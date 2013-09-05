@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>JSHint, a JavaScript Code Quality Tool</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    <link rel=stylesheet href="/res/bootstrap.css">
+    <link rel=stylesheet href="/res/styles.css">
+    <link rel=stylesheet href="/res/codemirror.css">
+    <link rel=stylesheet href="/res/dialog.css">
+
+    <script src="/res/codemirror.js"></script>
+    <script src="/res/javascript.js"></script>
+    <script src="/res/dialog.js"></script>
+    <script src="/res/match-highlighter.js"></script>
+    <script src="/res/search.js"></script>
+    <script src="/res/searchcursor.js"></script>
+    <script src="/res/index.js"></script>
+  </head>
+
+  <body onload="main()">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/docs/">Docs</a></li>
+        <li><a href="/install/">Install</a></li>
+        <li><a href="/hack/">Hack</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar">
+      <div class="wrapper">
+        Sidebar.
+      </div>
+    </div>
+
+    <div class="editor">
+      <div id="editor" class="wrapper">
+      </div>
+    </div>
+
+    <div class="output">
+      <div class="wrapper">
+        Errors.
+      </div>
+    </div>
+  </body>
+</html>

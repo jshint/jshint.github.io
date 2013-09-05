@@ -1,0 +1,25 @@
+{
+  "name": "jshint.com",
+  "version": "0.0.0",
+  "description": "http://jshint.com/",
+  "main": "index.js",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "oddweb dev .",
+    "build": "oddweb build ."
+  },
+
+  "dependencies": {
+    "oddweb": "~0.0.1",
+    "jshint": "latest"
+  },
+
+  "oddwebPlugins": [
+    "core/blog"
+  ],
+
+  "repository": "",
+  "author": "Anton Kovalyov <anton@kovalyov.net>",
+  "license": "BSD"
+}

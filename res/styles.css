@@ -1,0 +1,71 @@
+body {
+  padding-top: 70px;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+}
+
+.editor {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+}
+
+.output {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+
+  background-color: blue;
+}
+
+.wrapper {
+  padding: 60px 10px 10px 10px;
+  height: 100%;
+}
+
+.sidebar > .wrapper {
+  background-color: red;
+}
+
+.CodeMirror {
+  width: 100%;
+  height: 100% !important;
+  border: solid 1px #ccc;
+}
+
+@media (min-width: 1250px) {
+  .sidebar {
+    width: 17%;
+  }
+
+  .editor {
+    left: 17%;
+    width: 58%;
+  }
+
+  .output {
+    left: 75%;
+    width: 25%;
+  }
+}
+
+@media (max-width: 1250px) {
+  .sidebar {
+    width: 20%;
+  }
+
+  .editor {
+    left: 20%;
+    width: 50%;
+  }
+
+  .output {
+    left: 70%;
+    width: 30%;
+  }
+}
