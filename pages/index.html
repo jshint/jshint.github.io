@@ -9,9 +9,9 @@
     <meta name=author      content="Anton Kovalyov">
 
     <link rel=stylesheet href="/res/bootstrap.css">
-    <link rel=stylesheet href="/res/styles.css">
     <link rel=stylesheet href="/res/codemirror.css">
     <link rel=stylesheet href="/res/dialog.css">
+    <link rel=stylesheet href="/res/styles.css">
 
     <script src="/res/codemirror.js"></script>
     <script src="/res/javascript.js"></script>
@@ -19,26 +19,71 @@
     <script src="/res/match-highlighter.js"></script>
     <script src="/res/search.js"></script>
     <script src="/res/searchcursor.js"></script>
+    <script src="/res/jshint.js"></script>
     <script src="/res/index.js"></script>
   </head>
 
   <body onload="main()">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <ul class="nav navbar-nav navbar-left">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/docs/">Docs</a></li>
-        <li><a href="/install/">Install</a></li>
-        <li><a href="/hack/">Hack</a></li>
-        <li><a href="/blog/">Blog</a></li>
+    <div class="toolbar">
+      <a href="#">Configure</a>
+      <a href="#">Examples</a>
+    </div>
+
+    <div class="output">
+      <table id="errors">
+      </table>
+    </div>
+
+    <div class="menu">
+      <h1><span class="js">JS</span>Hint</h1>
+
+      <ul class="links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/install">Install</a></li>
+        <li><a href="/hack">Hack</a></li>
+        <li><a href="/blog">Blog</a></li>
       </ul>
-    </nav>
+
+      <div class="ad">
+        <div id="carbonads-container">
+          <div class="carbonad">
+            <div id="azcarbon"></div>
+            <script type="text/javascript">
+              var z = document.createElement("script");
+              z.type = "text/javascript";
+              z.async = true;
+              z.src = "http://engine.carbonads.com/z/49189/azcarbon_2_1_0_VERTDARK";
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(z, s);
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
 
     <div class="sidebar">
       <div class="wrapper">
-        Sidebar.
+        <div class="list-group">
+          <a href="#" class="list-group-item">Settings</a>
+        </div>
+
+
       </div>
     </div>
+
+    <nav class="toolbar navbar navbar-default" role="navigation">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Run</a></li>
+        <li><a href="#">Configure</a></li>
+      </ul>
+
+      <p class="navbar-text pull-right">Version 2.1.10</p>
+    </nav>
 
     <div class="editor">
       <div id="editor" class="wrapper">
@@ -50,5 +95,5 @@
         Errors.
       </div>
     </div>
-  </body>
-</html>
+
+-->
