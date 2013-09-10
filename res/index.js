@@ -26,8 +26,74 @@ var CM_CONFIG = {
   indentWithTabs: false
 }
 
+var CONFIGURE = {
+  Warn: {
+    debug:    "About debugging code", //
+    forin:    "About unsafe for..in",
+    eqnull:   "About == null", //
+    noarg:    "About arguments.caller and .callee",
+    noempty:  "About empty blocks",
+    eqeqeq:   "About unsafe comparisons",
+    boss:     "About assignments inside if/for/...", //
+    loopfunc: "About functions inside loops", //
+    evil:     "About eval", //
+    laxbreak: "About unsafe line breaks", //
+    bitwise:  "When bitwise operators are used",
+    strict:   "When code is not in strict mode",
+    undef:    "When variable is not defined",
+    unused:   "When variable is defined but not used",
+    curly:    "When block omits {}",
+    nonew:    "When new is used for side-effects" //
+  },
+
+  Assume: {
+    browser:  "Browser",
+    devel:    "Development (console, etc.)",
+    jquery:   "jQuery",
+    esnext:   "New JavaScript features (ES6)",
+    moz:      "Mozilla JavaScript extensions",
+    es3:      "Older environments (ES3)",
+    node:     "NodeJS"
+  }
+}
+
 function el(id) {
   return document.getElementById(id)
+}
+
+function createPanels() {
+  var panel = document.createElement("div")
+  panel.id = "configure"
+  panel.className = "win row"
+
+  var back = document.createElement("button")
+  back.innerHTML = "&larr; Done"
+  back.className = "back"
+  back.addEventListener("click", toggleConfigure, false)
+  panel.appendChild(back)
+
+  Object.keys(CONFIGURE).forEach(function (title) {
+    var col = document.createElement("div")
+    var h4  = document.createElement("h4")
+
+    col.className = "col-md-3 items"
+    h4.innerHTML = title
+    col.appendChild(h4)
+
+    Object.keys(CONFIGURE[title]).forEach(function (option) {
+      var button = document.createElement("button")
+      button.name = option
+      button.innerHTML = CONFIGURE[title][option]
+      button.addEventListener("click", function () {
+        button.className = (button.className === "active" ? "" : "active")
+      }, false)
+      col.appendChild(button)
+    })
+
+    panel.appendChild(col)
+  })
+
+  document.body.appendChild(panel)
 }
 
 function main() {
@@ -49,6 +115,8 @@ function main() {
   worker.postMessage({})  
 
   lint(editor, null, worker)
+  createPanels()
+  el("showConfigure").addEventListener("click", toggleConfigure, false)
 }
 
 function lint(cm, change, worker) {
@@ -84,7 +152,6 @@ function display(cm, resp) {
     table.appendChild(makeRow(err.line, err.reason, function (row) {
       row.addEventListener("mouseover", function () {
         var line = err.line - 1;
-        console.log(cm.getLine(line).length)
         cm.setSelection({ line: line, ch: 0 }, { line: line, ch: Infinity })
       })
 
@@ -93,4 +160,9 @@ function display(cm, resp) {
       })
     }))
   })  
+}
+
+function toggleConfigure() {
+  var panel = document.getElementById("configure")
+  panel.style.display = panel.style.display !== "none" ? "none" : "block"
 }
