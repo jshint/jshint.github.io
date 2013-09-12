@@ -77,7 +77,7 @@ html, body {
 .sidebar {
   z-index: 100;
   opacity: 0.7;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   height: 100%;
@@ -132,12 +132,15 @@ html, body {
 
 .output {
   text-align: left;
-  position: absolute;
-  top: 70px;
+  position: fixed;
+  top: 0;
   left: 50%;
+  height: 80%;
+  width: 350px;
+  margin-top: 70px;
+  overflow: scroll;
   color: #aaa;
   font-size: 90%;
-  width: 350px;
 }
 
 .output td {
@@ -151,16 +154,19 @@ html, body {
 }
 
 .CodeMirror {
+  position: absolute;
+  top: 70px;
   font-size: 90%;
+  background: #1d1e1c;
+  height: auto;
   width: 50%;
-  height: 100% !important;
 }
 
 .CodeMirror-scroll {
-  padding-top: 70px;
-  background: #1d1e1c;
   color: #ffffea;
   line-height: 1.2;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .CodeMirror-gutters {
