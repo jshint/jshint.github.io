@@ -25,8 +25,8 @@
 
   <body onload="main()">
     <div class="toolbar">
-      <a id="showConfigure" href="#">Configure</a>
-      <a id="showExamples" href="#">Examples</a>
+      <button id="showConfigure" class="button" href="#">Configure</button>
+      <button id="showExamples" class="button" href="#">Examples</button>
     </div>
 
     <div class="output">
@@ -34,7 +34,7 @@
       </table>
     </div>
 
-    <div class="menu">
+    <div class="sidebar">
       <h1><span class="js">JS</span>Hint</h1>
 
       <ul class="links">
@@ -61,5 +61,75 @@
         </div>
       </div>
     </div>
+
+    <div id="configure" class="win row">
+      <div class="menu">
+        <button class="back button">Done</button>
+      </div>
+
+      <div class="col-md-3 items">
+        <h4>Warn</h4>
+
+        <button name="debug">About debugging code</button>
+        <button name="forin">About unsafe for..in</button>
+        <button name="eqnull">About == null</button>
+        <button name="noarg">About arguments.caller and .callee</button>
+        <button name="noempty">About empty blocks</button>
+        <button name="eqeqeq">About unsafe comparisons</button>
+        <button name="boss">About assignments if/for/...</button>
+        <button name="loopfunc">About functions inside loops</button>
+        <button name="evil">About eval</button>
+        <button name="laxbreak">About unsafe line breaks</button>
+        <button name="bitwise">When bitwise operators are used</button>
+        <button name="strict">When code is not in strict mode</button>
+        <button name="undef">When variable is not defined</button>
+        <button name="unused">When variable is defined but not used</button>
+        <button name="curly">When block omits {}</button>
+        <button name="nonew">When new is used for side-effects</button>
+      </div>
+
+      <div class="col-md-3 items">
+        <h4>Assume</h4>
+
+        <button name="browser">Browser</button>
+        <button name="node">NodeJS</button>
+        <button name="jquery">jQuery</button>
+        <button name="devel">Development (console, etc.)</button>
+        <button name="esnext">New JavaScript features (ES6)</button>
+        <button name="moz">Mozilla JavaScript extensions</button>
+        <button name="es3">Older environments (ES3)</button>
+      </div>
+    </div>
+
+    <div id="examples" class="win row">
+      <div class="menu">
+        <button class="back button">Cancel</button>
+      </div>
+
+      <div class="col-md-3 items">
+        <h4>Examples</h4>
+
+        <button name="undef">Undefined and unused variables</button>
+        <button name="complexity">Cyclomatic complexity</button>
+      </div>
+    </div>
+
+    <script id="text-intro" type="text/jshint">
+      // Hello.
+      //
+      // This is JSHint, a tool that helps to detect errors and potential
+      // problems in your JavaScript code.
+      //
+      // To start, simply enter some JavaScript anywhere on this page.
+      // Additionally, you can toggle specific options in the Configure menu
+      // above or, if you're not sure what JSHint can do for you, look through
+      // the examples.
+
+      function main() {
+        return 'Hello, World!';
+      }
+
+      main();
+    </script>
   </body>
 </html>

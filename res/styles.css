@@ -4,25 +4,29 @@ html, body {
 }
 
 .toolbar {
-  z-index: 100;
+  z-index: 98;
   position: absolute;
   top: 20px;
   left: 10px;
 }
 
-.toolbar > a {
-  padding: 6px 10px;
+.button {
+  padding: 4px 10px;
   color: #aaa;
   background-color: #333;
+  border: none;
+  border-radius: 2px;
 }
 
-.toolbar > a:hover {
+.button:hover {
+  color: #aaa;
   text-decoration: none;
   background-color: #444;
 }
 
 .win {
-  z-index: 100;
+  z-index: 99;
+  display: none;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -32,57 +36,68 @@ html, body {
   color: #aaa;
 }
 
-.win h4 {
+.win .menu {
+  padding: 20px 10px;
+}
+
+.win .items {
+  margin-bottom: 25px;
+}
+
+.win .items h4 {
   font-weight: normal;
   margin-bottom: 20px;
 }
 
-.win button {
+.win .items button {
   display: block;
-  background: none;
+  background-color: transparent;
+  color: inherit;
   border: none;
-  color: #aaa;
   margin-bottom: 5px;
   font-size: 90%;
 }
 
-.win .items button:before {
+#configure .items button:before {
   content: "✓";
   margin-right: 10px;
   color: #444;
 }
 
-.win .items button.active:before {
+#configure .items .active:before {
   color: #9ac;
 }
 
-.win .back {
-  margin: 10px;
-  text-transform: uppercase;
+#examples .items button:before {
+  content: "✪";
+  margin-right: 10px;
+  color: #444; 
 }
 
-.menu {
+.sidebar {
   z-index: 100;
   opacity: 0.7;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 170px;
   background-color: #333;
   padding: 10px;
 }
 
-.menu .wrapper {
+.sidebar .wrapper {
   text-align: left;
 }
 
-.menu h1 {
+.sidebar h1 {
   font-family: "Helvetica Neue", Helvetica;
   font-weight: normal;
   color: #aaa;
   margin: 0;
 }
 
-.menu h1 .js {
+.sidebar h1 .js {
   background-color: #aaa;
   color: #333;
   display: inline-block;
@@ -90,28 +105,28 @@ html, body {
   margin-right: 5px;
 }
 
-.menu ul {
+.sidebar ul {
   margin: 20px 0 0 0;
   padding: 0;
   font-size: 90%;
 }
 
-.menu li {
+.sidebar li {
   margin: 5px;
   list-style-type: none;
 }
 
-.menu li a {
+.sidebar li a {
   color: #aaa;
 }
 
-.menu .carbonad {
+.sidebar .carbonad {
   border: none !important;
   margin-top: 20px;
   font-size: 90% !important;
 }
 
-.menu .carbonad a {
+.sidebar .carbonad a {
   font-weight: normal !important;
 }
 
