@@ -5,6 +5,31 @@ function on(q, ev, cb) { el(q).addEventListener(ev, cb, false) }
 function show(q) { el(q).style.display = "block" }
 function hide(q) { el(q).style.display = "none" }
 
+var defaults = {
+  opts: {
+    forin:    true,
+    noarg:    true,
+    bitwise:  true,
+    strict:   true,
+    nonew:    true
+  },
+
+  rev: {
+    eqnull:   false,
+    debug:    false,
+    boss:     false,
+    evil:     false,
+    loopfunc: false,
+    laxbreak: false
+  },
+
+  meta: {
+    unused:   true,
+    undef:    true,
+    complex:  true
+  }
+}
+
 function main() {
   var value = el("#text-intro").innerHTML
 
@@ -105,7 +130,7 @@ function display(cm, resp) {
   resp.errors.forEach(function (err) {
     table.appendChild(makeRow(err.line, err.reason, function (row) {
       row.addEventListener("mouseover", function () {
-        var line = err.line - 1;
+        var line = err.line - 1
         cm.setSelection({ line: line, ch: 0 }, { line: line, ch: Infinity })
       })
 

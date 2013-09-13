@@ -63,25 +63,29 @@
       </div>
 
       <div class="col-md-3 items">
+        <h4>Report</h4>
+
+        <button name="complexity">Cyclomatic complexity</button>
+        <button name="unused">Unused variables</button>
+        <button name="undefined">Undefined variables</button>
+      </div>
+
+      <div class="col-md-3 items">
         <h4>Warn</h4>
 
+        <button name="eqnull">About == null</button>
         <button name="debug">About debugging code</button>
         <button name="forin">About unsafe for..in</button>
-        <button name="eqnull">About == null</button>
         <button name="noarg">About arguments.caller and .callee</button>
-        <button name="noempty">About empty blocks</button>
-        <button name="eqeqeq">About unsafe comparisons</button>
         <button name="boss">About assignments if/for/...</button>
         <button name="loopfunc">About functions inside loops</button>
         <button name="evil">About eval</button>
         <button name="laxbreak">About unsafe line breaks</button>
-        <button name="bitwise">When bitwise operators are used</button>
+        <button name="bitwise">About potential typos in logical operators</button>
         <button name="strict">When code is not in strict mode</button>
-        <button name="undef">When variable is not defined</button>
-        <button name="unused">When variable is defined but not used</button>
-        <button name="curly">When block omits {}</button>
         <button name="nonew">When new is used for side-effects</button>
       </div>
+
 
       <div class="col-md-3 items">
         <h4>Assume</h4>
@@ -104,8 +108,9 @@
       <div class="col-md-3 items">
         <h4>Examples</h4>
 
-        <button name="undef">Undefined and unused variables</button>
-        <button name="complexity">Cyclomatic complexity</button>
+        <button name="undef">Undefined variables</button>
+        <button name="unused">Unused variables</button>
+        <button name="complex">Cyclomatic complexity</button>
       </div>
     </div>
 
