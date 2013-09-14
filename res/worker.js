@@ -4,7 +4,7 @@ self.onmessage = function (ev) {
   var ret, req = ev.data
 
   if (req.task === "lint") {
-    JSHINT(req.code, { undef: true, unused: true })
+    JSHINT(req.code, req.config)
 
     ret = JSHINT.data()
     ret.options = null

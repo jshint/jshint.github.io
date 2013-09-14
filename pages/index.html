@@ -20,8 +20,7 @@
 
   <body onload="main()">
     <div class="toolbar">
-      <button id="showConfigure" class="button" href="#">Configure</button>
-      <button id="showExamples" class="button" href="#">Examples</button>
+      <button data-type="toggle" data-target="configure" href="#">Configure</button>
     </div>
 
     <div class="output">
@@ -59,58 +58,42 @@
 
     <div id="configure" class="win row">
       <div class="menu">
-        <button class="back button">Done</button>
+        <button data-type="toggle" data-target="configure">Done</button>
       </div>
 
       <div class="col-md-3 items">
         <h4>Report</h4>
 
-        <button name="complexity">Cyclomatic complexity</button>
-        <button name="unused">Unused variables</button>
-        <button name="undefined">Undefined variables</button>
-      </div>
+        <button data-type="pref" id="complex">Cyclomatic complexity</button>
+        <button data-type="pref" id="unused">Unused variables</button>
+        <button data-type="pref" id="undef">Undefined variables</button>
 
-      <div class="col-md-3 items">
         <h4>Warn</h4>
 
-        <button name="eqnull">About == null</button>
-        <button name="debug">About debugging code</button>
-        <button name="forin">About unsafe for..in</button>
-        <button name="noarg">About arguments.caller and .callee</button>
-        <button name="boss">About assignments if/for/...</button>
-        <button name="loopfunc">About functions inside loops</button>
-        <button name="evil">About eval</button>
-        <button name="laxbreak">About unsafe line breaks</button>
-        <button name="bitwise">About potential typos in logical operators</button>
-        <button name="strict">When code is not in strict mode</button>
-        <button name="nonew">When new is used for side-effects</button>
+        <button data-type="pref" id="eqnull">About == null</button>
+        <button data-type="pref" id="debug">About debugging code</button>
+        <button data-type="pref" id="forin">About unsafe for..in</button>
+        <button data-type="pref" id="noarg">About arguments.caller and .callee</button>
+        <button data-type="pref" id="boss">About assignments if/for/...</button>
+        <button data-type="pref" id="loopfunc">About functions inside loops</button>
+        <button data-type="pref" id="evil">About eval</button>
+        <button data-type="pref" id="laxbreak">About unsafe line breaks</button>
+        <button data-type="pref" id="bitwise">About potential typos in logical operators</button>
+        <button data-type="pref" id="strict">When code is not in strict mode</button>
+        <button data-type="pref" id="nonew">When new is used for side-effects</button>
       </div>
 
 
       <div class="col-md-3 items">
         <h4>Assume</h4>
 
-        <button name="browser">Browser</button>
-        <button name="node">NodeJS</button>
-        <button name="jquery">jQuery</button>
-        <button name="devel">Development (console, etc.)</button>
-        <button name="esnext">New JavaScript features (ES6)</button>
-        <button name="moz">Mozilla JavaScript extensions</button>
-        <button name="es3">Older environments (ES3)</button>
-      </div>
-    </div>
-
-    <div id="examples" class="win row">
-      <div class="menu">
-        <button class="back button">Cancel</button>
-      </div>
-
-      <div class="col-md-3 items">
-        <h4>Examples</h4>
-
-        <button name="undef">Undefined variables</button>
-        <button name="unused">Unused variables</button>
-        <button name="complex">Cyclomatic complexity</button>
+        <button data-type="pref" id="browser">Browser</button>
+        <button data-type="pref" id="node">NodeJS</button>
+        <button data-type="pref" id="jquery">jQuery</button>
+        <button data-type="pref" id="devel">Development (console, etc.)</button>
+        <button data-type="pref" id="esnext">New JavaScript features (ES6)</button>
+        <button data-type="pref" id="moz">Mozilla JavaScript extensions</button>
+        <button data-type="pref" id="es3">Older environments (ES3)</button>
       </div>
     </div>
 
@@ -122,8 +105,7 @@
       //
       // To start, simply enter some JavaScript anywhere on this page.
       // Additionally, you can toggle specific options in the Configure menu
-      // above or, if you're not sure what JSHint can do for you, look through
-      // the examples.
+      // above.
 
       function main() {
         return 'Hello, World!';

@@ -4,23 +4,36 @@ function el(q) { return document.querySelector(q) }
 function on(q, ev, cb) { el(q).addEventListener(ev, cb, false) }
 function show(q) { el(q).style.display = "block" }
 function hide(q) { el(q).style.display = "none" }
+function each(o, cb) { Object.keys(o).forEach(function (k) { cb(o[k], k) }) }
 
-var defaults = {
+var editor = null
+var worker = null
+var cache  = { toggled: {} }
+
+var prefs  = {
   opts: {
     forin:    true,
     noarg:    true,
     bitwise:  true,
-    strict:   true,
-    nonew:    true
+    nonew:    true,
+    strict:   false,
+
+    browser:  true,
+    devel:    true,
+    node:     false,
+    jquery:   false,
+    esnext:   false,
+    moz:      false,
+    es3:      false
   },
 
   rev: {
-    eqnull:   false,
-    debug:    false,
-    boss:     false,
-    evil:     false,
-    loopfunc: false,
-    laxbreak: false
+    eqnull:   true,
+    debug:    true,
+    boss:     true,
+    evil:     true,
+    loopfunc: true,
+    laxbreak: true
   },
 
   meta: {
@@ -30,79 +43,100 @@ var defaults = {
   }
 }
 
+function pref(id, val) {
+  var cat = null
+
+  each(prefs, function (o, k) {
+    if (o[id] !== undefined) cat = k
+  })
+
+  if (!cat)
+    return null
+
+  if (val !== undefined)
+    prefs[cat][id] = val
+
+  return prefs[cat][id] || null
+}
+
+function setup() {
+  each(prefs, function (opts, n) {
+    each(opts, function (state, id) {
+      el("#" + id).className = state ? "active" : ""
+    })
+  })
+
+  on("body", "click", function (ev) {
+    if (ev.target.getAttribute("data-type") !== "toggle")
+      return
+
+    var button = ev.target
+    var target = button.getAttribute("data-target")
+    var state  = cache.toggled[target] || false
+
+    cache.toggled[target] = state = !state
+    el("#" + target).style.display = state ? "block" : "none"
+  })
+
+  on("body", "click", function (ev) {
+    if (ev.target.getAttribute("data-type") !== "pref")
+      return
+
+    var button = ev.target
+    var id = button.getAttribute("id")
+
+    pref(id, !pref(id))
+    button.className = pref(id) ? "active" : ""
+    lint()
+  })
+}
+
 function main() {
   var value = el("#text-intro").innerHTML
-
   value = value.split("\n")
   value = value.slice(1, value.length - 1)
-  value = value.map(function (line) {
-    return line.slice(6)
-  }).join("\n")
+  value = value.map(function (line) { return line.slice(6) }).join("\n")
 
-  var config = {
+  editor = CodeMirror(document.body, {
     value:          value,
     mode:           "javascript",
     tabSize:        2,
     indentUnit:     2,
     lineNumbers:    true,
     indentWithTabs: false
-  }
+  })
 
-  var editor  = CodeMirror(document.body, config)
-  var timeout = null
+  setup()
+  lint()
 
-  editor.on("change", function (cm, change) {
-    if (timeout)
-      clearTimeout(timeout)
+  var tm = null
+  editor.on("change", function (cm) {
+    if (tm)
+      clearTimeout(tm)
 
-    timeout = setTimeout(function () {
-      lint(cm, change, worker)
-      timeout = null
+    tm = setTimeout(function () {
+      lint()
+      tm = null
     }, 200)
   })
-
-  on("#showConfigure", "click", function () {
-    hide("#examples")
-    show("#configure")
-  })
-
-  on("#showExamples", "click", function () {
-    hide("#configure")
-    show("#examples")
-  })
-
-  on("#configure button.back", "click", function () {
-    hide("#configure")
-  })
-
-  on("#examples button.back", "click", function () {
-    hide("#examples")
-  })
-
-  on("#configure", "click", function (ev) {
-    var button = ev.target
-
-    if (button.nodeName !== "BUTTON" || !/items/.test(button.parentNode.className))
-      return
-
-    if (/active/.test(button.className))
-      button.className = ""
-    else
-      button.className = "active"
-  })
-
-  var worker = new Worker("/res/worker.js")
-  worker.addEventListener("message", function (ev) { display(editor, ev.data.result) })
-  worker.postMessage({})
-
-  lint(editor, null, worker)
 }
 
-function lint(cm, change, worker) {
-  worker.postMessage({ task: "lint", code: cm.getValue() })
+function lint() {
+  var value  = editor.getValue()
+  var config = {}
+
+  if (!worker) {
+    worker = new Worker("/res/worker.js")
+    worker.addEventListener("message", function (ev) { display(ev.data.result) })
+  }
+
+  each(prefs.opts, function (state, name) { config[name] = state })
+  each(prefs.rev,  function (state, name) { config[name] = !state })
+
+  worker.postMessage({ task: "lint", code: value, config: config })
 }
 
-function display(cm, resp) {
+function display(resp) {
   function makeRow(line, message, cb) {
     var row   = document.createElement("tr")
     var lcell = document.createElement("td")
@@ -131,11 +165,11 @@ function display(cm, resp) {
     table.appendChild(makeRow(err.line, err.reason, function (row) {
       row.addEventListener("mouseover", function () {
         var line = err.line - 1
-        cm.setSelection({ line: line, ch: 0 }, { line: line, ch: Infinity })
+        editor.setSelection({ line: line, ch: 0 }, { line: line, ch: Infinity })
       })
 
       row.addEventListener("mouseout", function () {
-        cm.setCursor({ line: err.line - 1, ch: 0 })
+        editor.setCursor({ line: err.line - 1, ch: 0 })
       })
     }))
   })

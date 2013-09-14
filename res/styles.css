@@ -10,7 +10,7 @@ html, body {
   left: 10px;
 }
 
-.button {
+button {
   padding: 4px 10px;
   color: #aaa;
   background-color: #333;
@@ -18,7 +18,7 @@ html, body {
   border-radius: 2px;
 }
 
-.button:hover {
+button:hover {
   color: #aaa;
   text-decoration: none;
   background-color: #444;
@@ -65,7 +65,7 @@ html, body {
   color: #444;
 }
 
-#configure .items .active:before {
+#configure .items button.active:before {
   color: #9ac;
 }
 
