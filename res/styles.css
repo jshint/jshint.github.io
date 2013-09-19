@@ -1,78 +1,19 @@
 html, body {
   height: 100%;
   background-color: #1d1e1c;
-}
-
-.toolbar {
-  z-index: 98;
-  position: absolute;
-  top: 20px;
-  left: 10px;
+  font-family: "aktiv-grotesk-std";
 }
 
 button {
-  padding: 4px 10px;
-  color: #aaa;
-  background-color: #333;
+  font-family: "aktiv-grotesk-std";
+  background-color: transparent;
   border: none;
-  border-radius: 2px;
+  color: #aaa;
+  padding: 0;
 }
 
 button:hover {
-  color: #aaa;
   text-decoration: none;
-  background-color: #444;
-}
-
-.win {
-  z-index: 99;
-  display: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: #1d1e1c;
-  color: #aaa;
-}
-
-.win .menu {
-  padding: 20px 10px;
-}
-
-.win .items {
-  margin-bottom: 25px;
-}
-
-.win .items h4 {
-  font-weight: normal;
-  margin-bottom: 20px;
-}
-
-.win .items button {
-  display: block;
-  background-color: transparent;
-  color: inherit;
-  border: none;
-  margin-bottom: 5px;
-  font-size: 90%;
-  text-align: left;
-}
-
-#configure .items button:before {
-  content: "✓";
-  margin-right: 10px;
-  color: #444;
-}
-
-#configure .items button.active:before {
-  color: #9ac;
-}
-
-#examples .items button:before {
-  content: "✪";
-  margin-right: 10px;
-  color: #444; 
 }
 
 .sidebar {
@@ -110,6 +51,7 @@ button:hover {
   margin: 20px 0 0 0;
   padding: 0;
   font-size: 90%;
+  font-family: "aktiv-grotesk-std";
 }
 
 .sidebar li {
@@ -119,6 +61,15 @@ button:hover {
 
 .sidebar li a {
   color: #aaa;
+}
+
+.sidebar li a:hover {
+  text-decoration: none;
+}
+
+.sidebar li a:hover:after {
+  content: ">";
+  margin-left: 10px;
 }
 
 .sidebar .carbonad {
@@ -131,36 +82,106 @@ button:hover {
   font-weight: normal !important;
 }
 
+.win {
+  z-index: 99;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1e1c;
+  color: #aaa;
+  padding-left: 20px;
+}
+
+.win .menu {
+  margin-top: 20px;
+  border-bottom: solid 1px #333;
+  padding-bottom: 10px;
+}
+
+.win .items h4 {
+  font-family: "aktiv-grotesk-std";
+  font-weight: normal;
+  margin: 20px 0 10px 0;
+}
+
+.win .items button {
+  display: block;
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  margin-bottom: 5px;
+  font-size: 90%;
+  text-align: left;
+}
+
+#configure .items button:before {
+  content: "✓";
+  margin-right: 10px;
+  color: #444;
+}
+
+#configure .items button.active:before {
+  color: #9ac;
+}
+
 .output {
   text-align: left;
   position: fixed;
   top: 0;
-  left: 50%;
+  left: 620px;
   height: 80%;
   width: 350px;
-  margin-top: 70px;
+  margin-top: 20px;
   overflow: scroll;
   color: #aaa;
+}
+
+.output .toolbar {
+  border-bottom: solid 1px #333;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  text-align: right;
+}
+
+.output .report {
   font-size: 90%;
+  margin-bottom: 20px;
 }
 
-.output td {
+.output .report td {
   vertical-align: top;
+  padding-bottom: 5px;
 }
 
-.output .lineno {
+.output .report td.header {
+  font-size: 120%;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.output .report td.lineno {
+  width: 20px;
   padding-right: 10px;
   color: #666;
   text-align: right;
 }
 
+.output button {
+  color: #666;
+}
+
 .CodeMirror {
   position: absolute;
-  top: 70px;
-  font-size: 90%;
+  left: 20px;
+  top: 80px;
+  font-size: 80%;
   background: #1d1e1c;
+  font-family: "droid-sans-mono";
   height: auto;
-  width: 50%;
+  width: 600px;
 }
 
 .CodeMirror-scroll {
@@ -177,7 +198,6 @@ button:hover {
 }
 
 .cm-s-default { background: var(bg); color:var(fg); }
-
 .cm-s-default span.cm-bracket {color: #aaa;}
 .cm-s-default span.cm-bracket1 {color: #aaa; }
 .cm-s-default span.cm-bracket2 {color: #0f0;}

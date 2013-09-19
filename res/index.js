@@ -1,4 +1,7 @@
-var OK_TEXT = "Seems like JSHint hasn't found any problems with your code."
+var NUM_TEXTS = [
+  null, "One", "Two", "Three", "Four", "Five",
+  "Six", "Seven", "Eight", "Nine", "Ten"
+]
 
 function el(q) { return document.querySelector(q) }
 function on(q, ev, cb) { el(q).addEventListener(ev, cb, false) }
@@ -136,41 +139,111 @@ function lint() {
   worker.postMessage({ task: "lint", code: value, config: config })
 }
 
-function display(resp) {
-  function makeRow(line, message, cb) {
-    var row   = document.createElement("tr")
-    var lcell = document.createElement("td")
-    var mcell = document.createElement("td")
+function makeRow(line, message) {
+  var row   = document.createElement("tr")
+  var mcell = document.createElement("td")
 
+  mcell.innerHTML = message
+
+  if (line !== null) {
+    var lcell = document.createElement("td")
     lcell.className = "lineno"
     lcell.innerHTML = line
-    mcell.innerHTML = message
-
     row.appendChild(lcell)
-    row.appendChild(mcell)
 
-    cb = cb || function () {}
-    cb(row)
+    row.addEventListener("mouseover", function () {
+      editor.setSelection({ line: line - 1, ch: 0 }, { line: line - 1, ch: Infinity })
+    })
 
-    return row
+    row.addEventListener("mouseout", function () {
+      editor.setCursor({ line: line - 1, ch: 0 })
+    })
+  } else {
+    mcell.className = "header"
+    mcell.setAttribute("colspan", 2)
   }
 
-  var table = el("#errors")
+  row.appendChild(mcell)
+  return row
+}
+
+function display(resp) {
+  showUndef(resp.implieds)
+  showUnused(resp.unused)
+  showErrors(resp.errors)
+}
+
+function showErrors(errors) {
+  var table = el("[data-type=errors]")
+  var text = ""
+
   table.innerHTML = ""
 
-  if (resp.errors == null)
-    return void table.appendChild(makeRow("&#x2713;", OK_TEXT))
+  if (!errors)
+    return false
 
-  resp.errors.forEach(function (err) {
-    table.appendChild(makeRow(err.line, err.reason, function (row) {
-      row.addEventListener("mouseover", function () {
-        var line = err.line - 1
-        editor.setSelection({ line: line, ch: 0 }, { line: line, ch: Infinity })
-      })
+  if (errors.length === 1)
+    text = "One warning"
+  else if (errors.length < 11)
+    text = NUM_TEXTS[errors.length] + " warnings"
+  else
+    text = errors.length + " warnings"
 
-      row.addEventListener("mouseout", function () {
-        editor.setCursor({ line: err.line - 1, ch: 0 })
-      })
-    }))
+  table.appendChild(makeRow(null, text))
+
+  errors.forEach(function (err) {
+    table.appendChild(makeRow(err.line, err.reason))
   })
+}
+
+function showUndef(undef) {
+  var table = el("[data-type=undef]")
+  var text = ""
+
+  table.innerHTML = ""
+
+  if (!prefs.meta.undef || !undef)
+    return false
+
+  if (undef.length === 1)
+    text = "One undefined variable"
+  else if (undef.length < 11)
+    text = NUM_TEXTS[undef.length] + " undefined variables"
+  else
+    text = undef.length + " undefined variables"
+
+  table.appendChild(makeRow(null, text))
+
+  undef.forEach(function (item) {
+    item.line.forEach(function (line) {
+      table.appendChild(makeRow(line, item.name))
+    })
+  })
+
+  return undef.length > 0
+}
+
+function showUnused(unused) {
+  var table = el("[data-type=unused]")
+  var text = ""
+
+  table.innerHTML = ""
+
+  if (!prefs.meta.unused || !unused)
+    return false
+
+  if (unused.length === 1)
+    text = "One unused variable"
+  else if (unused.length < 11)
+    text = NUM_TEXTS[unused.length] + " unused variables"
+  else
+    text = unused.length + " unused variables"
+
+  table.appendChild(makeRow(null, text))
+
+  unused.forEach(function (item) {
+    table.appendChild(makeRow(item.line, item.name))
+  })
+
+  return unused.length > 0
 }
