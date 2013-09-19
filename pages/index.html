@@ -22,14 +22,51 @@
   </head>
 
   <body onload="main()">
-    <div class="output">
+    <div class="whiteboard">
       <div class="toolbar">
-        <button data-type="toggle" data-target="configure" href="#">Configure</button>
+        <button data-type="toggle" data-target="configure,output">Configure</button>
       </div>
 
-      <table data-type="errors" class="report"></table>
-      <table data-type="undef" class="report"></table>
-      <table data-type="unused" class="report"></table>
+      <div id="configure">
+        <div>
+          <h4>Report</h4>
+          <button data-type="pref" id="complex">Cyclomatic complexity</button>
+          <button data-type="pref" id="unused">Unused variables</button>
+          <button data-type="pref" id="undef">Undefined variables</button>
+        </div>
+
+        <div>
+          <h4>Warn</h4>
+          <button data-type="pref" id="eqnull">About == null</button>
+          <button data-type="pref" id="debug">About debugging code</button>
+          <button data-type="pref" id="forin">About unsafe for..in</button>
+          <button data-type="pref" id="noarg">About arguments.caller and .callee</button>
+          <button data-type="pref" id="boss">About assignments if/for/...</button>
+          <button data-type="pref" id="loopfunc">About functions inside loops</button>
+          <button data-type="pref" id="evil">About eval</button>
+          <button data-type="pref" id="laxbreak">About unsafe line breaks</button>
+          <button data-type="pref" id="bitwise">About potential typos in logical operators</button>
+          <button data-type="pref" id="strict">When code is not in strict mode</button>
+          <button data-type="pref" id="nonew">When new is used for side-effects</button>
+        </div>
+
+        <div>
+          <h4>Assume</h4>
+          <button data-type="pref" id="browser">Browser</button>
+          <button data-type="pref" id="node">NodeJS</button>
+          <button data-type="pref" id="jquery">jQuery</button>
+          <button data-type="pref" id="devel">Development (console, etc.)</button>
+          <button data-type="pref" id="esnext">New JavaScript features (ES6)</button>
+          <button data-type="pref" id="moz">Mozilla JavaScript extensions</button>
+          <button data-type="pref" id="es3">Older environments (ES3)</button>
+        </div>
+      </div>
+
+      <div id="output">
+        <table data-type="errors" class="report"></table>
+        <table data-type="undef" class="report"></table>
+        <table data-type="unused" class="report"></table>
+      </div>
     </div>
 
     <div class="sidebar">
@@ -60,60 +97,17 @@
       </div>
     </div>
 
-    <div id="configure" class="win">
-      <div class="row menu">
-        <div class="col-md-3">
-          <button data-type="toggle" data-target="configure">&larr; Done</button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-3 items">
-          <h4>Report</h4>
-
-          <button data-type="pref" id="complex">Cyclomatic complexity</button>
-          <button data-type="pref" id="unused">Unused variables</button>
-          <button data-type="pref" id="undef">Undefined variables</button>
-
-          <h4>Warn</h4>
-
-          <button data-type="pref" id="eqnull">About == null</button>
-          <button data-type="pref" id="debug">About debugging code</button>
-          <button data-type="pref" id="forin">About unsafe for..in</button>
-          <button data-type="pref" id="noarg">About arguments.caller and .callee</button>
-          <button data-type="pref" id="boss">About assignments if/for/...</button>
-          <button data-type="pref" id="loopfunc">About functions inside loops</button>
-          <button data-type="pref" id="evil">About eval</button>
-          <button data-type="pref" id="laxbreak">About unsafe line breaks</button>
-          <button data-type="pref" id="bitwise">About potential typos in logical operators</button>
-          <button data-type="pref" id="strict">When code is not in strict mode</button>
-          <button data-type="pref" id="nonew">When new is used for side-effects</button>
-        </div>
-
-
-        <div class="col-md-3 items">
-          <h4>Assume</h4>
-
-          <button data-type="pref" id="browser">Browser</button>
-          <button data-type="pref" id="node">NodeJS</button>
-          <button data-type="pref" id="jquery">jQuery</button>
-          <button data-type="pref" id="devel">Development (console, etc.)</button>
-          <button data-type="pref" id="esnext">New JavaScript features (ES6)</button>
-          <button data-type="pref" id="moz">Mozilla JavaScript extensions</button>
-          <button data-type="pref" id="es3">Older environments (ES3)</button>
-        </div>
-      </div>
-    </div>
-
     <script id="text-intro" type="text/jshint">
       // Hello.
       //
       // This is JSHint, a tool that helps to detect errors and potential
       // problems in your JavaScript code.
       //
-      // To start, simply enter some JavaScript anywhere on this page.
-      // Additionally, you can toggle specific options in the Configure menu
-      // above.
+      // To start, simply enter some JavaScript anywhere on this page. Your
+      // report will appear on the right side.
+      //
+      // Additionally, you can toggle specific options in the Configure
+      // menu.
 
       function main() {
         return 'Hello, World!';

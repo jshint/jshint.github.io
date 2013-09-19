@@ -11,7 +11,7 @@ function each(o, cb) { Object.keys(o).forEach(function (k) { cb(o[k], k) }) }
 
 var editor = null
 var worker = null
-var cache  = { toggled: {} }
+var cache  = { toggled: { configure: false, output: true } }
 
 var prefs  = {
   opts: {
@@ -73,12 +73,21 @@ function setup() {
     if (ev.target.getAttribute("data-type") !== "toggle")
       return
 
-    var button = ev.target
-    var target = button.getAttribute("data-target")
-    var state  = cache.toggled[target] || false
+    var button  = ev.target
+    var targets = button.getAttribute("data-target")
 
-    cache.toggled[target] = state = !state
-    el("#" + target).style.display = state ? "block" : "none"
+    targets.split(",").forEach(function (key, i) {
+      var inverse = key.charAt(0) === "-"
+      var target  = inverse ? key.slice(1) : key
+      var state   = cache.toggled[target]
+
+      cache.toggled[target] = state = !state
+      target = el("#" + target)
+      target.style.display = state ? "block" : "none"
+
+      if (i === 0)
+        button.className = state ? "active" : ""
+    })
   })
 
   on("body", "click", function (ev) {

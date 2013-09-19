@@ -82,32 +82,80 @@ button:hover {
   font-weight: normal !important;
 }
 
-.win {
-  z-index: 99;
-  display: none;
+.whiteboard {
+  text-align: left;
   position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: #1d1e1c;
-  color: #aaa;
-  padding-left: 20px;
-}
-
-.win .menu {
+  top: 0;
+  bottom: 20px;
+  left: 640px;
+  width: 350px;
   margin-top: 20px;
-  border-bottom: solid 1px #333;
-  padding-bottom: 10px;
+  overflow: scroll;
+  color: #aaa;
 }
 
-.win .items h4 {
+.whiteboard .toolbar {
+  margin-bottom: 20px;
+}
+
+.whiteboard .toolbar button {
+  font-size: 80%;
+  text-transform: uppercase;
+}
+
+.whiteboard .report {
+  font-size: 90%;
+  margin-bottom: 20px;
+}
+
+.whiteboard .report td {
+  vertical-align: top;
+  padding-bottom: 5px;
+}
+
+.whiteboard .report td.header {
+  font-size: 120%;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.whiteboard .report td.lineno {
+  width: 20px;
+  padding-right: 10px;
+  color: #666;
+  text-align: right;
+}
+
+.whiteboard button {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+
+  color: #666;
+}
+
+.whiteboard button.active {
+  color: #9ac;
+}
+
+.whiteboard #configure {
+  display: none;
   font-family: "aktiv-grotesk-std";
-  font-weight: normal;
-  margin: 20px 0 10px 0;
 }
 
-.win .items button {
+.whiteboard #configure > div {
+  margin-bottom: 20px;
+}
+
+.whiteboard #configure h4 {
+  font-family: "aktiv-grotesk-std";
+  font-size: 110%;
+  color: #666;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.whiteboard #configure button {
   display: block;
   background-color: transparent;
   color: inherit;
@@ -117,66 +165,24 @@ button:hover {
   text-align: left;
 }
 
-#configure .items button:before {
+.whiteboard #configure button:before {
+  transition-property: color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+
   content: "✓";
   margin-right: 10px;
   color: #444;
 }
 
-#configure .items button.active:before {
+.whiteboard #configure button.active:before {
   color: #9ac;
-}
-
-.output {
-  text-align: left;
-  position: fixed;
-  top: 0;
-  left: 620px;
-  height: 80%;
-  width: 350px;
-  margin-top: 20px;
-  overflow: scroll;
-  color: #aaa;
-}
-
-.output .toolbar {
-  border-bottom: solid 1px #333;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  text-align: right;
-}
-
-.output .report {
-  font-size: 90%;
-  margin-bottom: 20px;
-}
-
-.output .report td {
-  vertical-align: top;
-  padding-bottom: 5px;
-}
-
-.output .report td.header {
-  font-size: 120%;
-  margin-bottom: 10px;
-  color: #666;
-}
-
-.output .report td.lineno {
-  width: 20px;
-  padding-right: 10px;
-  color: #666;
-  text-align: right;
-}
-
-.output button {
-  color: #666;
 }
 
 .CodeMirror {
   position: absolute;
   left: 20px;
-  top: 80px;
+  top: 20px;
   font-size: 80%;
   background: #1d1e1c;
   font-family: "droid-sans-mono";
