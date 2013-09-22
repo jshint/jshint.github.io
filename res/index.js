@@ -77,12 +77,10 @@ function setup() {
     var targets = button.getAttribute("data-target")
 
     targets.split(",").forEach(function (key, i) {
-      var inverse = key.charAt(0) === "-"
-      var target  = inverse ? key.slice(1) : key
-      var state   = cache.toggled[target]
+      var target  = el("#" + key)
+      var state   = cache.toggled[key]
 
-      cache.toggled[target] = state = !state
-      target = el("#" + target)
+      cache.toggled[key] = state = !state
       target.style.display = state ? "block" : "none"
 
       if (i === 0)
@@ -180,6 +178,7 @@ function display(resp) {
   showUndef(resp.implieds)
   showUnused(resp.unused)
   showErrors(resp.errors)
+  showMetrics(resp.functions)
 }
 
 function showErrors(errors) {
@@ -201,15 +200,14 @@ function showErrors(errors) {
   table.appendChild(makeRow(null, text))
 
   errors.forEach(function (err) {
+    if (err === null) return
     table.appendChild(makeRow(err.line, err.reason))
   })
 }
 
 function showUndef(undef) {
   var table = el("[data-type=undef]")
-  var text = ""
-
-  table.innerHTML = ""
+  var text = table.innerHTML = ""
 
   if (!prefs.meta.undef || !undef)
     return false
@@ -234,9 +232,7 @@ function showUndef(undef) {
 
 function showUnused(unused) {
   var table = el("[data-type=unused]")
-  var text = ""
-
-  table.innerHTML = ""
+  var text = table.innerHTML = ""
 
   if (!prefs.meta.unused || !unused)
     return false
@@ -255,4 +251,78 @@ function showUnused(unused) {
   })
 
   return unused.length > 0
+}
+
+function showMetrics(functions) {
+  var div  = el("[data-type=metrics]")
+  var wrap = el("[data-type=metrics] > div")
+  wrap.innerHTML = ""
+
+  function p(text) {
+    var el = document.createElement("p")
+    el.innerHTML = text
+    wrap.appendChild(el)
+  }
+
+  function calc(nums) {
+    var half, len = nums.length
+    nums.sort(function (a, b) { return a - b })
+    half = Math.floor(len / 2)
+    console.log(nums)
+    return {
+      max: nums[len - 1],
+      med: len % 2 ? nums[half] : (nums[half - 1] + nums[half]) / 2.0
+    }
+  }
+
+  if (!prefs.meta.complex || !functions.length) {
+    div.style.display = "none"
+    return false
+  }
+
+  div.style.display = "block"
+
+  if (functions.length === 1) {
+    p("There is only <b>one</b> function in this file.")
+
+    switch (functions[0].metrics.parameters) {
+      case 0:
+        p("It takes <b>no</b> arguments.")
+        break
+      case 1:
+        p("It takes <b>one</b> argument.")
+        break
+      default:
+        p("It takes <b>" + functions[0].metrics.parameters + "</b> arguments.")
+    }
+
+    switch(functions[0].metrics.statements) {
+      case 0:
+        p("This function is <b>empty</b>.")
+        break
+      case 1:
+        p("This function contains only <b>one</b> statement.")
+        break
+      default:
+        p("This function contains <b>" + functions[0].metrics.statements + "</b> statements.")
+    }
+
+    p("Cyclomatic complexity number for this function is <b>"
+      + functions[0].metrics.complexity + "</b>.")
+
+    return
+  }
+
+  var func = functions.length
+  var args = calc(functions.map(function (fn) { return fn.metrics.parameters }))
+  var stmt = calc(functions.map(function (fn) { return fn.metrics.statements }))
+  var comp = calc(functions.map(function (fn) { return fn.metrics.complexity }))
+
+  p("There are <b>" + func + "</b> functions in this file.")
+  p("Function with the largest signature take <b>" + args.max +
+    "</b> arguments, while the median is <b>" + args.med + "</b>.")
+  p("Largest function has <b>" + stmt.max + "</b> statements in it," +
+    " while the median is <b>" + stmt.med + "</b>.")
+  p("The most complex function has a cyclomatic complexity value of <b>" + comp.max +
+    "</b> while the median is <b>" + comp.med + "</b>.")
 }

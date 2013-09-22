@@ -24,7 +24,7 @@ button:hover {
   right: 0;
   height: 100%;
   width: 170px;
-  background-color: #333;
+  background-color: #2E2E2D;
   padding: 10px;
 }
 
@@ -39,12 +39,8 @@ button:hover {
   margin: 0;
 }
 
-.sidebar h1 .js {
-  background-color: #aaa;
-  color: #333;
-  display: inline-block;
-  padding: 7px;
-  margin-right: 5px;
+.sidebar h1 img {
+  width: 150px;
 }
 
 .sidebar ul {
@@ -94,6 +90,14 @@ button:hover {
   color: #aaa;
 }
 
+.whiteboard h4 {
+  font-size: 120%;
+  margin-bottom: 10px;
+  color: #666;
+  font-weight: normal;
+  font-family: "aktiv-grotesk-std";
+}
+
 .whiteboard .toolbar {
   margin-bottom: 20px;
 }
@@ -106,6 +110,15 @@ button:hover {
 .whiteboard .report {
   font-size: 90%;
   margin-bottom: 20px;
+}
+
+.whiteboard .report p {
+  margin-bottom: 3px;
+}
+
+.whiteboard .report p b {
+  color: #9ac;
+  font-weight: normal;
 }
 
 .whiteboard .report td {
