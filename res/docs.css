@@ -1,0 +1,42 @@
+body {
+  padding-top: 70px;
+}
+
+a {
+  color: #d44950;
+}
+
+.header {
+  background-color: #E6E2D9;
+  font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 110%;
+  height: 50px;
+}
+
+.header .container {
+  background-image: url("/res/jshint.png");
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  background-position: left center;
+  padding-left: 150px;
+}
+
+.carbonad {
+  border: solid 1px #ddd !important;
+}
+
+.content {
+  font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 110%;
+  margin-bottom: 50px;
+}
+
+.content h1 {
+  font-family: aktiv-grotesk-std, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 30px;
+}
+
+.content h3 {
+  font-family: aktiv-grotesk-std, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
