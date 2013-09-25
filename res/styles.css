@@ -107,6 +107,13 @@ button:hover {
   text-transform: uppercase;
 }
 
+.whiteboard .toolbar .version {
+  margin-left: 10px;
+  font-size: 80%;
+  text-transform: uppercase;
+  color: #333;
+}
+
 .whiteboard .report {
   font-size: 90%;
   margin-bottom: 20px;

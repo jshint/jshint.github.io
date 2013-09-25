@@ -1,4 +1,4 @@
-{ "url": "/about/", "template": "docs" }
+{ "title": "About JSHint", "url": "/about/", "template": "docs", "sideimage": "power.jpg" }
 
 # About
 

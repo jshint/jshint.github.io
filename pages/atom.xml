@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>Anton Kovalyov</title>
+<link href="http://jshint.com/atom.xml" rel="self"/>
+<link href="http://jshint.com/"/>
+<updated>{{ date site.time "YYYY-MM-DDTHHmm:ss+Z" }}</updated>
+<id>http://jshint.com/</id>
+<author>
+  <name>Anton Kovalyov</name>
+  <email>anton@kovalyov.net</email>
+</author>
+
+{{#posts}}
+<entry>
+  <title>{{ meta.title }}</title>
+  <link href="http://jshint.com{{ meta.url }}"/>
+  <updated>{{ date meta.date "YYYY-MM-DDTHHmm:ss+Z" }}</updated>
+  <id>{{ meta.url }}</id>
+  <content type="html"></content>
+</entry>
+{{/posts}}
+</feed>

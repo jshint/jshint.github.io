@@ -1,0 +1,40 @@
+nomen
+
+This option disallows the use of dangling `_` in variables. We don't know why
+would you need it.
+
+--
+
+onevar
+
+This option allows only one `var` statement per function. Some people think
+that having a single var in a function, at the top of the function, helps
+readability. Example (taken from JSLint/JSHint source code):
+
+    x.nud = function () {
+      var b, f, i, j, p, seen = {}, t;
+
+      b = token.line !== nexttoken.line;
+      if (b) {
+        indent += option.indent;
+        if (nexttoken.from === indent + option.indent) {
+              indent += option.indent;
+          }
+      }
+
+      // [...]
+    };
+
+--
+
+passfail
+
+This option makes JSHint stop on the first error or warning.
+
+--
+
+white
+
+This option make JSHint check your source code against Douglas Crockford's
+JavaScript coding style. Unfortunately, his “The Good Parts” book aside, the
+actual rules are not very well documented.

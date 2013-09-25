@@ -1,28 +1,25 @@
-body {
-  padding-top: 70px;
-}
-
 a {
   color: #d44950;
 }
 
 .header {
   background-color: #E6E2D9;
+  opacity: 0.9;
   font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 110%;
-  height: 50px;
 }
 
 .header .container {
   background-image: url("/res/jshint.png");
   background-repeat: no-repeat;
-  background-size: auto 40px;
-  background-position: left center;
-  padding-left: 150px;
+  background-size: auto 50px;
+  background-position: left top;
+  padding-left: 140px;
 }
 
 .carbonad {
   border: solid 1px #ddd !important;
+  margin: 20px 0 100px 0;
 }
 
 .content {
@@ -31,12 +28,19 @@ a {
   margin-bottom: 50px;
 }
 
-.content h1 {
+.content h1, .content h2, .content h3, .content h4 {
   font-family: aktiv-grotesk-std, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.content h1 {
   margin-bottom: 30px;
 }
 
-.content h3 {
-  font-family: aktiv-grotesk-std, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: normal;
+.blog-list {
+  margin-top: 30px;
+}
+
+.blog-list .link {
+  padding-left: 20px;
 }
