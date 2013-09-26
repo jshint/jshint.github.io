@@ -1,9 +1,12 @@
----
-layout: docs
-title: Blog
-subtitle: "Bugfix release: r04"
-name: post
----
+{
+  "template": "docs",
+  "blog": true,
+  "title": "Bugfix release: r04",
+  "date": "2012-01-08",
+  "url": "/blog/2012-01-08/release-r04"
+}
+
+# Bugfix release: r04
 
 This is a bugfix release that also contains some improvements to our
 test coverage.

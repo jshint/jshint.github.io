@@ -4,7 +4,7 @@
 	"title": "Hello",
 	"date": "2011-12-20",
 	"url": "/blog/hello",
-	"altUrl": "/2011/12/20/hello"
+	"altUrl": "/blog/2011-12-20/hello"
 }
 
 # Hello

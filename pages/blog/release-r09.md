@@ -1,9 +1,12 @@
----
-layout: docs
-title: Blog
-subtitle: "New release: r09"
-name: post
----
+{
+  "template": "docs",
+  "blog": true,
+  "title": "New release: r09",
+  "date": "2012-08-05",
+  "url": "/blog/2012-08-05/release-r09"
+}
+
+# New release: r09
 
 This release introduces a new option called `unused`. This option
 allows you to quickly spot variables that were defined but never used.

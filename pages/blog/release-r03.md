@@ -1,9 +1,12 @@
----
-layout: docs
-title: Blog
-subtitle: "New release: r03"
-name: post
----
+{
+  "template": "docs",
+  "blog": true,
+  "title": "New release: r03",
+  "date": "2011-12-30",
+  "url": "/blog/2011-12-30/release-r03"
+}
+
+# New release: r03
 
 This release contains significant improvements to the way JSHint
 treats ES5 accessor functions:

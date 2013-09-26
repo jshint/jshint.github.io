@@ -1,9 +1,12 @@
----
-layout: docs
-title: Blog
-subtitle: "New release: r07"
-name: post
----
+{
+  "template": "docs",
+  "blog": true,
+  "title": "New release: r07",
+  "date": "2012-05-01",
+  "url": "/blog/2012-05-01/release-r07"
+}
+
+# New release: r07
 
 * New globals for the `browser` option.
 

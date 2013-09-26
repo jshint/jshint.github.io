@@ -1,9 +1,12 @@
----
-layout: docs
-title: Blog
-subtitle: "New release: r08"
-name: post
----
+{
+  "template": "docs",
+  "blog": true,
+  "title": "New release: r08",
+  "date": "2012-07-26",
+  "url": "/blog/2012-07-26/release-r08"
+}
+
+# New release: r08
 
 This release introduces a new option—`quotmark`. This option allows
 you to enforce the consistency of quotation marks.

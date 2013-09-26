@@ -1,9 +1,12 @@
----
-layout: docs
-title: Blog
-subtitle: "New release: r05"
-name: post
----
+{
+  "template": "docs",
+  "blog": true,
+  "title": "New release: r05",
+  "date": "2012-01-19",
+  "url": "/blog/2012-01-19/release-r05"
+}
+
+# New release: r05
 
 This release improves JSHint's support for variable hoisting. JSHint
 now fully understands variable hoisting:

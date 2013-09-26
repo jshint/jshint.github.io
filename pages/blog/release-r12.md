@@ -1,9 +1,12 @@
----
-layout: docs
-title: Blog
-subtitle: "New release: r12"
-name: post
----
+{
+  "template": "docs",
+  "blog": true,
+  "title": "New release: r12",
+  "date": "2012-09-25",
+  "url": "/blog/2012-09-25/release-r12"
+}
+
+# New release: r12
 
 This is mostly a bugfix release:
 

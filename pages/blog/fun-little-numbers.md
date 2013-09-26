@@ -1,9 +1,12 @@
----
-layout: docs
-title: Blog
-subtitle: "Fun little numbers"
-name: post
----
+{
+  "template": "docs",
+  "blog": true,
+  "title": "Fun little numbers",
+  "date": "2013-07-29",
+  "url": "/blog/2013-07-29/stats"
+}
+
+# Fun little numbers
 
 A few months ago I started sending data from this website to [Keen.IO](https://keen.io/),
 a small San Francisco-based company specializing in the API for custom analytics. Last
