@@ -4,22 +4,17 @@ a {
 
 .header {
   background-color: #E6E2D9;
-  opacity: 0.9;
   font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 110%;
+  font-size: 100%;
 }
 
-.header .container {
-  background-image: url("/res/jshint.png");
-  background-repeat: no-repeat;
-  background-size: auto 50px;
-  background-position: left top;
-  padding-left: 140px;
+.sideimage {
+  margin: 20px 0 20px 0;
 }
 
 .carbonad {
   border: solid 1px #ddd !important;
-  margin: 20px 0 100px 0;
+  margin: 20px 0 0 0;
 }
 
 .content {
@@ -39,6 +34,16 @@ a {
 
 .blog-list {
   margin-top: 30px;
+}
+
+.blog-list td {
+  padding-bottom: 10px;
+}
+
+.blog-list .meta {
+  font-size: 80%;
+  text-align: right;
+  color: #999;
 }
 
 .blog-list .link {

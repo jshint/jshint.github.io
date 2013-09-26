@@ -34,8 +34,11 @@
   <body>
     <nav class="header navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
         <ul class="nav navbar-nav">
-          <li><a href="/">Home</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/docs/">Docs</a></li>
           <li><a href="/install/">Install</a></li>
@@ -59,6 +62,10 @@
         </div>
 
         <div class="col-md-4">
+          {{#if page.sideimage}}
+          <img class="sideimage" src="/res/{{ page.sideimage }}">
+          {{/if}}
+
           <div class="ad">
             <div id="carbonads-container">
               <div class="carbonad">
@@ -73,10 +80,6 @@
                 </script>
               </div>
             </div>
-
-            {{#if page.sideimage}}
-            <img src="/res/{{ page.sideimage }}">
-            {{/if}}
           </div>
         </div>
       </div>
