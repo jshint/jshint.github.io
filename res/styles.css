@@ -86,7 +86,8 @@ button:hover {
   left: 640px;
   width: 350px;
   margin-top: 20px;
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: visible;
   color: #aaa;
 }
 
