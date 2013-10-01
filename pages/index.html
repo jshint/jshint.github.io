@@ -8,9 +8,17 @@
     <meta name=description content="JSHint, a JavaScript Code Quality Tool">
     <meta name=author      content="Anton Kovalyov">
 
+    <!--[if IE]>
+    <meta http-equiv="refresh" content="0; url=/about/">
+    <![endif]-->
+
+    {{#if site.dev}}
     <link rel=stylesheet href="/res/bootstrap.css">
     <link rel=stylesheet href="/res/codemirror.css">
     <link rel=stylesheet href="/res/styles.css">
+    {{else}}
+    <link rel=stylesheet href="/res/index.min.css">
+    {{/if}}
 
     <script type="text/javascript" src="//use.typekit.net/pxl3iqm.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -30,9 +38,14 @@
     </script>
 
     <script src="https://raw.github.com/jshint/jshint/master/dist/jshint.js"></script>
+
+    {{#if site.dev}}
     <script src="/res/codemirror.js"></script>
     <script src="/res/javascript.js"></script>
     <script src="/res/index.js"></script>
+    {{ else }}
+    <script src="/res/scripts.min.js"></script>
+    {{/if}}
   </head>
 
   <body onload="main()">

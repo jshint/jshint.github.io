@@ -11,15 +11,18 @@
   },
 
   "dependencies": {
-    "markdown": "0.5.x",
-    "oddweb":   "~0.0.3",
-    "jshint":   "latest"
+    "markdown":  "0.5.x",
+    "oddweb":    "~0.0.4",
+    "jshint":    "latest",
+    "sqwish":    "0.2.x",
+    "uglify-js": "2.4.x"
   },
 
   "oddwebPlugins": [
     "core/blog",
     "version.js",
-    "options.js"
+    "options.js",
+    "minify.js"
   ],
 
   "repository": "",

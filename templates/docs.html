@@ -4,15 +4,19 @@
   <head>
     <title>{{page.title}}</title>
 
-  	<meta charset=utf8>
-  	<meta name=description content="JSHint, a JavaScript Code Quality Tool">
-  	<meta name=author      content="Anton Kovalyov">
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
 
-  	<link rel=stylesheet href="/res/bootstrap.css">
+    {{#if site.dev}}
+    <link rel=stylesheet href="/res/bootstrap.css">
     <link rel=stylesheet href="/res/docs.css">
+    {{else}}
+    <link rel=stylesheet href="/res/docs.min.css">
+    {{/if}}
 
-  	<script type="text/javascript" src="//use.typekit.net/pxl3iqm.js"></script>
-  	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="//use.typekit.net/pxl3iqm.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
     <script>
       function jumpToOption() {
@@ -36,7 +40,7 @@
       _gaq.push(["_setDomainName", "jshint.com"]);
       _gaq.push(["_trackPageview"]);
     </script>
-	</head>
+  </head>
 
   <body>
     <nav class="header navbar navbar-default navbar-static-top" role="navigation">
