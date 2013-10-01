@@ -21,6 +21,8 @@
         if (/^\s*$/.test(input.value))
           return false
 
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
+
         if (window.location.pathname === "/docs/options/")
           window.location.hash = "#" + input.value
         else
@@ -28,6 +30,11 @@
 
         return false
       }
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
     </script>
 	</head>
 
@@ -84,5 +91,17 @@
         </div>
       </div>
     </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
   </body>
 </html>

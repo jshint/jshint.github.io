@@ -15,6 +15,20 @@
     <script type="text/javascript" src="//use.typekit.net/pxl3iqm.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
+    <script>
+      var Keen = Keen || {
+        configure: function (e) { this._cf = e },
+        addEvent:  function (e,t,n,i) { this._eq = this._eq || [], this._eq.push([e,t,n,i]) },
+        setGlobalProperties: function (e) { this._gp = e },
+        onChartsReady: function (e) { this._ocrq = this._ocrq || [], this._ocrq.push(e) }
+      };
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+
     <script src="https://raw.github.com/jshint/jshint/master/dist/jshint.js"></script>
     <script src="/res/codemirror.js"></script>
     <script src="/res/javascript.js"></script>
@@ -118,6 +132,34 @@
       }
 
       main();
+    </script>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+
+      (function () {
+        var e = document.createElement("script");
+        e.type = "text/javascript";
+        e.async = !0;
+        e.src = ("https:" == document.location.protocol ? "https://":"http://") + "dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";
+
+        var t = document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e,t)
+      })();
+
+      Keen.configure({
+        projectId: "50e24abc3843312ecb000002",
+        writeKey: "70c2f6c374616275eda384c613b64f817b485bb288711b0640435bacfc157d89966a3616b234c8ef16c9d4f1617a7fbe85aa0faafa1410693993dfbdb3d24e23cb431ba38f92a0abce03cb31abb979e3ec08fd288b1d54b86f86d2af78bfa3be0e5ab0d205ba11bcd7035bfc04ff24f6",
+        readKey: "d766ce12f9dc48680e1642a6eb2d6c0c21e287b6093abbc5d9b2333c924d5cb5a4682ab54e2f5f8b174aee658a29a6496501a5e3bfcc126df572f29c2a4225c0bb6acd13427b6f8a0c7d0a1fc9ac94e76ae91a5751efa2314564c68a8283a2e7062b46650d5c8079290f834e04959933"
+      });
     </script>
   </body>
 </html>
