@@ -13,7 +13,7 @@ var editor = null
 var worker = null
 var cache  = { toggled: { configure: false, output: true } }
 
-var prefs  = {
+var prefs  = JSON.parse(localStorage.getItem("prefs")) || {
   opts: {
     forin:    true,
     noarg:    true,
@@ -82,6 +82,7 @@ function setup() {
 
       cache.toggled[key] = state = !state
       target.style.display = state ? "block" : "none"
+      if (!state) localStorage.setItem("prefs", JSON.stringify(prefs))
       Keen.addEvent("togglePane", { name: key, opened: state });
 
       if (i === 0)
