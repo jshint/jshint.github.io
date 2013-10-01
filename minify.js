@@ -7,54 +7,42 @@ module.exports = function (site, handlebars) {
   if (site.dev)
     return site
 
-  var styles = {
-    "bootstrap.css":  true,
-    "codemirror.css": true,
-    "styles.css":     true
+  var index   = [ "bootstrap.css", "codemirror.css", "styles.css" ]
+  var docs    = [ "bootstrap.css", "docs.css" ]
+  var scripts = [ "codemirror.js", "javascript.js", "index.js" ]
+  var jshint  = [ "jshint.js" ]
+
+  function combine(names) {
+    var out = ""
+    names.forEach(function (name) {
+      site.resources.map(function (res) {
+        if (res.meta.path === name) out += res.data + "\n"
+      })
+    })
+    return out
   }
 
-  var css = site.resources.map(function (res) {
-    if (styles[res.meta.path])
-      return res.data
-    return ""
-  }).join("\n")
+  site.resources.push(
+    {
+      meta: { path: "index.min.css", binary: true },
+      data: sqwish.minify(combine(index))
+    },
 
-  site.resources.push({
-    meta: { path: "index.min.css", binary: true },
-    data: sqwish.minify(css)
-  })
+    {
+      meta: { path: "docs.min.css", binary: true },
+      data: sqwish.minify(combine(docs))
+    },
 
-  css = site.resources.map(function (res) {
-    if (res.meta.path === "bootstrap.css" || res.meta.path === "docs.css")
-      return res.data
-    return ""
-  }).join("\n")
+    {
+      meta: { path: "scripts.min.js", binary: true },
+      data: uglify.minify(combine(scripts), { fromString: true, output: { ascii_only: true }}).code
+    },
 
-  site.resources.push({
-    meta: { path: "docs.min.css", binary: true },
-    data: sqwish.minify(css)
-  })
-
-
-  var scripts = {
-    "codemirror.js": true,
-    "javascript.js": true,
-    "index.js":      true
-  }
-
-  var js = site.resources.map(function (res) {
-    if (scripts[res.meta.path])
-      return res.data
-    return ""
-  }).join("\n")
-
-  // uglify is breaking the website for some reason :-\
-  // uglify.minify(js, { fromString: true, mangle: false, compress: false }).code
-
-  site.resources.push({
-    meta: { path: "scripts.min.js", binary: true },
-    data: js
-  })
+    {
+      meta: { path: "jshint.js", binary: true },
+      data: uglify.minify(combine(jshint), { fromString: true, output: { ascii_only: true }}).code
+    }
+  );
 
   return site 
 }

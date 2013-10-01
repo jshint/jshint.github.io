@@ -150,7 +150,7 @@ function lint() {
     length: value.length,
     config: config,
     meta: prefs.meta
-  });
+  })
 }
 
 function makeRow(line, message) {
