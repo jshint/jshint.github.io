@@ -191,7 +191,7 @@ button:hover {
   transition-duration: 0.5s;
   transition-timing-function: ease-out;
 
-  content: "✓";
+  content: "\2713";
   margin-right: 10px;
   color: #444;
 }
