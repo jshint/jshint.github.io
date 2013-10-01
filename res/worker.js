@@ -8,7 +8,6 @@ self.onmessage = function (ev) {
 
     ret = JSHINT.data()
     ret.options = null
-
-    self.postMessage({ task: "lint", result: ret })
+    self.postMessage({ task: "lint", result: JSON.stringify(ret) })
   }
 }

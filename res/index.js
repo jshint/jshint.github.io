@@ -126,8 +126,8 @@ function main() {
       clearTimeout(tm)
 
     tm = setTimeout(function () {
-      lint()
       tm = null
+      lint()
     }, 200)
   })
 }
@@ -138,7 +138,7 @@ function lint() {
 
   if (!worker) {
     worker = new Worker("/res/worker.js")
-    worker.addEventListener("message", function (ev) { display(ev.data.result) })
+    worker.addEventListener("message", function (ev) { display(JSON.parse(ev.data.result)) })
   }
 
   each(prefs.opts, function (state, name) { config[name] = state })
