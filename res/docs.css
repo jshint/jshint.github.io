@@ -21,6 +21,7 @@ a {
   font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 110%;
   margin-bottom: 50px;
+  padding: 0 15px;
 }
 
 .content h1, .content h2, .content h3, .content h4 {
