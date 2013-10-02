@@ -9,11 +9,24 @@ function show(q) { el(q).style.display = "block" }
 function hide(q) { el(q).style.display = "none" }
 function each(o, cb) { Object.keys(o).forEach(function (k) { cb(o[k], k) }) }
 
+function save(key, obj) {
+  localStorage.setItem(key, JSON.stringify(obj))
+}
+
+function restore(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key))
+  } catch (err) {
+    localStorage.removeItem(key)
+    return null
+  }
+}
+
 var editor = null
 var worker = null
 var cache  = { toggled: { configure: false, output: true } }
 
-var prefs  = JSON.parse(localStorage.getItem("prefs")) || {
+var prefs  = restore("prefs") || {
   opts: {
     forin:    true,
     noarg:    true,
@@ -82,7 +95,7 @@ function setup() {
 
       cache.toggled[key] = state = !state
       target.style.display = state ? "block" : "none"
-      if (!state) localStorage.setItem("prefs", JSON.stringify(prefs))
+      if (!state) save("prefs", prefs)
       Keen.addEvent("togglePane", { name: key, opened: state });
 
       if (i === 0)
