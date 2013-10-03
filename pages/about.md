@@ -7,6 +7,11 @@ JavaScript code and to enforce your team's coding conventions. It is very
 flexible so you can easily adjust it to your particular coding guidelines and
 the environment you expect your code to execute in.
 
+JSHint is open source and will always stay this way. If you really like JSHint
+and would like to donate to the project, you can do that via
+[PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L9V4YWVEMSQLY) or 
+[GitTip](https://www.gittip.com/antonkovalyov).
+
 ### Our goal
 
 The goal of this project is to help JavaScript developers write complex programs
