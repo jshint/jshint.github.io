@@ -57,6 +57,10 @@ JSHint).
 JSLint and JSHint).
 * [Web Essentials](http://vswebessentials.com) (Runs JSHint automatically).
 
+#### Brackets
+
+* [Brackets JSHint plugin](https://github.com/cfjedimaster/brackets-jshint/)
+
 #### Other
 
 * [ShiftEdit IDE](http://shiftedit.net/) has built-in support for JSHint.
@@ -93,3 +97,5 @@ manager with built-in JSHint linting, distributed as a Ruby gem. [Read
 more](http://causes.github.io/blog/2013/05/30/overcommit-the-opinionated-git-hook-manager/)
 about it.
 * [jshint-mojo](https://github.com/cjdev/jshint-mojo), a plugin for Maven.
+* [JSXHint](https://github.com/CondeNast/JSXHint), a wrapper around JSHint to allow
+linting of files containing JSX syntax.
