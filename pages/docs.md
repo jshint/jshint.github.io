@@ -37,7 +37,9 @@ you can either specify the configuration file manually via the `--config` flag,
 use a special file `.jshintrc` or put your config into your projects `package.json`
 file under the `jshintConfig` property. In case of `.jshintrc`, JSHint will look
 for this file in the current working directory and, if not found, will move
-one level up the directory tree all the way up to the filesystem root.
+one level up the directory tree all the way up to the filesystem root. (Note
+that if the input comes from stdin, JSHint doesn't attempt to find a configuration
+file)
 
 This setup allows you to have different configuration files per project. Place
 your file into the project root directory and, as long as you run JSHint from
