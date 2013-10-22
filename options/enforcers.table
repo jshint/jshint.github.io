@@ -46,7 +46,7 @@ es3
 
 This option tells JSHint that your code needs to adhere to ECMAScript 3
 specification. Use this option if you need your program to be executable
-in older browsers—such as Internet Explorer 6/7/8—and other legacy
+in older browsers—such as Internet Explorer 6/7/8/9—and other legacy
 JavaScript environments.
 
 --
@@ -68,6 +68,17 @@ filter inherited properties out as shown in the example:
 For more in-depth understanding of `for in` loops in JavaScript, read
 [Exploring JavaScript for-in loops](http://javascriptweblog.wordpress.com/2011/01/04/exploring-javascript-for-in-loops/)
 by Angus Croll.
+
+--
+
+freeze
+
+This options prohibits overwriting prototypes of native objects such as
+`Array`, `Date` and so on.
+
+    /* jshint freeze:true */
+    Array.prototype.count = function (value) { return 4; };
+    // -> Warning: Extending prototype of native object: 'Array'.
 
 --
 

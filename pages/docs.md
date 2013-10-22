@@ -113,6 +113,21 @@ current file but used elsewhere. Use it together with the `unused` option.
 A directive for telling JSHint about all properties you intend to use. **This
 directive is deprecated.**
 
+#### ignore
+
+A directive for telling JSHint to ignore a block of code.
+
+    // Code here will be linted with JSHint.
+    /* jshint ignore:start */
+    // Code here will be linted with ignored by JSHint.
+    /* jshint ignore:end */
+
+All code in between `ignore:start` and `ignore:end` won't be passed to JSHint
+so you can use any language extension such as [Facebook React](http://facebook.github.io/react/).
+Additionally, you can ignore a single line with a trailing comment:
+
+    ignoreThis(); // jshint ignore:line
+
 ### Options
 
 Most often, when you need to tune JSHint to your own taste, all you need to do
