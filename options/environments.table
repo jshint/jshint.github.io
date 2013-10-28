@@ -50,7 +50,10 @@ node
 
 This option defines globals available when your code is running inside of the
 Node runtime environment. [Node.js](http://nodejs.org/) is a server-side
-JavaScript environment that uses an asynchronous event-driven model.
+JavaScript environment that uses an asynchronous event-driven model. This option
+also skips some warnings that make sense in the browser environments but
+don't make sense in Node such as file-level `use strict` pragmas and `console.log`
+statements.
 
 --
 
