@@ -60,6 +60,7 @@ JSLint and JSHint).
 #### Brackets
 
 * [Brackets JSHint plugin](https://github.com/cfjedimaster/brackets-jshint/)
+* [Brackets Interactive Linter](https://github.com/MiguelCastillo/Brackets-InteractiveLinter)
 
 #### Other
 
