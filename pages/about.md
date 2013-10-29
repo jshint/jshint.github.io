@@ -39,6 +39,7 @@ tests as well as with code reviews.
 Engineers from these companies and projects use JSHint:
 
 * [Mozilla](http://mozilla.org/)
+* [Facebook](https://facebook.com/)
 * [Twitter](https://twitter.com/)
 * [Bootstrap](http://getbootstrap.com/)
 * [Disqus](https://disqus.com/)
@@ -56,6 +57,8 @@ Engineers from these companies and projects use JSHint:
 * [EnyoJS](http://enyojs.com/)
 * [QuickenLoans](http://quickenloans.com/)
 * [oDesk](http://www.odesk.com/)
+* [Cloud9](http://c9.io/)
+* [CodeClimate](https://codeclimate.com/)
 
 And many more!
 
