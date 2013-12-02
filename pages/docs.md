@@ -218,3 +218,26 @@ above and then re-enable the warning afterwards:
     /*jshint +W089 */
 
 [This page](/docs/options/) contains a list of all options support by JSHint.
+
+#### Switch statements
+
+By default JSHint warns when you omit `break` or `return` statements within
+switch statements:
+
+    switch (cond) {
+    case "one":
+      doSomething(); // JSHint will warn about missing 'break' here.
+    case "two":
+      doSomethingElse();
+    }
+
+If you really know what you're doing you can tell JSHint that you intended the
+case block to fall through by adding a `/* falls through */` comment:
+
+    switch (cond) {
+    case "one":
+      doSomething();
+      /* falls through */
+    case "two":
+      doSomethingElse();
+    }
