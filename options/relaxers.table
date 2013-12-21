@@ -91,6 +91,12 @@ scope.
 
 --
 
+gcl
+
+This option makes JSHint compatible with Google Closure Compiler.
+
+--
+
 globalstrict
 
 This option suppresses warnings about the use of global strict mode. Global
@@ -165,6 +171,13 @@ To fix the code above you need to copy the value of `i`:
         };
       }(i));
     }
+
+--
+
+maxerr
+
+This options allows you to set the maximum amount of warnings JSHint will produce
+before giving up. Default is 50.
 
 --
 
