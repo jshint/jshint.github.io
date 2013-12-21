@@ -4,7 +4,7 @@
 <title>Anton Kovalyov</title>
 <link href="http://jshint.com/atom.xml" rel="self"/>
 <link href="http://jshint.com/"/>
-<updated>{{ date site.time "YYYY-MM-DDTHHmm:ssZ" }}</updated>
+<updated>{{ date site.time "YYYY-MM-DDTHH:mm:ssZ" }}</updated>
 <id>http://jshint.com/</id>
 <author>
   <name>Anton Kovalyov</name>
@@ -15,7 +15,7 @@
 <entry>
   <title>{{ meta.title }}</title>
   <link href="http://jshint.com{{ meta.url }}"/>
-  <updated>{{ date meta.date "YYYY-MM-DDTHHmm:ssZ" }}</updated>
+  <updated>{{ date meta.date "YYYY-MM-DDTHH:mm:ssZ" }}</updated>
   <id>{{ meta.url }}</id>
   <content type="html"></content>
 </entry>

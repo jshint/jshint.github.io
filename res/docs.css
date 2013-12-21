@@ -2,6 +2,10 @@ a {
   color: #d44950;
 }
 
+a.anchor {
+  color: inherit;
+}
+
 .header {
   background-color: #E6E2D9;
   font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;

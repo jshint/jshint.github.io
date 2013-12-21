@@ -43,11 +43,11 @@ highlighting for ST2.
 
 #### TextMate
 
+* [JSHint Bundle for TextMate 2](https://github.com/bodnaristvan/JSHint.tmbundle)
 * [JSHint TextMate Bundle](https://github.com/fgnass/jshint.tmbundle).
 * [JSLintMate](http://rondevera.github.com/jslintmate/) (supports both JSHint and
 JSLint).
-* [JSHint.tmbundle](https://github.com/oost/JSHint.tmbundle), a NodeJS port of
-JSLintMate.
+* [JSHint-external TextMate Bundle](https://github.com/natesilva/jshint-external.tmbundle)
 
 #### Visual Studio
 
