@@ -292,3 +292,10 @@ function using `Function.call`).
 
 **Note:** This option can be used only inside of a function scope. JSHint will fail
 with an error if you will try to set this option globally.
+
+--
+
+noyield
+
+This option suppresses warnings about generator functions with no `yield` statement
+in them.
