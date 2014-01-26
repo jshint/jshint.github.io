@@ -153,6 +153,14 @@ in any way.
 
 --
 
+nonbsp
+
+This option warns about "non-breaking whitespace" characters. These characters
+can be entered with option-space on Mac computers and have a potential of
+breaking non-UTF8 web pages.
+
+--
+
 nonew
 
 This option prohibits the use of constructor functions for side-effects. Some
