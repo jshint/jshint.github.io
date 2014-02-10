@@ -31,6 +31,8 @@ supports JSHint both older/newer than 1.1.0.
 Emacs.
 * [Flycheck](https://github.com/lunaryorn/flycheck), on-the-fly syntax checking
 extension for GNU Emacs, built-in JSHint support.
+* [web-mode](http://web-mode.org/), an autonomous major-mode for editing web templates
+supports JSHint.
 
 #### Sublime Text
 
