@@ -96,7 +96,6 @@ function setup() {
       cache.toggled[key] = state = !state
       target.style.display = state ? "block" : "none"
       if (!state) save("prefs", prefs)
-      Keen.addEvent("togglePane", { name: key, opened: state });
 
       if (i === 0)
         button.className = state ? "active" : ""
@@ -159,12 +158,6 @@ function lint() {
   each(prefs.rev,  function (state, name) { config[name] = !state })
 
   worker.postMessage({ task: "lint", code: value, config: config })
-
-  Keen.addEvent("runLint", {
-    length: value.length,
-    config: config,
-    meta: prefs.meta
-  })
 }
 
 function makeRow(line, message) {
