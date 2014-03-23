@@ -41,6 +41,7 @@ Engineers from these companies and projects use JSHint:
 * [Twitter](https://twitter.com/)
 * [Bootstrap](http://getbootstrap.com/)
 * [Disqus](https://disqus.com/)
+* [Medium](https://medium.com/)
 * [Yahoo!](https://yahoo.com/)
 * [SmugMug](http://smugmug.com/)
 * [jQuery](http://jquery.com/)
@@ -48,6 +49,7 @@ Engineers from these companies and projects use JSHint:
 * [Coursera](http://coursera.com/)
 * [Adobe Brackets](http://brackets.io/)
 * [Apache Cordova](http://cordova.io/)
+* [RedHat](http://redhat.com/)
 * [SoundCloud](http://soundcloud.com/)
 * [Nodejitsu](http://nodejitsu.com/)
 * [Yelp](https://yelp.com/)
@@ -57,6 +59,8 @@ Engineers from these companies and projects use JSHint:
 * [oDesk](http://www.odesk.com/)
 * [Cloud9](http://c9.io/)
 * [CodeClimate](https://codeclimate.com/)
+* [Pandoo TEK](http://pandootek.com/)
+* [Zendesk](http://zendesk.com/)
 
 And many more!
 
