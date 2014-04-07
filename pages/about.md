@@ -8,8 +8,6 @@ flexible so you can easily adjust it to your particular coding guidelines and
 the environment you expect your code to execute in. JSHint is open source and
 will always stay this way.
 
-If your company is getting value out of JSHint, consider [supporting the project](/commercial/).
-
 ### Our goal
 
 The goal of this project is to help JavaScript developers write complex programs
