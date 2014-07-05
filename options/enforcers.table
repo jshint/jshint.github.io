@@ -93,14 +93,7 @@ function itself.
 
 indent
 
-This option enforces specific tab width for your code. For example, the
-following code will trigger a warning on line 4:
-
-    /*jshint indent:4 */
-
-    if (cond) {
-      doSomething(); // We used only two spaces for indentation here
-    }
+This option sets a specific tab width for your code.
 
 --
 
@@ -250,19 +243,6 @@ perform certain optimizations.
 the global scoped strict mode because it might break third-party widgets on your
 page. If you really want to use global strict mode, see the *globalstrict*
 option.
-
---
-
-trailing
-
-This option makes it an error to leave a trailing whitespace in your code.
-Trailing whitespaces can be source of nasty bugs with multi-line strings in
-JavaScript:
-
-    // This otherwise perfectly valid string will error if
-    // there is a whitespace after \
-    var str = "Hello \
-    World";
 
 --
 

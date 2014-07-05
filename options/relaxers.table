@@ -91,12 +91,6 @@ scope.
 
 --
 
-gcl
-
-This option makes JSHint compatible with Google Closure Compiler.
-
---
-
 globalstrict
 
 This option suppresses warnings about the use of global strict mode. Global
@@ -242,14 +236,6 @@ scripturl
 
 This option suppresses warnings about the use of script-targeted URLs—such as
 `javascript:...`.
-
---
-
-smarttabs
-
-This option suppresses warnings about mixed tabs and spaces when the latter are
-used for alignmnent only. The technique is called
-[SmartTabs](http://www.emacswiki.org/emacs/SmartTabs).
 
 --
 
