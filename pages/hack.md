@@ -114,7 +114,7 @@ Our main rule is simple:
 * Don't use comma-first notation.
 * Try not to chain stuff unless it **really** helps (e.g. in tests).
 * Don't short-circuit expressions if you're not assigning the result:
-    
+
         // Good
         token = token || tokens.find(0);
 
@@ -129,6 +129,8 @@ Today we use JSHint's `white:true` to enforce some of these rules. Eventually
 we'll switch to JSHint Next style enforcing component. But it's not ready yet.
 
 ### License
+
+Most files are under this license:
 
     Copyright 2013 Anton Kovalyov (http://jshint.com)
 
@@ -150,3 +152,34 @@ we'll switch to JSHint Next style enforcing component. But it's not ready yet.
     LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
     OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+One file, however, is under a slightly modified version of the license. Unfortunately,
+due to historical reasons and Crockford's stubborness we can't change it. Here's this
+modified license:
+
+    JSHint, by JSHint Community.
+
+    This file (and this file only) is licensed under the same slightly modified
+    MIT license that JSLint is. It stops evil-doers everywhere:
+
+    Copyright (c) 2002 Douglas Crockford  (www.JSLint.com)
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the "Software"),
+    to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense,
+    and/or sell copies of the Software, and to permit persons to whom
+    the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    The Software shall be used for Good, not Evil.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+    DEALINGS IN THE SOFTWARE.
