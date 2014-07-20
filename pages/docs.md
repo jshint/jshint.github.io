@@ -61,7 +61,7 @@ undefined and unused variables and tell JSHint about a global variable named
 
 In addition to using configuration files you can configure JSHint from within your
 files using special comments. These comments start either with `jshint`
-or `global` and are followed by a comma-separated list of value. For example,
+or `global` and are followed by a comma-separated list of values. For example,
 the following snippet will enable warnings about undefined and unused variables
 and tell JSHint about a global variable named `MY_GLOBAL`.
 
@@ -217,7 +217,7 @@ above and then re-enable the warning afterwards:
     }
     /*jshint +W089 */
 
-[This page](/docs/options/) contains a list of all options support by JSHint.
+[This page](/docs/options/) contains a list of all options supported by JSHint.
 
 #### Switch statements
 
