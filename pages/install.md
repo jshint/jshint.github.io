@@ -2,9 +2,9 @@
 
 # Download and install
 
-For browser-like environments: [download](https://github.com/jshint/jshint/raw/2.x/dist/jshint.js).
+For browser-like environments: [download](https://github.com/jshint/jshint/raw/master/dist/jshint.js).
 
-For Rhino: [download](https://github.com/jshint/jshint/raw/2.x/dist/jshint-rhino.js).
+For Rhino: [download](https://github.com/jshint/jshint/raw/master/dist/jshint-rhino.js).
 
 ### Node (with NPM)
 
