@@ -59,6 +59,7 @@ Engineers from these companies and projects use JSHint:
 * [CodeClimate](https://codeclimate.com/)
 * [Pandoo TEK](http://pandootek.com/)
 * [Zendesk](http://zendesk.com/)
+* [Apache CouchDB](http://couchdb.apache.org/)
 
 And many more!
 
