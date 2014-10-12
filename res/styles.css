@@ -1,11 +1,11 @@
 html, body {
   height: 100%;
   background-color: #1d1e1c;
-  font-family: "aktiv-grotesk-std";
+  font-family: Sans-Serif;
 }
 
 button {
-  font-family: "aktiv-grotesk-std";
+  font-family: Sans-Serif;
   background-color: transparent;
   border: none;
   color: #aaa;
@@ -33,7 +33,7 @@ button:hover {
 }
 
 .sidebar h1 {
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: Sans-Serif;
   font-weight: normal;
   color: #aaa;
   margin: 0;
@@ -47,7 +47,7 @@ button:hover {
   margin: 20px 0 0 0;
   padding: 0;
   font-size: 90%;
-  font-family: "aktiv-grotesk-std";
+  font-family: Sans-Serif;
 }
 
 .sidebar li {
@@ -96,7 +96,7 @@ button:hover {
   margin-bottom: 10px;
   color: #666;
   font-weight: normal;
-  font-family: "aktiv-grotesk-std";
+  font-family: Sans-Serif;
 }
 
 .whiteboard .toolbar {
@@ -161,7 +161,7 @@ button:hover {
 
 .whiteboard #configure {
   display: none;
-  font-family: "aktiv-grotesk-std";
+  font-family: Sans-Serif;
 }
 
 .whiteboard #configure > div {
@@ -169,7 +169,7 @@ button:hover {
 }
 
 .whiteboard #configure h4 {
-  font-family: "aktiv-grotesk-std";
+  font-family: Sans-Serif;
   font-size: 110%;
   color: #666;
   font-weight: normal;
@@ -206,7 +206,7 @@ button:hover {
   top: 20px;
   font-size: 80%;
   background: #1d1e1c;
-  font-family: "droid-sans-mono";
+  font-family: monaco, monospace;
   height: auto;
   width: 600px;
 }

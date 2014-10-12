@@ -22,14 +22,14 @@ a.anchor {
 }
 
 .content {
-  font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Sans-Serif;
   font-size: 110%;
   margin-bottom: 50px;
   padding: 0 15px;
 }
 
 .content h1, .content h2, .content h3, .content h4 {
-  font-family: aktiv-grotesk-std, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Sans-Serif;
   font-weight: normal;
 }
 
