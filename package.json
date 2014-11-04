@@ -3,28 +3,24 @@
   "version": "0.0.0",
   "description": "http://jshint.com/",
   "main": "index.js",
-
   "scripts": {
-    "test":  "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "oddweb dev .",
     "build": "oddweb build ."
   },
-
   "dependencies": {
-    "markdown":  "0.5.x",
-    "oddweb":    "~0.0.4",
-    "jshint":    "latest",
-    "sqwish":    "0.2.x",
+    "dox": "^0.5.3",
+    "oddweb": "~0.0.4",
+    "jshint": "latest",
+    "sqwish": "0.2.x",
     "uglify-js": "2.4.x"
   },
-
   "oddwebPlugins": [
     "core/blog",
     "plugins/version.js",
     "plugins/options.js",
     "plugins/minify.js"
   ],
-
   "repository": "",
   "author": "Anton Kovalyov <anton@kovalyov.net>",
   "license": "BSD"

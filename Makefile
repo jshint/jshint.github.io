@@ -5,6 +5,7 @@ node_modules: package.json
 	npm install
 
 site: node_modules res
+	git submodule update
 	npm run build
 
 .PHONY: deploy
