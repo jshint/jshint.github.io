@@ -13,7 +13,7 @@ deploy: site
 	git ls-files * | xargs git rm
 	rmdir --ignore-fail-on-non-empty --parents */
 	mv site/* .
-	echo "jshint.org" > CNAME
+	echo "www.jshint.org" > CNAME
 	git add .
 	git commit -m "Build site."
 	git push --force $(DEPLOY_REMOTE) $(DEPLOY_BRANCH)
