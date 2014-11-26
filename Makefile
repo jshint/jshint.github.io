@@ -16,5 +16,5 @@ deploy: site
 	echo "jshint.org" > CNAME
 	git add .
 	git commit -m "Build site."
-	git push $(DEPLOY_REMOTE) $(DEPLOY_BRANCH)
+	git push --force $(DEPLOY_REMOTE) $(DEPLOY_BRANCH)
 	git checkout -
