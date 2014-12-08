@@ -24,7 +24,7 @@ CheckStyle XML.
       </file>
     </checkstyle>
 
-See also: [Writing your own JSHint reporter](/docs/reporter/).
+See also: [Writing your own JSHint reporter](/docs/reporters/).
 
 #### `--verbose`
 
