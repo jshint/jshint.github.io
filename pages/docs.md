@@ -119,7 +119,7 @@ A directive for telling JSHint to ignore a block of code.
 
     // Code here will be linted with JSHint.
     /* jshint ignore:start */
-    // Code here will be linted with ignored by JSHint.
+    // Code here will be ignored by JSHint.
     /* jshint ignore:end */
 
 All code in between `ignore:start` and `ignore:end` won't be passed to JSHint
