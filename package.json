@@ -20,9 +20,9 @@
 
   "oddwebPlugins": [
     "core/blog",
-    "version.js",
-    "options.js",
-    "minify.js"
+    "plugins/version.js",
+    "plugins/options.js",
+    "plugins/minify.js"
   ],
 
   "repository": "",
