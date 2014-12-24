@@ -1,4 +1,4 @@
-importScripts("/res/jshint.js")
+importScripts("/res/jshint/dist/jshint.js")
 
 self.onmessage = function (ev) {
   var ret, req = ev.data

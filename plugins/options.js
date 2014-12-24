@@ -2,7 +2,7 @@
 var fs = require("fs")
 var dox = require("dox");
 
-var optionsSrc = __dirname + "/../jshint/src/options.js";
+var optionsSrc = __dirname + "/../res/jshint/src/options.js";
 
 dox.setMarkedOptions({
   breaks: false

@@ -10,7 +10,7 @@ module.exports = function (site, handlebars) {
   var index   = [ "bootstrap.css", "codemirror.css", "styles.css" ]
   var docs    = [ "bootstrap.css", "docs.css" ]
   var scripts = [ "codemirror.js", "javascript.js", "index.js" ]
-  var jshint  = [ "jshint.js" ]
+  var jshint  = [ "jshint/dist/jshint.js" ]
 
   function combine(names) {
     var out = ""
@@ -39,7 +39,7 @@ module.exports = function (site, handlebars) {
     },
 
     {
-      meta: { path: "jshint.js", binary: true },
+      meta: { path: "jshint/dist/jshint.js", binary: true },
       data: uglify.minify(combine(jshint), { fromString: true, output: { ascii_only: true }}).code
     }
   );
