@@ -14,7 +14,12 @@ var contributing = fs.readFileSync(
 );
 var context = {
   contributionGuidelines: translateFencedCode(contributing),
-  version: pkg.version
+  version: pkg.version,
+  urls: {
+    repo: "https://github.com/jshint/jshint",
+    newIssue: "https://github.com/jshint/jshint/issues/new",
+    newPullRequest: "https://github.com/jshint/jshint/compare"
+  }
 };
 
 /**
