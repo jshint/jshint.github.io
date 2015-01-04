@@ -17,9 +17,9 @@
   },
   "oddwebPlugins": [
     "core/blog",
-    "plugins/version.js",
     "plugins/options.js",
-    "plugins/minify.js"
+    "plugins/minify.js",
+    "plugins/variables.js"
   ],
   "repository": "",
   "author": "Anton Kovalyov <anton@kovalyov.net>",
