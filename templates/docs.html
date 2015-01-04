@@ -8,6 +8,10 @@
     <meta name=description content="JSHint, a JavaScript Code Quality Tool">
     <meta name=author      content="Anton Kovalyov">
 
+    {{#if page.redirect}}
+    <meta http-equiv=refresh content="0; url={{page.redirect}}">
+    {{/if}}
+
     {{#if site.dev}}
     <link rel=stylesheet href="/res/bootstrap.css">
     <link rel=stylesheet href="/res/docs.css">
