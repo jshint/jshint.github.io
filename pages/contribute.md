@@ -1,6 +1,6 @@
-{ "title": "Hack on JSHint", "url": "/hack/", "template": "docs" }
+{ "title": "Contribute to JSHint", "url": "/contribute/", "template": "docs" }
 
-# Hack
+# Contribute
 
 Good news everyone, JSHint is open source! Our source code is hosted on
 [GitHub](http://github.com/jshint/jshint/).
