@@ -44,8 +44,9 @@ for ST2.
 highlighting for ST2.
 
 #### Atom
-* [linter-jshint](https://github.com/AtomLinter/linter-jshint), JSHint plugin for Atom's Linter
-* [JSHint for Atom](https://github.com/sindresorhus/atom-jshint), JSHint package for Atom
+
+* [linter-jshint](https://github.com/AtomLinter/linter-jshint), JSHint plugin for Atom's Linter.
+* [JSHint for Atom](https://github.com/sindresorhus/atom-jshint), JSHint package for Atom.
 
 #### TextMate
 
