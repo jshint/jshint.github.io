@@ -68,16 +68,6 @@ button:hover {
   margin-left: 10px;
 }
 
-.sidebar .carbonad {
-  border: none !important;
-  margin-top: 20px;
-  font-size: 90% !important;
-}
-
-.sidebar .carbonad a {
-  font-weight: normal !important;
-}
-
 .whiteboard {
   text-align: left;
   position: fixed;
