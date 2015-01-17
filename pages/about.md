@@ -35,6 +35,7 @@ tests as well as with code reviews.
 Engineers from these companies and projects use JSHint:
 
 * [Mozilla](http://mozilla.org/)
+* [Wikipedia](http://wikipedia.org/)
 * [Facebook](https://facebook.com/)
 * [Twitter](https://twitter.com/)
 * [Bootstrap](http://getbootstrap.com/)
