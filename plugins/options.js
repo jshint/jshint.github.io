@@ -1,8 +1,11 @@
 "use strict";
 var fs = require("fs")
 var dox = require("dox");
+var marked = require("marked");
 
 var optionsSrc = __dirname + "/../res/jshint/src/options.js";
+var deprecationMsg = "<strong>Warning</strong> This option has been " +
+  "deprecated and will be removed in the next major release of JSHint."
 
 dox.setMarkedOptions({
   breaks: false
@@ -38,12 +41,31 @@ function getCategory(annotation) {
   return name;
 }
 
+function getDeprecationReason(annotation) {
+  var tags = annotation.tags;
+  var idx, length, tag;
+
+  if (!tags) {
+    return null;
+  }
+
+  for (idx = 0, length = tags.length; idx < length; ++idx) {
+    tag = tags[idx];
+    if (tag.type === 'deprecated') {
+      return tag.string;
+    }
+  }
+
+  return null;
+}
+
 options.annotations.map(function(annotation) {
   var name = annotation.code.split(":")[0];
   var option = options.parsed[name];
 
   annotation.name = name.trim();
   annotation.category = getCategory(annotation);
+  annotation.deprecationReason = getDeprecationReason(annotation);
 
   return annotation;
 }).forEach(function(annotation) {
@@ -62,13 +84,26 @@ function table2html(annotations) {
 
   return header + annotations.map(function(annotation) {
     var name = annotation.name;
+    var description = '';
+
+    if (annotation.deprecationReason) {
+      description += "<div class='deprecation-msg'>" + deprecationMsg + " " +
+        // TODO: Remove this when the `dox` module is updated to also parse
+        //       annotations for Markdown.
+        // See:  "Parse tag strings with Markdown"
+        //       https://github.com/tj/dox/pull/139
+        marked(annotation.deprecationReason) +
+        "</div>";
+    }
+
+    description += annotation.description.full;
 
     return [
       "<tr>",
         "<td class='name' id='" + name + "'>",
           "<a href='#" + name + "'>" + name + "</a>",
         "</td>",
-        "<td class='desc'>" + annotation.description.full + "</td>",
+        "<td class='desc'>" + description + "</td>",
       "</tr>"
     ].join("\n");
   }).join("\n") + footer;

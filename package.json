@@ -9,9 +9,10 @@
     "build": "oddweb build ."
   },
   "dependencies": {
-    "dox": "^0.5.3",
-    "oddweb": "~0.0.4",
+    "dox": "^0.6.1",
     "jshint": "latest",
+    "marked": "^0.3.2",
+    "oddweb": "~0.0.4",
     "sqwish": "0.2.x",
     "uglify-js": "2.4.x"
   },

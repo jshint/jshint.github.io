@@ -49,3 +49,16 @@ a.anchor {
 .blog-list .link {
   padding-left: 20px;
 }
+
+.deprecation-msg {
+  margin-bottom: 1em;
+}
+
+.deprecation-msg strong {
+  font-weight: bold;
+}
+
+.deprecation-msg p {
+  display: inline;
+  margin: 0;
+}
