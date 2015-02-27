@@ -54,7 +54,7 @@ undefined and unused variables and tell JSHint about a global variable named
     {
       "undef": true,
       "unused": true,
-      "global": {
+      "globals": {
         "MY_GLOBAL": true
       }
     }
