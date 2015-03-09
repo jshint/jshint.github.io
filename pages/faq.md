@@ -2,14 +2,6 @@
 
 # Frequently Asked Questions
 
-### How do I turn off a *mixed tabs and spaces* warning?
-
-If you're using so-called [smart tabs](http://www.emacswiki.org/SmartTabs)
-then we have an option `smarttabs` for you. Otherwise, your solution is to
-run JSHint with a custom reporter that discards any warnings you don't like.
-For example, this [example reporter](https://gist.github.com/3885619)
-discards all warnings about mixed tabs and spaces.
-
 ### JSHint skips some unused variables
 
 If your code looks like this:
