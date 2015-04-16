@@ -7,7 +7,7 @@ var path = require("path");
 var fs = require("fs");
 
 var pkg = require(path.join(
-  __dirname, "..", "node_modules", "jshint", "package.json")
+  __dirname, "..", "res", "jshint", "package.json")
 );
 var contributing = fs.readFileSync(
   "res/jshint/CONTRIBUTING.md", { encoding: "utf-8" }
@@ -18,7 +18,8 @@ var context = {
   urls: {
     repo: "https://github.com/jshint/jshint",
     newIssue: "https://github.com/jshint/jshint/issues/new",
-    newPullRequest: "https://github.com/jshint/jshint/compare"
+    newPullRequest: "https://github.com/jshint/jshint/compare",
+    latestRelease: "https://github.com/jshint/jshint/releases/tag/" + pkg.version
   }
 };
 

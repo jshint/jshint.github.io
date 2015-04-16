@@ -44,7 +44,7 @@ button:hover {
 }
 
 .sidebar ul {
-  margin: 20px 0 0 0;
+  margin: 15px 0 0 0;
   padding: 0;
   font-size: 90%;
   font-family: Sans-Serif;
@@ -55,6 +55,12 @@ button:hover {
   list-style-type: none;
 }
 
+.sidebar .version {
+  display: block;
+  text-align: right;
+}
+
+.sidebar .version a,
 .sidebar li a {
   color: #aaa;
 }
