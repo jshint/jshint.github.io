@@ -122,7 +122,7 @@ automate JSHint in Ant Maven.
 your code from within your unit tests. Lint errors result in failed tests.
 * [Grunt](http://gruntjs.com), a task-based command line build tool for JavaScript
 projects, supports JSHint out of the box.
-* [overcommit](https://github.com/causes/overcommit) is an extensible Git hook
+* [overcommit](https://github.com/brigade/overcommit) is an extensible Git hook
 manager with built-in JSHint linting, distributed as a Ruby gem. [Read
 more](http://causes.github.io/blog/2013/05/30/overcommit-the-opinionated-git-hook-manager/)
 about it.
