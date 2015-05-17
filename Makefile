@@ -14,8 +14,9 @@ deploy: site
 	git ls-files * | xargs git rm
 	rmdir --ignore-fail-on-non-empty --parents */
 	mv site/* .
+	rm -rf res/jshint/node_modules
 	echo "jshint.com" > CNAME
-	git add .
+	git add --all .
 	git commit -m "Build site."
 	git push --force $(DEPLOY_REMOTE) $(DEPLOY_BRANCH)
 	git checkout -
