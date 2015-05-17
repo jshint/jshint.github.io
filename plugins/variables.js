@@ -5,6 +5,10 @@
 "use strict";
 var path = require("path");
 var fs = require("fs");
+var marked = require("marked");
+var readOptions = require("./util/read-options");
+var translateFencedCode = require("./util/fenced-code");
+var optionsSrc = __dirname + "/../res/jshint/src/options.js";
 
 var pkg = require(path.join(
   __dirname, "..", "res", "jshint", "package.json")
@@ -15,6 +19,7 @@ var contributing = fs.readFileSync(
 var context = {
   contributionGuidelines: translateFencedCode(contributing),
   version: pkg.version,
+  options: readOptions(optionsSrc),
   urls: {
     repo: "https://github.com/jshint/jshint",
     newIssue: "https://github.com/jshint/jshint/issues/new",
@@ -23,41 +28,26 @@ var context = {
   }
 };
 
-/**
- * The Markdown preprocessor used by Oddweb does not support the
- * "backtick"/"code fence" syntax for multiline code examples. If present,
- * these must be translated to the "indented" format.
- */
-function translateFencedCode(markdown) {
-  var openPattern = /^(\s*)```[\w]*\s*$/;
-  var closePattern = /^\s*```\s*$/;
-  var lines = markdown.split("\n");
-  var state = { fixed: [], indent: '', isCode: false };
-
-  lines.reduce(function(state, line) {
-    var match;
-    if (state.isCode) {
-      if (closePattern.test(line)) {
-        state.isCode = false;
-      } else {
-        state.fixed.push(state.indent + line);
-      }
-    } else {
-      match = openPattern.exec(line);
-      if (match) {
-        state.isCode = true;
-        state.indent = match[1] || '    ';
-      } else {
-        state.fixed.push(line);
-      }
-    }
-    return state;
-  }, state);
-
-  return state.fixed.join("\n");
-}
-
 module.exports = function (site, handlebars) {
+  var partialPattern = /^(.*)\.html$/i;
+
+  handlebars.registerHelper("markdown", function (input) {
+    return new handlebars.SafeString(marked(input));
+  });
+
+  fs.readdirSync("partials").forEach(function(filename) {
+    var match = filename.match(partialPattern);
+
+    if (!match) {
+      return null;
+    }
+
+    handlebars.registerPartial(
+      match[1],
+      fs.readFileSync(path.join("partials", filename), { encoding: "utf-8" })
+    );
+  });
+
   site.pages.forEach(function(page) {
     var template = handlebars.compile(page.data);
     page.data = template(context);
