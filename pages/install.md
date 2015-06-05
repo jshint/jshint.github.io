@@ -2,17 +2,39 @@
 
 # Download and install
 
-For browser-like environments: [download](https://github.com/jshint/jshint/raw/master/dist/jshint.js).
+JSHint runs in a number of different environments; installation is different
+for each.
 
-For Rhino: [download](https://github.com/jshint/jshint/raw/master/dist/jshint-rhino.js).
+### Browser-like environments
 
-### Node (with NPM)
+A standalone files is built for browser-like environments with every release.
+You'll find it in the `dist` directory of the download. [Download the latest
+release here](https://github.com/jshint/jshint/releases/latest).
+
+### Rhino
+
+A standalone files is built for Mozilla's [Rhino JavaScript
+engine](http://www.mozilla.org/rhino) with every release.  You'll find it in
+the `dist` directory of the download. [Download the latest release
+here](https://github.com/jshint/jshint/releases/latest).
+
+### Node.js
 
 ![NPM version](https://badge.fury.io/js/jshint.png)
 
-From your command line run the following command (add `-g` to install globally on your system):
+Each release of JSHint is published to [npm](https://npmjs.org), the package
+manager for [the Node.js platform](https://nodejs.org).
 
-    npm install jshint
+You may **install it globally** using the following command:
+
+    npm install -g jshint
+
+After this, you can use the `jshint` command-line interface.
+
+It is common to install JSHint as a development dependency within an existing
+Node.js project:
+
+    npm install --save-dev jshint
 
 ### Plugins for text editors and IDEs
 
