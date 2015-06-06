@@ -113,7 +113,24 @@ statements](/docs/options#expr) for only those files ending in `-test.js`:
 
 ### Ignoring Files
 
-TODO
+`jshint` can be configured to ignore files based on their location in the
+filesystem. You may create a dedicated "ignore" file to list any number of file
+names, file paths, or file path patterns that should not be linted. Path
+patterns will be interpreted using [the `minimatch` npm
+module](https://www.npmjs.com/package/minimatch), which itself is based on [the
+Unix filename matching syntax, fnmatch](http://linux.die.net/man/3/fnmatch).
+
+    build/
+    src/**/tmp.js
+
+`jshint` will look for this configuration in a number of locations, stopping at
+the first positive match:
+
+1. The location specified with the `--exclude-path` [flag](#flags)
+2. A file named `.jshintignore` located in the current directory or any parent
+   of the current directory
+
+If this search yields no results, `jshint` will not ignore any files.
 
 <a name="flags"></a>
 
