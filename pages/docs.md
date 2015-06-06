@@ -6,8 +6,9 @@ JSHint is a program that flags suspicious usage in programs written in JavaScrip
 The core project consists of a library itself as well as a CLI program distributed
 as a Node module.
 
-More docs: [List of all JSHint options](/docs/options/) · [CLI flags](/docs/cli/) · 
-[Writing your own reporter](/docs/reporters/) · [FAQ](/docs/faq/)
+More docs: [List of all JSHint options](/docs/options/) · [Command-line
+Interface](/docs/cli/) · [Writing your own reporter](/docs/reporters/) ·
+[FAQ](/docs/faq/)
 
 ### Basic usage
 
@@ -18,16 +19,7 @@ working directory):
 
     $ npm install jshint -g
 
-After you've done that you should be able to use the `jshint` program. The
-simplest use case would be linting a single file or all JavaScript files in
-a directory:
-
-    $ jshint myfile.js
-    myfile.js: line 10, col 39, Octal literals are not allowed in strict mode.
-
-    1 error
-
-If a file path is a dash (`-`) then JSHint will read from standard input.
+After you've done that you should be able to use the `jshint` program.
 
 ### Configuration
 
