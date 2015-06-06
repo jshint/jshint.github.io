@@ -4,6 +4,13 @@
 
 The JSHint CLI program accepts the following flags:
 
+#### `--config`
+
+Explicitly sets the location on the file system from which `jshint` should load
+linting options.
+
+    $ jshint --config ../path/to/my/config.json
+
 #### `--reporter`
 
 Allows you to modify JSHint's output by replacing its default output function
