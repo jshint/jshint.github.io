@@ -86,12 +86,12 @@ A directive for telling JSHint about global variables that are defined
 elsewhere. If value is `false` (default), JSHint will consider that variable
 as read-only. Use it together with the `undef` option.
 
-    /* global MY_LIB: false */
+    /* globals MY_LIB: false */
 
 You can also blacklist certain global variables to make sure they are not used
 anywhere in the current file.
 
-    /* global -BAD_LIB */
+    /* globals -BAD_LIB */
 
 #### exported
 
