@@ -221,7 +221,6 @@ like it's an HTML file.
 
 Allows you to specify directories which you DON'T want to be linted.
 
-
 #### `--exclude-path`
 
 Allows you to provide your own .jshintignore file. For example, you can point
