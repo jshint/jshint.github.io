@@ -7,19 +7,24 @@ The core project consists of a library itself as well as a CLI program distribut
 as a Node module.
 
 More docs: [List of all JSHint options](/docs/options/) · [Command-line
-Interface](/docs/cli/) · [Writing your own reporter](/docs/reporters/) ·
-[FAQ](/docs/faq/)
+Interface](/docs/cli/) · [API](/docs/api/) · [Writing your own
+reporter](/docs/reporters/) · [FAQ](/docs/faq/)
 
 ### Basic usage
 
-The easiest way to use JSHint is to install it as a Node program. To do so,
-simply run the following command in your terminal (flag -g installs JSHint
-globally on your system, omit it if you want to install JSHint in the current
-working directory):
+First, check out [the installation instructions](/install/) for details on
+how to install JSHint in your perferred environment. Both the command line
+executable and the JavaScript API offer unique ways to configure JSHint's
+behaviour. The most common usages are:
 
-    $ npm install jshint -g
+- [As a command-line tool](/docs/cli/) (via [Node.js](https://nodejs.org))
+- [As a JavaScript module](/docs/api/)
 
-After you've done that you should be able to use the `jshint` program.
+Regardless of your preferred environment, you can control JSHint's behavior
+through specifying any number of [linting options](/docs/options/). In
+addition, JSHint will honor any directives declared within the input source
+code--see [the section on in-line directives](#inline-configuration) for more
+information.
 
 ### Configuration
 
@@ -48,6 +53,8 @@ undefined and unused variables and tell JSHint about a global variable named
       "unused": true,
       "predef": [ "MY_GLOBAL" ]
     }
+
+<a name="inline-configuration"></a>
 
 ### Inline configuration
 
