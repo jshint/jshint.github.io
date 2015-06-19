@@ -20,7 +20,7 @@ here](https://github.com/jshint/jshint/releases/latest).
 
 ### Node.js
 
-![NPM version](https://badge.fury.io/js/jshint.png)
+![NPM version](https://badge.fury.io/js/jshint.svg)
 
 Each release of JSHint is published to [npm](https://npmjs.org), the package
 manager for [the Node.js platform](https://nodejs.org).
