@@ -1,5 +1,5 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "Better integration with NPM",
   "author": "Anton Kovalyov",
@@ -7,8 +7,6 @@
   "url": "/blog/better-npm-integration",
   "altUrl": "/blog/2013-08-02/npm"
 }
-
-# Better integration with NPM
 
 If you're working on an NPM package you don't need to have a *.jshintrc*
 file anymore. Just put your JSHint options into your *package.json* file

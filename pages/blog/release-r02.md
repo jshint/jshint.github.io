@@ -1,13 +1,11 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "New release: r02",
   "author": "Anton Kovalyov",
   "date": "2011-12-23",
   "url": "/blog/2011-12-23/release-r02"
 }
-
-# New release: r02
 
 A huge [1] number of tweaks and bugfixes. New options: `funcscope`, `esnext`,
 `multistr` and `smarttabs`. To see what they do, refer to the [docs](/docs/).

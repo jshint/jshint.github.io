@@ -1,13 +1,11 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "JSHint 3 plans",
   "author": "Anton Kovalyov",
   "date": "2013-10-08",
   "url": "/blog/jshint-3-plans"
 }
-
-# JSHint 3 plans
 
 A few weeks ago we shipped the new JSHint website and it seemed like
 people liked it! In this blog post, I'd like to share my plans for the

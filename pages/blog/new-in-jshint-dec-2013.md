@@ -1,13 +1,11 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "What's new in JSHint (December, 2013)",
   "author": "Anton Kovalyov",
   "date": "2013-12-27",
   "url": "/blog/new-in-jshint-dec-2013"
 }
-
-# What's new in JSHint (December, 2013)
 
 Our latest release, [2.4.0](https://github.com/jshint/jshint/releases/tag/2.4.0),
 was mostly a bug fix release. We fixed a lot of parsing bugs. Among them were

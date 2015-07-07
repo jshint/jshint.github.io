@@ -1,13 +1,11 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "New release: r03",
   "author": "Anton Kovalyov",
   "date": "2011-12-30",
   "url": "/blog/2011-12-30/release-r03"
 }
-
-# New release: r03
 
 This release contains significant improvements to the way JSHint
 treats ES5 accessor functions:

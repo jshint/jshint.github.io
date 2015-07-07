@@ -1,13 +1,11 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "New release: r09",
   "author": "Anton Kovalyov",
   "date": "2012-08-05",
   "url": "/blog/2012-08-05/release-r09"
 }
-
-# New release: r09
 
 This release introduces a new option called `unused`. This option
 allows you to quickly spot variables that were defined but never used.

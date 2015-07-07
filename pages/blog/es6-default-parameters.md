@@ -1,5 +1,5 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "ES6 default parameters",
   "author": "Anton Kovalyov",
@@ -7,8 +7,6 @@
   "url": "/blog/es6-default-parameters",
   "altUrl": "/blog/2013-07-31/default-parameters"
 }
-
-# ES6 default parameters
 
 Yesterday, I decided to post a bounty on [a feature request](https://github.com/jshint/jshint/issues/1195) to add support
 for ES6 [parameter default values](http://wiki.ecmascript.org/doku.php?id=harmony:parameter_default_values).

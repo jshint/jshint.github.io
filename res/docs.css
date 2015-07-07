@@ -50,6 +50,17 @@ a.anchor {
   padding-left: 20px;
 }
 
+.content .blog-title {
+  margin-bottom: 0;
+}
+
+.blog-byline {
+  display: block;
+  margin: 0.2em 0 1.2em 0;
+
+  font-size: 0.8em;
+}
+
 .deprecation-msg {
   margin-bottom: 1em;
 }

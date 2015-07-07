@@ -1,13 +1,11 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "Fun little numbers",
   "author": "Anton Kovalyov",
   "date": "2013-07-29",
   "url": "/blog/2013-07-29/stats"
 }
-
-# Fun little numbers
 
 A few months ago I started sending data from this website to [Keen.IO](https://keen.io/),
 a small San Francisco-based company specializing in the API for custom analytics. Last

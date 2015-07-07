@@ -6,7 +6,7 @@
 
     <meta charset=utf8>
     <meta name=description content="JSHint, a JavaScript Code Quality Tool">
-    <meta name=author      content="Anton Kovalyov">
+    <meta name=author      content="{{ page.author }}">
 
     {{#if page.redirect}}
     <meta http-equiv=refresh content="0; url={{page.redirect}}">
@@ -20,25 +20,6 @@
     {{/if}}
 
     <script>
-      if (window.self !== window.top)
-        window.top.location.href = document.location.href;
-
-      function jumpToOption() {
-        var input = document.getElementById("jump-to-option")
-
-        if (/^\s*$/.test(input.value))
-          return false
-
-        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
-
-        if (window.location.pathname === "/docs/options/")
-          window.location.hash = "#" + input.value
-        else
-          window.location = "/docs/options/#" + input.value
-
-        return false
-      }
-
       var _gaq = _gaq || [];
       _gaq.push(["_setAccount", "UA-126146-15"]);
       _gaq.push(["_setDomainName", "jshint.com"]);
@@ -52,13 +33,14 @@
     <div class="container content">
       <div class="row">
         <div class="col-md-8">
-          {{ content }}
-        </div>
+          <h1 class="blog-title">{{ page.title }}</h1>
 
-        <div class="col-md-4">
-          {{#if page.sideimage}}
-          <img class="sideimage" src="/res/{{ page.sideimage }}">
-          {{/if}}
+          <span class="blog-byline">
+            <span class="blog-author">{{ page.author }}</span>
+            <span class="blog-date">{{ date page.date 'MMM Do, YYYY' }}</span>
+          </span>
+
+          {{ content }}
         </div>
       </div>
     </div>

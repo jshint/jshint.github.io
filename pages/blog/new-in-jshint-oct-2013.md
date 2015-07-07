@@ -1,13 +1,11 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "What's new in JSHint (October, 2013)",
   "author": "Anton Kovalyov",
   "date": "2013-10-21",
   "url": "/blog/new-in-jshint-oct-2013"
 }
-
-# What's new in JSHint (October, 2013)
 
 We shipped a couple of exciting new features in October. Here's a short
 write-up about some of them.

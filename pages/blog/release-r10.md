@@ -1,13 +1,11 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "New release: r10",
   "author": "Anton Kovalyov",
   "date": "2012-08-20",
   "url": "/blog/2012-08-20/release-r10"
 }
-
-# New release: r10
 
 This release introduces lots of improvements to the `unused` option from
 [r09](/blog/2012-08-05/release-r09/). For example, JSHint is now smart

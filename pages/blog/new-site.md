@@ -1,13 +1,11 @@
 {
-	"template": "docs",
+	"template": "blog",
 	"blog": true,
 	"title": "New JSHint website",
 	"author": "Anton Kovalyov",
 	"date": "2013-10-01",
 	"url": "/blog/new-site"
 }
-
-# Welcome to the new JSHint website
 
 For the last couple of weeks I've been working on a new homepage for JSHint
 and today I'm proud to announce the new [jshint.com](http://jshint.com/)!

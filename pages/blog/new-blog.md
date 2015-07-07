@@ -1,13 +1,11 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "New blog",
   "author": "Anton Kovalyov",
   "date": "2012-10-24",
   "url": "/blog/2012-10-24/new-blog"
 }
-
-# New blog
 
 Welcome to the official JSHint blog. This blog will serve two purposes.
 First, it will replace our old Changelog page where we announce new JSHint

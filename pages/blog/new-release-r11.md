@@ -1,13 +1,11 @@
 {
-  "template": "docs",
+  "template": "blog",
   "blog": true,
   "title": "New release: r11",
   "author": "Anton Kovalyov",
   "date": "2012-09-03",
   "url": "/blog/2012-09-03/new-release-r11"
 }
-
-# New release: r11
 
 This release adds **new checks for excessive code**! You can now use JSHint
 to check number of parameters per function, nested block depth per function,

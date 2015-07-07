@@ -1,5 +1,5 @@
 {
-	"template": "docs",
+	"template": "blog",
 	"blog": true,
 	"title": "Hello",
 	"author": "Anton Kovalyov",
@@ -7,8 +7,6 @@
 	"url": "/blog/hello",
 	"altUrl": "/blog/2011-12-20/hello"
 }
-
-# Hello
 
 After almost a year into development we decided that it's time to
 make more frequent stable releases and keep a blog.
