@@ -2,6 +2,7 @@
   "template": "docs",
   "blog": true,
   "title": "ES6 default parameters",
+  "author": "Anton Kovalyov",
   "date": "2013-07-31",
   "url": "/blog/es6-default-parameters",
   "altUrl": "/blog/2013-07-31/default-parameters"

@@ -2,6 +2,7 @@
   "template": "docs",
   "blog": true,
   "title": "New release: r10",
+  "author": "Anton Kovalyov",
   "date": "2012-08-20",
   "url": "/blog/2012-08-20/release-r10"
 }

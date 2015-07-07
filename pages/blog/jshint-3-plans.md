@@ -2,6 +2,7 @@
   "template": "docs",
   "blog": true,
   "title": "JSHint 3 plans",
+  "author": "Anton Kovalyov",
   "date": "2013-10-08",
   "url": "/blog/jshint-3-plans"
 }

@@ -2,6 +2,7 @@
   "template": "docs",
   "blog": true,
   "title": "Fun little numbers",
+  "author": "Anton Kovalyov",
   "date": "2013-07-29",
   "url": "/blog/2013-07-29/stats"
 }

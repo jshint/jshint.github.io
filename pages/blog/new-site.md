@@ -2,6 +2,7 @@
 	"template": "docs",
 	"blog": true,
 	"title": "New JSHint website",
+	"author": "Anton Kovalyov",
 	"date": "2013-10-01",
 	"url": "/blog/new-site"
 }

@@ -2,6 +2,7 @@
   "template": "docs",
   "blog": true,
   "title": "What's new in JSHint (October, 2013)",
+  "author": "Anton Kovalyov",
   "date": "2013-10-21",
   "url": "/blog/new-in-jshint-oct-2013"
 }

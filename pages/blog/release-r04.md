@@ -2,6 +2,7 @@
   "template": "docs",
   "blog": true,
   "title": "Bugfix release: r04",
+  "author": "Anton Kovalyov",
   "date": "2012-01-08",
   "url": "/blog/2012-01-08/release-r04"
 }

@@ -2,6 +2,7 @@
 	"template": "docs",
 	"blog": true,
 	"title": "Hello",
+	"author": "Anton Kovalyov",
 	"date": "2011-12-20",
 	"url": "/blog/hello",
 	"altUrl": "/blog/2011-12-20/hello"

@@ -2,6 +2,7 @@
   "template": "docs",
   "blog": true,
   "title": "Better integration with NPM",
+  "author": "Anton Kovalyov",
   "date": "2013-08-02",
   "url": "/blog/better-npm-integration",
   "altUrl": "/blog/2013-08-02/npm"
