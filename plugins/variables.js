@@ -10,6 +10,23 @@ var readOptions = require("./util/read-options");
 var translateFencedCode = require("./util/fenced-code");
 var optionsSrc = __dirname + "/../res/jshint/src/options.js";
 
+/**
+ * Marked renderer that adds anchors to headings
+ * https://github.com/chjj/marked#overriding-renderer-methods
+ */
+var renderer = new marked.Renderer();
+
+renderer.heading = function (text, level) {
+  var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+
+  return '<h'+level+'>'+
+           '<a name="'+escapedText+'" class="anchor" href="#'+escapedText+'">'+
+             '<span class="header-link"></span>'+
+           '</a>'+text+
+         '</h'+level+'>';
+};
+
+
 var pkg = require(path.join(
   __dirname, "..", "res", "jshint", "package.json")
 );
@@ -36,7 +53,7 @@ module.exports = function (site, handlebars) {
   var partialPattern = /^(.*)\.html$/i;
 
   handlebars.registerHelper("markdown", function (input) {
-    return new handlebars.SafeString(marked(input));
+    return new handlebars.SafeString(marked(input, {renderer: renderer}));
   });
 
   fs.readdirSync("partials").forEach(function(filename) {
