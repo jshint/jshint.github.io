@@ -2,75 +2,105 @@
 
 # Documentation
 
-JSHint is a program that flags suspicious usage in programs written in JavaScript.
-The core project consists of a library itself as well as a CLI program distributed
-as a Node module.
+JSHint helps you find dubious and invalid syntax in JavaScript files, enabling
+you to quickly identify potential problems.
 
-More docs: [List of all JSHint options](/docs/options/) · [Command-line
-Interface](/docs/cli/) · [API](/docs/api/) · [Writing your own
-reporter](/docs/reporters/) · [FAQ](/docs/faq/)
+The project consists of a core library and also a CLI module that runs on
+[Node.js](https://nodejs.org).
+
+More docs: [Directives](#directives) · [JSHint options](/docs/options/) · 
+[Command-line Interface](/docs/cli/) · [API](/docs/api/) · 
+[Writing your own reporter](/docs/reporters/) · [FAQ](/docs/faq/)
 
 ### Basic usage
 
-First, check out [the installation instructions](/install/) for details on
-how to install JSHint in your perferred environment. Both the command line
-executable and the JavaScript API offer unique ways to configure JSHint's
-behaviour. The most common usages are:
+After [installaling JSHint](/install/) there are three main ways to use it:
 
-- [As a command-line tool](/docs/cli/) (via [Node.js](https://nodejs.org))
-- [As a JavaScript module](/docs/api/)
+* [via command-line tool](/docs/cli/) (via [Node.js](https://nodejs.org))
+* [via JavaScript module](/docs/api/)
+* [via editor integration](/install/#urg)
 
-Regardless of your preferred environment, you can control JSHint's behavior
-through specifying any number of [linting options](/docs/options/). In
-addition, JSHint will honor any directives declared within the input source
-code--see [the section on in-line directives](#inline-configuration) for more
-information.
+However, before putting it to use, you should set some options (see
+**Configuration** section below for how), in particular:
+
+* [ECMA Script version](/docs/options/#esversion)
+* [Environment](/docs/options/#environments) (eg. Node.js, browser, jQuery, etc)
 
 ### Configuration
 
-JSHint comes with a default set of warnings but it was designed to be very
-configurable. There are three main ways to configure your copy of JSHint:
-you can either specify the configuration file manually via the `--config` flag,
-use a special file `.jshintrc` or put your config into your projects `package.json`
-file under the `jshintConfig` property. In case of `.jshintrc`, JSHint will start
-looking for this file in the same directory as the file that's being linted.
-If not found, it will move one level up the directory tree all the way up to
-the filesystem root. (Note that if the input comes from stdin, JSHint doesn't
-attempt to find a configuration file)
+By default, JSHint will report all potential issues with your code. This is useful
+for developers who are just starting with JavaScript, but can become irritating
+for more experienced developers. Luckily, JSHint can be customised to your specific
+requirements.
 
-This setup allows you to have different configuration files per project. Place
-your file into the project root directory and, as long as you run JSHint from
-anywhere within your project directory tree, the same configuration file will
-be used.
+There are three ways to define options, listed in order of precendence:
 
-Configuration file is a simple JSON file that specifies which JSHint options
-to turn on or off. For example, the following file will enable warnings about
-undefined and unused variables and tell JSHint about a global variable named
-`MY_GLOBAL`.
+1. **Inline** - via code comments
+  * block level (eg. within a function)
+  * script level
+2. **Settings file**
+  * `package.json` - project-level settings
+  * `.jshintrc` - project-level or global settings
+3. **Command line** - use the `--config` flag
 
-    {
-      "undef": true,
-      "unused": true,
-      "predef": [ "MY_GLOBAL" ]
+Note: Some options, such as the `exported` and `ignore` directives, can only be
+specified inline as they apply to a specific file or block of code.
+
+#### Inline options
+
+To specify options inline, simply add a comment to your script that starts with
+a valid directive (most commonly, `jshint`) followed by one or more options.
+Both line and block comments work:
+
+    // jshint esversion: 6, node: true
+    /* jshint esversion: 6, node: true */
+
+If options are placed within a function, they will only apply to that function:
+
+    function foo() {
+        // jshint varstmt: true
+        var bar = 'qux'; // displays warning about using vars
     }
 
-<a name="inline-configuration"></a>
+    var meh = 'moo'; // no warning given
 
-### Inline configuration
+#### Settings file
 
-In addition to using configuration files you can configure JSHint from within your
-files using special comments. These comments start with a label such as
-`jshint` or `globals` (complete list below) and are followed by a
-comma-separated list of values. For example, the following snippet will enable
-warnings about undefined and unused variables and tell JSHint about a global
-variable named `MY_GLOBAL`.
+You can use either a `.jshintrc` or a `package.json` file to specify project-wide
+options.
 
-    /* jshint undef: true, unused: true */
-    /* globals MY_GLOBAL */
+**Example: `package.json`**
 
-You can use both multi- and single-line comments to configure JSHint. These
-comments are function scoped meaning that if you put them inside a function they
-will affect only this function's code.
+Set project-wide settings by adding a `jshintConfig` section to your `package.json`
+file:
+
+    {
+        "jshintConfig": {
+            "esversion": 6,
+            "node": true
+        }
+    }
+
+**Example: `.jshintrc`**
+
+JSHint will look in the same folder as the file being linted, and if not found
+there, it will try each parent folder in turn up to file system root. Useful if
+you want to define default settings for all projects.
+
+    {
+        "undef": true,
+        "unused": true,
+        "predef": [ "MY_GLOBAL" ]
+    }
+
+Note: If the input comes from `stdin`, JSHint doesn't attempt to find a
+configuration file (as it doesn't know where to start the search).
+
+#### Command line
+
+For details, see `--config` flag section in [Command Line Interface](/docs/cli/).
+
+<a name="directives"></a>
 
 ### Directives
 
@@ -217,7 +247,7 @@ above and then re-enable the warning afterwards:
     }
     /*jshint +W089 */
 
-[This page](/docs/options/) contains a list of all options supported by JSHint.
+See [Options](/docs/options/) for a list of all options supported by JSHint.
 
 #### Switch statements
 
