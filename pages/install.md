@@ -97,6 +97,7 @@ JSLint and JSHint).
 * [Komodo 7 now ships](http://www.activestate.com/blog/2011/05/komodo-7-alpha-2-improved-syntax-checking)
 with built-in support for JSHint.
 * [JSHint integration for the Eclipse IDE](http://github.eclipsesource.com/jshint-eclipse/)
+* [JSHint integration for the NetBeans IDE](https://github.com/panga/netbeans-jshint/)
 * [JetBrains IDE family](http://www.jetbrains.com/products.html) supports realtime
 code inspection with both JSHint and JSLint out of the box.
 * [JSLint plugin for Notepad++](http://sourceforge.net/projects/jslintnpp/) now
