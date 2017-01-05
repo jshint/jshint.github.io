@@ -13,7 +13,7 @@ reporter](/docs/reporters/) · [FAQ](/docs/faq/)
 ### Basic usage
 
 First, check out [the installation instructions](/install/) for details on
-how to install JSHint in your perferred environment. Both the command line
+how to install JSHint in your preferred environment. Both the command line
 executable and the JavaScript API offer unique ways to configure JSHint's
 behaviour. The most common usages are:
 
