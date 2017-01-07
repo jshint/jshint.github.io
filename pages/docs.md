@@ -28,8 +28,9 @@ information.
 
 ### Configuration
 
-JSHint comes with a default set of warnings but it was designed to be very
-configurable. There are three main ways to configure your copy of JSHint:
+JSHint comes with a [default set](https://github.com/jshint/jshint/blob/master/examples/.jshintrc)
+of warnings but it was designed to be very configurable.
+There are three main ways to configure your copy of JSHint:
 you can either specify the configuration file manually via the `--config` flag,
 use a special file `.jshintrc` or put your config into your projects `package.json`
 file under the `jshintConfig` property. In case of `.jshintrc`, JSHint will start
@@ -145,8 +146,8 @@ Take the following code as an example:
       return a == null;
     }
 
-This code will produce the following warning when run with default JSHint
-options:
+This code will produce the following warning when run with
+[default JSHint options](https://github.com/jshint/jshint/blob/master/examples/.jshintrc):
 
     line 2, col 14, Use '===' to compare with 'null'.
 
