@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+<title>JSHint</title>
+<link href="http://jshint.com/atom.xml" rel="self"/>
+<link href="http://jshint.com/"/>
+<updated>2017-01-07T18:35:23-05:00</updated>
+<id>http://jshint.com/</id>
+
+
+<entry>
+  <title>New Release: 2.9.4</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2016-10-20/release-2-9-4"/>
+  <updated>2016-10-20T00:00:00-04:00</updated>
+  <id>/blog/2016-10-20/release-2-9-4</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.9.3</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2016-08-18/release-2-9-3"/>
+  <updated>2016-08-18T00:00:00-04:00</updated>
+  <id>/blog/2016-08-18/release-2-9-3</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.9.2</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2016-04-19/release-2-9-2"/>
+  <updated>2016-04-19T00:00:00-04:00</updated>
+  <id>/blog/2016-04-19/release-2-9-2</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.9.1</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2016-01-14/release-2-9-1"/>
+  <updated>2016-01-14T00:00:00-05:00</updated>
+  <id>/blog/2016-01-14/release-2-9-1</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.9.1-rc3</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2016-01-12/release-2-9-1-rc3"/>
+  <updated>2016-01-12T00:00:00-05:00</updated>
+  <id>/blog/2016-01-12/release-2-9-1-rc3</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.9.1-rc2</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2015-12-22/release-2-9-1-rc2"/>
+  <updated>2015-12-22T00:00:00-05:00</updated>
+  <id>/blog/2015-12-22/release-2-9-1-rc2</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.9.1-rc1</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2015-11-12/release-2-9-1-rc1"/>
+  <updated>2015-11-12T00:00:00-05:00</updated>
+  <id>/blog/2015-11-12/release-2-9-1-rc1</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.9.0</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2015-09-03/release-2-9-0"/>
+  <updated>2015-09-03T00:00:00-04:00</updated>
+  <id>/blog/2015-09-03/release-2-9-0</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>A Formal Commitment to New Language Features</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/new-lang-features"/>
+  <updated>2015-07-07T00:00:00-04:00</updated>
+  <id>/blog/new-lang-features</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.8.0</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2015-05-31/release-2-8-0"/>
+  <updated>2015-05-31T00:00:00-04:00</updated>
+  <id>/blog/2015-05-31/release-2-8-0</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.7.0</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2015-04-10/release-2-7-0"/>
+  <updated>2015-04-10T00:00:00-04:00</updated>
+  <id>/blog/2015-04-10/release-2-7-0</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.6.3</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2015-02-28/release-2-6-3"/>
+  <updated>2015-02-28T00:00:00-05:00</updated>
+  <id>/blog/2015-02-28/release-2-6-3</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.6.2</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2015-02-28/release-2-6-2"/>
+  <updated>2015-02-28T00:00:00-05:00</updated>
+  <id>/blog/2015-02-28/release-2-6-2</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.6.1</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2015-02-27/release-2-6-1"/>
+  <updated>2015-02-27T00:00:00-05:00</updated>
+  <id>/blog/2015-02-27/release-2-6-1</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.6.0</title>
+  <author>The JSHint team</author>
+  <link href="http://jshint.com/blog/2015-01-21/release-2-6-0"/>
+  <updated>2015-01-21T00:00:00-05:00</updated>
+  <id>/blog/2015-01-21/release-2-6-0</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>What&#x27;s new in JSHint (December, 2013)</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/new-in-jshint-dec-2013"/>
+  <updated>2013-12-27T00:00:00-05:00</updated>
+  <id>/blog/new-in-jshint-dec-2013</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>What&#x27;s new in JSHint (October, 2013)</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/new-in-jshint-oct-2013"/>
+  <updated>2013-10-21T00:00:00-04:00</updated>
+  <id>/blog/new-in-jshint-oct-2013</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 3 plans</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/jshint-3-plans"/>
+  <updated>2013-10-08T00:00:00-04:00</updated>
+  <id>/blog/jshint-3-plans</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New JSHint website</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/new-site"/>
+  <updated>2013-10-01T00:00:00-04:00</updated>
+  <id>/blog/new-site</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.1.10</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-08-15/release-2-1-10"/>
+  <updated>2013-08-15T00:00:00-04:00</updated>
+  <id>/blog/2013-08-15/release-2-1-10</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 2.1.10</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/jshint-2-1-10"/>
+  <updated>2013-08-15T00:00:00-04:00</updated>
+  <id>/blog/jshint-2-1-10</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>Better integration with NPM</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/better-npm-integration"/>
+  <updated>2013-08-02T00:00:00-04:00</updated>
+  <id>/blog/better-npm-integration</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>ES6 default parameters</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/es6-default-parameters"/>
+  <updated>2013-07-31T00:00:00-04:00</updated>
+  <id>/blog/es6-default-parameters</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.1.6</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-07-29/release-2-1-6"/>
+  <updated>2013-07-29T00:00:00-04:00</updated>
+  <id>/blog/2013-07-29/release-2-1-6</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>Fun little numbers</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-07-29/stats"/>
+  <updated>2013-07-29T00:00:00-04:00</updated>
+  <id>/blog/2013-07-29/stats</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 2.1.6</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-07-28/2-1-6"/>
+  <updated>2013-07-28T00:00:00-04:00</updated>
+  <id>/blog/2013-07-28/2-1-6</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.1.0</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-05-21/release-2-1-0"/>
+  <updated>2013-05-21T00:00:00-04:00</updated>
+  <id>/blog/2013-05-21/release-2-1-0</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 2.1.0</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-05-20/2-1-0"/>
+  <updated>2013-05-20T00:00:00-04:00</updated>
+  <id>/blog/2013-05-20/2-1-0</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 2.0.0</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-05-08/release-2-0-0"/>
+  <updated>2013-05-08T00:00:00-04:00</updated>
+  <id>/blog/2013-05-08/release-2-0-0</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 2.0.0</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-05-07/2-0-0"/>
+  <updated>2013-05-07T00:00:00-04:00</updated>
+  <id>/blog/2013-05-07/2-0-0</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 1.1.0 is out</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-03-05/1-1-0"/>
+  <updated>2013-03-05T00:00:00-05:00</updated>
+  <id>/blog/2013-03-05/1-1-0</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 1.0.0 is out</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-02-27/1-0-0"/>
+  <updated>2013-02-27T00:00:00-05:00</updated>
+  <id>/blog/2013-02-27/1-0-0</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 1.0.0 RC4</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-01-18/1-0-0-rc4"/>
+  <updated>2013-01-18T00:00:00-05:00</updated>
+  <id>/blog/2013-01-18/1-0-0-rc4</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 1.0.0-rc4</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-01-18/release-1-0-0-rc4"/>
+  <updated>2013-01-18T00:00:00-05:00</updated>
+  <id>/blog/2013-01-18/release-1-0-0-rc4</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 1.0.0-rc3</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-01-02/release-1-0-0-rc3"/>
+  <updated>2013-01-02T00:00:00-05:00</updated>
+  <id>/blog/2013-01-02/release-1-0-0-rc3</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 1.0.0 RC3</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2013-01-01/1-0-0-rc3"/>
+  <updated>2013-01-01T00:00:00-05:00</updated>
+  <id>/blog/2013-01-01/1-0-0-rc3</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 1.0.0 RC2</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-12-31/1-0-0-rc2"/>
+  <updated>2012-12-31T00:00:00-05:00</updated>
+  <id>/blog/2012-12-31/1-0-0-rc2</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New Release: 1.0.0-rc2</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-12-31/release-1-0-0-rc2"/>
+  <updated>2012-12-31T00:00:00-05:00</updated>
+  <id>/blog/2012-12-31/release-1-0-0-rc2</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>JSHint 1.0.0 RC1</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-12-29/1-0-0-rc1"/>
+  <updated>2012-12-29T00:00:00-05:00</updated>
+  <id>/blog/2012-12-29/1-0-0-rc1</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New blog</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-10-24/new-blog"/>
+  <updated>2012-10-24T00:00:00-04:00</updated>
+  <id>/blog/2012-10-24/new-blog</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New release: r12</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-09-25/release-r12"/>
+  <updated>2012-09-25T00:00:00-04:00</updated>
+  <id>/blog/2012-09-25/release-r12</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New release: r11</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-09-03/new-release-r11"/>
+  <updated>2012-09-03T00:00:00-04:00</updated>
+  <id>/blog/2012-09-03/new-release-r11</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New release: r10</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-08-20/release-r10"/>
+  <updated>2012-08-20T00:00:00-04:00</updated>
+  <id>/blog/2012-08-20/release-r10</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New release: r09</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-08-05/release-r09"/>
+  <updated>2012-08-05T00:00:00-04:00</updated>
+  <id>/blog/2012-08-05/release-r09</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New release: r08</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-07-26/release-r08"/>
+  <updated>2012-07-26T00:00:00-04:00</updated>
+  <id>/blog/2012-07-26/release-r08</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New release: r07</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-05-01/release-r07"/>
+  <updated>2012-05-01T00:00:00-04:00</updated>
+  <id>/blog/2012-05-01/release-r07</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>Bugfix release: r06</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-02-13/release-r06"/>
+  <updated>2012-02-13T00:00:00-05:00</updated>
+  <id>/blog/2012-02-13/release-r06</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New release: r05</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-01-19/release-r05"/>
+  <updated>2012-01-19T00:00:00-05:00</updated>
+  <id>/blog/2012-01-19/release-r05</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>Bugfix release: r04</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2012-01-08/release-r04"/>
+  <updated>2012-01-08T00:00:00-05:00</updated>
+  <id>/blog/2012-01-08/release-r04</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New release: r03</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2011-12-30/release-r03"/>
+  <updated>2011-12-30T00:00:00-05:00</updated>
+  <id>/blog/2011-12-30/release-r03</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>New release: r02</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/2011-12-23/release-r02"/>
+  <updated>2011-12-23T00:00:00-05:00</updated>
+  <id>/blog/2011-12-23/release-r02</id>
+  <content type="html"></content>
+</entry>
+
+<entry>
+  <title>Hello</title>
+  <author>Anton Kovalyov</author>
+  <link href="http://jshint.com/blog/hello"/>
+  <updated>2011-12-20T00:00:00-05:00</updated>
+  <id>/blog/hello</id>
+  <content type="html"></content>
+</entry>
+
+</feed>

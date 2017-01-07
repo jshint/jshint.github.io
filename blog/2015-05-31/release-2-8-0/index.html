@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.8.0</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.8.0</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">May 31st, 2015</span>
+          </span>
+
+          <h3>Bug Fixes</h3>
+
+<ul><li>add the &quot;fetch&quot; global for &quot;browser&quot; environment (<a href="https://github.com/jshint/jshint/commit/b3b41c8">b3b41c8</a>), closes <a href="https://github.com/jshint/jshint/issues/2355">#2355</a></li><li>Allow lexer to communicate completion (<a href="https://github.com/jshint/jshint/commit/a093f78">a093f78</a>)</li><li>Distinguish between directive and mode (<a href="https://github.com/jshint/jshint/commit/51059bd">51059bd</a>)</li><li>Don&#39;t throw &quot;Duplicate class method&quot; with computed method names (<a href="https://github.com/jshint/jshint/commit/ab12dfb">ab12dfb</a>), closes <a href="https://github.com/jshint/jshint/issues/2350">#2350</a></li><li>Ignore unused arrow-function parameters if unused: vars (<a href="https://github.com/jshint/jshint/commit/2ea9cb0">2ea9cb0</a>), closes <a href="https://github.com/jshint/jshint/issues/2345">#2345</a></li><li>Move helper methods to <code>state</code> object (<a href="https://github.com/jshint/jshint/commit/678da76">678da76</a>)</li><li>parse <code>const</code> declarations in ForIn/Of loops (<a href="https://github.com/jshint/jshint/commit/2b673d9">2b673d9</a>), closes <a href="https://github.com/jshint/jshint/issues/2334">#2334</a> <a href="https://github.com/jshint/jshint/issues/2335">#2335</a></li><li>Parse semicolons in class bodies (<a href="https://github.com/jshint/jshint/commit/58c8e64">58c8e64</a>)</li><li>Prevent regression in <code>enforceall</code> (<a href="https://github.com/jshint/jshint/commit/6afcde4">6afcde4</a>)</li><li>Relax singleGroups restrictions: arrow fns (<a href="https://github.com/jshint/jshint/commit/4a4f522">4a4f522</a>)</li><li>Relax singleGroups restrictions: IIFEs (<a href="https://github.com/jshint/jshint/commit/9f55160">9f55160</a>)</li><li>Reset generator flag for each method definition (<a href="https://github.com/jshint/jshint/commit/2444a04">2444a04</a>), closes <a href="https://github.com/jshint/jshint/issues/2388">#2388</a> <a href="https://github.com/jshint/jshint/issues/2389">#2389</a></li></ul>
+
+<h3>Features</h3>
+
+<ul><li>Implement <code>module</code> option (<a href="https://github.com/jshint/jshint/commit/290280c">290280c</a>)</li><li>support destructuring in ForIn/Of loops, lint bad ForIn/Of LHS (<a href="https://github.com/jshint/jshint/commit/c0edd9f">c0edd9f</a>), closes <a href="https://github.com/jshint/jshint/issues/2341">#2341</a></li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

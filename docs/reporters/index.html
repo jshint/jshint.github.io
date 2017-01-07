@@ -1,0 +1,157 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>Writing your own JSHint reporter</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      if (window.self !== window.top)
+        window.top.location.href = document.location.href;
+
+      function jumpToOption() {
+        var input = document.getElementById("jump-to-option")
+
+        if (/^\s*$/.test(input.value))
+          return false
+
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
+
+        if (window.location.pathname === "/docs/options/")
+          window.location.hash = "#" + input.value
+        else
+          window.location = "/docs/options/#" + input.value
+
+        return false
+      }
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Writing your own JSHint reporter</h1>
+
+<p>JSHint Reporter is a JavaScript file that accepts raw data from JSHint and
+outputs something into the console (or another file, or sends an email; it&#39;s
+really up to you).</p>
+
+<p>Here&#39;s the simplest reporter, the one that prints <code>OK</code> if JSHint passed the file
+and <code>FAIL</code> if it didn&#39;t:</p>
+
+<pre><code>module.exports = {
+  reporter: function (errors) {
+    console.log(errors.length ? &quot;FAIL&quot; : &quot;OK&quot;);
+  }
+};</code></pre>
+
+<p>Each reporter file must expose one function, <code>reporter</code>, that accepts an array
+of errors. Each entry of this array has the following structure:</p>
+
+<pre><code>{
+  file:        [string, filename]
+  error: {
+    id:        [string, usually &#39;(error)&#39;],
+    code:      [string, error/warning code],
+    reason:    [string, error/warning message],
+    evidence:  [string, a piece of code that generated this error]
+    line:      [number]
+    character: [number]
+    scope:     [string, message scope;
+                usually &#39;(main)&#39; unless the code was eval&#39;ed]
+
+    [+ a few other legacy fields that you don&#39;t need to worry about.]
+  }
+}</code></pre>
+
+<p>And a real-world example:</p>
+
+<pre><code>[
+  {
+    file: &#39;demo.js&#39;,
+    error:  {
+      id: &#39;(error)&#39;,
+      code: &#39;W117&#39;,
+      reason: &#39;\&#39;module\&#39; is not defined.&#39;
+      evidence: &#39;module.exports = {&#39;,
+      line: 3,
+      character: 1,
+      scope: &#39;(main)&#39;,
+
+      // [...]
+    }
+  },
+
+  // [...]
+]</code></pre>
+
+<p>If you&#39;re still confused, JSHint repository has
+<a href="https://github.com/jshint/jshint/blob/master/examples/reporter.js">an example reporter</a>.</p>
+        </div>
+
+        <div class="col-md-4">
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

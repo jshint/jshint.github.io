@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.1.0</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.1.0</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">May 21st, 2013</span>
+          </span>
+
+          <p>JSHint 2.1.0 is out. This releases adds support for ES6 <code>class</code> syntax and
+fixes some issues with our parser.</p>
+
+<ul><li>Added support for ES6 <code>class</code> syntax.
+(<a href="https://github.com/jshint/jshint/pull/1048">#1048</a>)</li><li>Added support for error code in the Checkstyle reporter.
+(<a href="https://github.com/jshint/jshint/pull/1088">#1088</a>)</li><li>Added support for <code>do</code> statement bodies that are not block
+statements.
+(<a href="https://github.com/jshint/jshint/pull/1062">#1062</a>)</li><li>Fixed issues with JSHint not parsing comma expressions correctly.
+(<a href="https://github.com/jshint/jshint/pull/1084">#1084</a>)</li><li>Fixed a bug with W080 no longer pointing to relevant identifiers.
+(<a href="https://github.com/jshint/jshint/pull/1070">#1070</a>)</li><li>Fixed a potential issue with Node 0.10 and Windows.
+(<a href="https://github.com/jshint/jshint/pull/1065">#1065</a>)</li><li>Fixed issues with JSHint not parsing assignments in <code>switch</code>
+conditionals.
+(<a href="https://github.com/jshint/jshint/pull/1064">#1064</a>)</li><li>Fixed an issue with <code>esnext</code> and <code>moz</code> modes turning off the
+default <code>es5</code> mode.
+(<a href="https://github.com/jshint/jshint/issues/1068">#1068</a>)</li></ul>
+
+<p><strong>Thanks</strong> to usrbincc, James Allardice, Iraê Carvalho, Nick Schonning and
+jklein for sending patches!</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>
