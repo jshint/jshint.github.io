@@ -1,0 +1,371 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>JSHint Blog</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      if (window.self !== window.top)
+        window.top.location.href = document.location.href;
+
+      function jumpToOption() {
+        var input = document.getElementById("jump-to-option")
+
+        if (/^\s*$/.test(input.value))
+          return false
+
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
+
+        if (window.location.pathname === "/docs/options/")
+          window.location.hash = "#" + input.value
+        else
+          window.location = "/docs/options/#" + input.value
+
+        return false
+      }
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>JSHint Blog</h1>
+
+<p>The Official JSHint Blog: announcements, discussions, and more.
+  (<a href="/atom.xml">RSS</a>)</p>
+
+<table class="blog-list">
+  
+  <tr>
+    <td class=meta>Oct 20th, 2016</td>
+    <td class=link><a href="/blog/2016-10-20/release-2-9-4">New Release: 2.9.4</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Aug 18th, 2016</td>
+    <td class=link><a href="/blog/2016-08-18/release-2-9-3">New Release: 2.9.3</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Apr 19th, 2016</td>
+    <td class=link><a href="/blog/2016-04-19/release-2-9-2">New Release: 2.9.2</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jan 14th, 2016</td>
+    <td class=link><a href="/blog/2016-01-14/release-2-9-1">New Release: 2.9.1</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jan 12th, 2016</td>
+    <td class=link><a href="/blog/2016-01-12/release-2-9-1-rc3">New Release: 2.9.1-rc3</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Dec 22nd, 2015</td>
+    <td class=link><a href="/blog/2015-12-22/release-2-9-1-rc2">New Release: 2.9.1-rc2</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Nov 12th, 2015</td>
+    <td class=link><a href="/blog/2015-11-12/release-2-9-1-rc1">New Release: 2.9.1-rc1</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Sep 3rd, 2015</td>
+    <td class=link><a href="/blog/2015-09-03/release-2-9-0">New Release: 2.9.0</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jul 7th, 2015</td>
+    <td class=link><a href="/blog/new-lang-features">A Formal Commitment to New Language Features</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>May 31st, 2015</td>
+    <td class=link><a href="/blog/2015-05-31/release-2-8-0">New Release: 2.8.0</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Apr 10th, 2015</td>
+    <td class=link><a href="/blog/2015-04-10/release-2-7-0">New Release: 2.7.0</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Feb 28th, 2015</td>
+    <td class=link><a href="/blog/2015-02-28/release-2-6-3">New Release: 2.6.3</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Feb 28th, 2015</td>
+    <td class=link><a href="/blog/2015-02-28/release-2-6-2">New Release: 2.6.2</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Feb 27th, 2015</td>
+    <td class=link><a href="/blog/2015-02-27/release-2-6-1">New Release: 2.6.1</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jan 21st, 2015</td>
+    <td class=link><a href="/blog/2015-01-21/release-2-6-0">New Release: 2.6.0</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Dec 27th, 2013</td>
+    <td class=link><a href="/blog/new-in-jshint-dec-2013">What&#x27;s new in JSHint (December, 2013)</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Oct 21st, 2013</td>
+    <td class=link><a href="/blog/new-in-jshint-oct-2013">What&#x27;s new in JSHint (October, 2013)</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Oct 8th, 2013</td>
+    <td class=link><a href="/blog/jshint-3-plans">JSHint 3 plans</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Oct 1st, 2013</td>
+    <td class=link><a href="/blog/new-site">New JSHint website</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Aug 15th, 2013</td>
+    <td class=link><a href="/blog/2013-08-15/release-2-1-10">New Release: 2.1.10</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Aug 15th, 2013</td>
+    <td class=link><a href="/blog/jshint-2-1-10">JSHint 2.1.10</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Aug 2nd, 2013</td>
+    <td class=link><a href="/blog/better-npm-integration">Better integration with NPM</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jul 31st, 2013</td>
+    <td class=link><a href="/blog/es6-default-parameters">ES6 default parameters</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jul 29th, 2013</td>
+    <td class=link><a href="/blog/2013-07-29/release-2-1-6">New Release: 2.1.6</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jul 29th, 2013</td>
+    <td class=link><a href="/blog/2013-07-29/stats">Fun little numbers</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jul 28th, 2013</td>
+    <td class=link><a href="/blog/2013-07-28/2-1-6">JSHint 2.1.6</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>May 21st, 2013</td>
+    <td class=link><a href="/blog/2013-05-21/release-2-1-0">New Release: 2.1.0</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>May 20th, 2013</td>
+    <td class=link><a href="/blog/2013-05-20/2-1-0">JSHint 2.1.0</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>May 8th, 2013</td>
+    <td class=link><a href="/blog/2013-05-08/release-2-0-0">New Release: 2.0.0</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>May 7th, 2013</td>
+    <td class=link><a href="/blog/2013-05-07/2-0-0">JSHint 2.0.0</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Mar 5th, 2013</td>
+    <td class=link><a href="/blog/2013-03-05/1-1-0">JSHint 1.1.0 is out</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Feb 27th, 2013</td>
+    <td class=link><a href="/blog/2013-02-27/1-0-0">JSHint 1.0.0 is out</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jan 18th, 2013</td>
+    <td class=link><a href="/blog/2013-01-18/1-0-0-rc4">JSHint 1.0.0 RC4</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jan 18th, 2013</td>
+    <td class=link><a href="/blog/2013-01-18/release-1-0-0-rc4">New Release: 1.0.0-rc4</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jan 2nd, 2013</td>
+    <td class=link><a href="/blog/2013-01-02/release-1-0-0-rc3">New Release: 1.0.0-rc3</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jan 1st, 2013</td>
+    <td class=link><a href="/blog/2013-01-01/1-0-0-rc3">JSHint 1.0.0 RC3</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Dec 31st, 2012</td>
+    <td class=link><a href="/blog/2012-12-31/release-1-0-0-rc2">New Release: 1.0.0-rc2</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Dec 31st, 2012</td>
+    <td class=link><a href="/blog/2012-12-31/1-0-0-rc2">JSHint 1.0.0 RC2</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Dec 29th, 2012</td>
+    <td class=link><a href="/blog/2012-12-29/1-0-0-rc1">JSHint 1.0.0 RC1</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Oct 24th, 2012</td>
+    <td class=link><a href="/blog/2012-10-24/new-blog">New blog</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Sep 25th, 2012</td>
+    <td class=link><a href="/blog/2012-09-25/release-r12">New release: r12</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Sep 3rd, 2012</td>
+    <td class=link><a href="/blog/2012-09-03/new-release-r11">New release: r11</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Aug 20th, 2012</td>
+    <td class=link><a href="/blog/2012-08-20/release-r10">New release: r10</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Aug 5th, 2012</td>
+    <td class=link><a href="/blog/2012-08-05/release-r09">New release: r09</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jul 26th, 2012</td>
+    <td class=link><a href="/blog/2012-07-26/release-r08">New release: r08</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>May 1st, 2012</td>
+    <td class=link><a href="/blog/2012-05-01/release-r07">New release: r07</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Feb 13th, 2012</td>
+    <td class=link><a href="/blog/2012-02-13/release-r06">Bugfix release: r06</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jan 19th, 2012</td>
+    <td class=link><a href="/blog/2012-01-19/release-r05">New release: r05</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Jan 8th, 2012</td>
+    <td class=link><a href="/blog/2012-01-08/release-r04">Bugfix release: r04</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Dec 30th, 2011</td>
+    <td class=link><a href="/blog/2011-12-30/release-r03">New release: r03</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Dec 23rd, 2011</td>
+    <td class=link><a href="/blog/2011-12-23/release-r02">New release: r02</a></td>
+  </tr>
+  
+  <tr>
+    <td class=meta>Dec 20th, 2011</td>
+    <td class=link><a href="/blog/hello">Hello</a></td>
+  </tr>
+  
+</table>
+
+        </div>
+
+        <div class="col-md-4">
+          
+          <img class="sideimage" src="/res/jshint.png">
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

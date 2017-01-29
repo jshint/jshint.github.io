@@ -1,0 +1,138 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>What&#x27;s new in JSHint (October, 2013)</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">What&#x27;s new in JSHint (October, 2013)</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Oct 21st, 2013</span>
+          </span>
+
+          <p>We shipped a couple of exciting new features in October. Here&#39;s a short
+write-up about some of them.</p>
+
+<h3>Ignore directive</h3>
+
+<p>Thanks to <a href="https://github.com/danielmiladinov">Daniel Miladinov</a>, JSHint
+can now ignore blocks of code which makes it easier to use JSHint with
+JavaScript language extensions such as <a href="http://facebook.github.io/react/">Facebook React</a>.</p>
+
+<pre><code>// Code here will be linted with JSHint.
+/* jshint ignore:start */
+// Code here will be linted with ignored by JSHint.
+/* jshint ignore:end */</code></pre>
+
+<p>All code in between <strong>ignore:start</strong> and <strong>ignore:end</strong> won&#39;t be
+passed to JSHint at all. Additionally, you can ignore a single
+line with a trailing comment:</p>
+
+<pre><code>ignoreThis(); // jshint ignore:line</code></pre>
+
+<h3>Checks for the <em>typeof</em> operator</h3>
+
+<p>Thanks to <a href="https://github.com/phadej">Oleg Grenrus</a>, JSHint can now
+check the use of a <strong>typeof</strong> operator when its result is compared
+to a string. This operator has only a limited set of possible return
+values (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">mdn</a>).
+If you try to compare it with an invalid value, JSHint will produce
+a warning informing you about the issue. You can disable this check
+with a <strong>notypeof</strong> option.</p>
+
+<pre><code>// &#39;fuction&#39; instead of &#39;function&#39;
+if (typeof a == &quot;fuction&quot;) { // Warning: Invalid typeof value &#39;fuction&#39;
+  /* ... */
+}</code></pre>
+
+<h3>New option: <em>freeze</em></h3>
+
+<p>Thanks to <a href="https://github.com/caitp">Caitlin Potter</a>, there&#39;s a new
+option—<strong>freeze</strong>—that prohibits the modification of native objects
+such as Array, Number, Date, etc. It&#39;s generally a bad idea to modify
+these objects unless you&#39;re absolutely sure you know what you&#39;re doing.</p>
+
+<pre><code>/* jshint freeze:true */
+Array.prototype.count = function (value) { return 4; };
+// -&gt; Warning: Extending prototype of native object: &#39;Array&#39;.</code></pre>
+
+<p>This option is still under development. Do you have suggestions
+on how we can improve it? <a href="https://github.com/jshint/jshint/issues/1316">Tell us here</a>.</p>
+
+<h3>Changesets</h3>
+
+<p>We now use GitHub releases to host our changesets:</p>
+
+<ul><li><a href="https://github.com/jshint/jshint/releases/tag/2.3.0">JSHint 2.3.0 changeset</a></li><li><a href="https://github.com/jshint/jshint/releases/tag/2.2.0">JSHint 2.2.0 changeset</a></li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

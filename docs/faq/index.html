@@ -1,0 +1,162 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>FAQ</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      if (window.self !== window.top)
+        window.top.location.href = document.location.href;
+
+      function jumpToOption() {
+        var input = document.getElementById("jump-to-option")
+
+        if (/^\s*$/.test(input.value))
+          return false
+
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
+
+        if (window.location.pathname === "/docs/options/")
+          window.location.hash = "#" + input.value
+        else
+          window.location = "/docs/options/#" + input.value
+
+        return false
+      }
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Frequently Asked Questions</h1>
+
+<h3>Can I use multiple reporters at the same time?</h3>
+
+<p>Yes, you may do so by authoring a new reporter that composes the reporters you
+are interested in using.</p>
+
+<p>For example, to use reporters named <code>first-reporter</code> and <code>second-reporter</code>,
+create a new module that invokes them both:</p>
+
+<pre><code>var first = require(&#39;first-reporter&#39;);
+var second = require(&#39;second-reporter&#39;);
+
+exports.reporter = function(results, data, opts) {
+  first.reporter(results, data, opts);
+  second.reporter(results, data, opts);
+};</code></pre>
+
+<p>Save that to a file named <code>dual-reporter.js</code>, and run JSHint with:</p>
+
+<pre><code>$ jshint --reporter ./dual-reporter.js</code></pre>
+
+<p>...and you should see the output of <code>first-reporter</code> followed by the output of
+<code>second-reporter</code>.</p>
+
+<p>This approach is especially well-suited to using the different reporters&#39;
+output in different contexts (for instance, e-mailing one reporter&#39;s output to
+the development team and feeding another reporter&#39;s output to a continuous
+integration system). You might output a custom delimiter between the output
+streams in order to demultiplex them. Alternatively, you might replace the
+global <code>process.stdout</code> value with another stream between reporter invocations.
+This latter solution is somewhat fragile because it involves mutating global
+state--a future release of JSHint may expose a safer mechanism for this
+operation.</p>
+
+<p>See <a href="http://jshint.com/docs/reporters/">the documentation on JSHint&#39;s &quot;reporter&quot;
+API</a> for more details on creating your own
+reporter.</p>
+
+<h3>JSHint skips some unused variables</h3>
+
+<p>If your code looks like this:</p>
+
+<pre><code>function test(a, b, c) {
+  return c;
+}</code></pre>
+
+<p>Then JSHint will not warn about unused variables <code>a</code> and <code>b</code> if you set the
+<code>unused</code> option to <code>true</code>. It figures that if unused arguments are followed
+by used ones, it was a conscious decision and not a typo. If you want to
+warn about all unused variables not matter where they appear, set the <code>unused</code>
+option to <code>strict</code>:</p>
+
+<pre><code>/*jshint unused:strict */
+function test(a, b, c) {
+  return c;
+}
+
+// Warning: unused variable &#39;a&#39;
+// Warning: unused variable &#39;b&#39;</code></pre>
+
+<p>For more information see: <a href="http://jshint.com/docs/options/#unused">options/unused</a>.</p>
+        </div>
+
+        <div class="col-md-4">
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

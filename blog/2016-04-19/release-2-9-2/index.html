@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.9.2</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.9.2</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">Apr 19th, 2016</span>
+          </span>
+
+          <p>This release contains a number of bug fixes. As always, we thank everyone who
+reported issues and submitted patches; those contributions are essential to the
+continuing improvement of the project. We hope you&#39;ll keep it up!</p>
+
+<h3>Bug Fixes</h3>
+
+<ul><li>(cli - extract) lines can end with &quot;\r\n&quot;, not &quot;\n\r&quot; (<a href="https://github.com/jshint/jshint/commit/93818f3">93818f3</a>), closes <a href="https://github.com/jshint/jshint/issues/2825">#2825</a></li><li>Account for implied closures (<a href="https://github.com/jshint/jshint/commit/c3b4d63">c3b4d63</a>)</li><li>Add CompositionEvent to browser globals (<a href="https://github.com/jshint/jshint/commit/56515cf">56515cf</a>)</li><li>Allow destructuring in setter parameter (<a href="https://github.com/jshint/jshint/commit/97d0ac1">97d0ac1</a>)</li><li>Allow parentheses around object destructuring assignment. (<a href="https://github.com/jshint/jshint/commit/7a0bd70">7a0bd70</a>), closes <a href="https://github.com/jshint/jshint/issues/2775">#2775</a></li><li>Allow regex inside template literal (<a href="https://github.com/jshint/jshint/commit/5dd9c90">5dd9c90</a>), closes <a href="https://github.com/jshint/jshint/issues/2791">#2791</a></li><li>Allow regexp literal after &#39;instanceof&#39; (<a href="https://github.com/jshint/jshint/commit/caa30e6">caa30e6</a>), closes <a href="https://github.com/jshint/jshint/issues/2773">#2773</a></li><li>Correct CLI&#39;s indentation offset logic (<a href="https://github.com/jshint/jshint/commit/47daf76">47daf76</a>), closes <a href="https://github.com/jshint/jshint/issues/2778">#2778</a></li><li>Do not crash on invalid input (<a href="https://github.com/jshint/jshint/commit/2e0026f">2e0026f</a>)</li><li>Do not fail on valid configurations (<a href="https://github.com/jshint/jshint/commit/2fb3c24">2fb3c24</a>)</li><li>Don&#39;t throw E056 for vars used in two functions (<a href="https://github.com/jshint/jshint/commit/fd91d4a">fd91d4a</a>), closes <a href="https://github.com/jshint/jshint/issues/2838">#2838</a></li><li>Emit correct token value from &quot;module&quot; API (<a href="https://github.com/jshint/jshint/commit/4a43fb9">4a43fb9</a>)</li><li>Expand forms accepted in dstr. assignment (<a href="https://github.com/jshint/jshint/commit/8bbd537">8bbd537</a>)</li><li>Improve binding power for tagged templates (<a href="https://github.com/jshint/jshint/commit/9cf2ff0">9cf2ff0</a>)</li><li>Improve reporting of &quot;Bad assignment.&quot; (<a href="https://github.com/jshint/jshint/commit/08df19e">08df19e</a>)</li><li>Make the &#39;freeze&#39; option less strict (<a href="https://github.com/jshint/jshint/commit/b76447c">b76447c</a>), closes <a href="https://github.com/jshint/jshint/issues/1600">#1600</a></li><li>Report &quot;Bad assignment.&quot; in destructuring (<a href="https://github.com/jshint/jshint/commit/fe559ed">fe559ed</a>)</li><li>Report character position for camelcase errors (<a href="https://github.com/jshint/jshint/commit/480252a">480252a</a>), closes <a href="https://github.com/jshint/jshint/issues/2845">#2845</a></li><li>Reserve <code>await</code> keyword in ES6 module code (<a href="https://github.com/jshint/jshint/commit/b1c8d5b">b1c8d5b</a>)</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

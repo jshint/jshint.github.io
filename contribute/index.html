@@ -1,0 +1,270 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>Contribute to JSHint</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      if (window.self !== window.top)
+        window.top.location.href = document.location.href;
+
+      function jumpToOption() {
+        var input = document.getElementById("jump-to-option")
+
+        if (/^\s*$/.test(input.value))
+          return false
+
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
+
+        if (window.location.pathname === "/docs/options/")
+          window.location.hash = "#" + input.value
+        else
+          window.location = "/docs/options/#" + input.value
+
+        return false
+      }
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <p>This page&#39;s content is sourced from <a href="https://github.com/jshint/jshint">the JSHint project repository</a>. If you spot an error, please <a href="https://github.com/jshint/jshint/issues/new">open an issue</a> or (better yet) <a href="https://github.com/jshint/jshint/compare">make a pull request</a>!</p>
+
+<h1>How to contribute</h1>
+
+<p>Contributions to the project generally take one of three forms:</p>
+
+<ul><li>Bug reports</li><li>Feature requests</li><li>Patches</li></ul>
+
+<p>This document describes the best way to contribute each of these. The
+maintenance team will assign one of the following labels to document the
+report&#39;s severity:</p>
+
+<ul><li><em>P1:</em> Something is throwing exceptions; broken JSHint backward compatibility.</li><li><em>P2:</em> Something is not being parsed correctly.</li><li><em>P3:</em> Features that the core team will work on once P2s and P1s are done.</li><li><em>P4:</em> Patches welcome; The request is good, but low priority.</li></ul>
+
+<h2>Bug Reports</h2>
+
+<p>If you believe you have identified incorrect behavior, please let the team know
+by filing an issue. In order to help the team diagnose and fix the problem, the
+issue report should have the following information:</p>
+
+<ul><li>Version of JSHint being used</li><li>Input source code (simplified to only contain details necessary to
+demonstrate the problem)</li><li>Configuration values</li><li>Description of expected behavior</li><li>Description of actual behavior</li></ul>
+
+<h2>Feature Requests</h2>
+
+<p>If there is some new functionality that you think would improve JSHint, we&#39;d
+love to hear about it! Great feature requests contain the following
+information:</p>
+
+<ul><li>Description of problem the feature solves</li><li>Outline of the feature&#39;s intended operation</li><li>List of any edge cases/exceptional circumstances, and how they should be
+addressed</li></ul>
+
+<p>If you are capable of implementing the feature and submitting a patch, then all
+the better! Please begin by making a feature request so that the maintainers
+can verify that it is appropriate and help shape its design.</p>
+
+<h2>Patches</h2>
+
+<p>The best way to make sure your issue is addressed is to submit a patch. We
+accept patches through all mediums: pull requests, email, issue comment, tweet
+with a link to a snippet, etc.</p>
+
+<p>However, before sending a patch, please make sure that the following applies:</p>
+
+<ul><li>Your commit message follows the <a href="#commit-message-guidelines">Commit Message Guidelines</a>.</li><li>You have signed the <a href="https://www.clahub.com/agreements/jshint/jshint">Contributor&#39;s License Agreement</a>.</li><li>Your patch doesn&#39;t have useless merge commits.</li><li>Your coding style is similar to ours (see below).</li><li>Your patch is 100% tested. We don&#39;t accept any test regressions.</li><li>All tests and lint checks pass (<code>npm test</code>).</li><li>You understand that we&#39;re super grateful for your patch.</li></ul>
+
+<h3>Development Environment</h3>
+
+<p>JSHint is developed using <a href="http://nodejs.org/">Node.js</a> and has a number of
+dependencies specified in its <code>package.json</code> file. To install them just run the
+following command from within your repo directory:</p>
+
+<pre><code>$ npm install</code></pre>
+
+<p>After that, you will be able to run the edge version of JSHint using
+<code>bin/jshint</code> or build the release bundles using <code>bin/build</code>.</p>
+
+<h3>Coding Style</h3>
+
+<p>This section describes our coding style guide. You might not agree with it and
+that&#39;s fine but if you&#39;re going to send us patches treat this guide as a law.</p>
+
+<p><strong>Our main rule is simple:</strong></p>
+
+<blockquote><p>All code in any code-base should look like a single person typed it, no
+matter how many people contributed.
+—<a href="https://github.com/rwaldron/idiomatic.js/">idiomatic.js</a></p></blockquote>
+
+<h4>Whitespace</h4>
+
+<ul><li>We use two spaces everywhere.</li><li>Use one space after <code>if</code>, <code>for</code>, <code>while</code>, etc.</li><li><p>No spaces between <code>function</code> and <code>(</code> for anonymous functions, no space between name and <code>(</code>  for named functions:</p><pre><code>var a = function() {};
+function a() {}</code></pre></li><li><p>Feel free to indent variable assignments or property definitions if it makes the code look better. But don&#39;t abuse that:</p><pre><code>// Good
+var next = token.peak();
+var prev = token.peak(-1);
+var cur  = token.current;
+
+var scope = {
+  name:   &quot;(global)&quot;,
+  parent: parentScope,
+  vars:   [],
+  uses:   []
+};
+
+// Bad
+var cur         = token.current;
+var isSemicolon = cur.isPunctuator(&quot;;&quot;);</code></pre></li><li><p>Wrap multi-line comments with new lines on both sides.</p></li></ul>
+
+<h4>Variables</h4>
+
+<ul><li><p>Use one <code>var</code> per variable unless you don&#39;t assign any values to it (and it&#39;s short enough):</p><pre><code>var token = tokens.find(index);
+var scope = scopes.current;
+var next, prev, cur;</code></pre></li><li><p>Don&#39;t be overly descriptive with your variable names but don&#39;t abuse one-letter variables either. Find a sweet spot somewhere in between.</p></li></ul>
+
+<h4>Comments</h4>
+
+<ul><li>Comment everything that is not obvious.</li><li>If you&#39;re adding a new check, write a comment describing why this check is important and what it checks for.</li></ul>
+
+<h4>Misc</h4>
+
+<ul><li>Always use strict mode.</li><li>Always use strict comparisons: <code>===</code> and <code>!==</code>.</li><li>Use semicolons.</li><li>Don&#39;t use comma-first notation.</li><li>Try not to chain stuff unless it <strong>really</strong> helps (e.g. in tests).</li><li><p>Don&#39;t short-circuit expressions if you&#39;re not assigning the result:</p><pre><code>// Good
+token = token || tokens.find(0);
+
+// Bad
+token.isPunctuator(&quot;;&quot;) &amp;&amp; report.addWarning(&quot;W001&quot;);
+
+// Good
+if (token.isPunctuator(&quot;;&quot;))
+  report.addWarning(&quot;W001&quot;);</code></pre></li></ul>
+
+<h3>Commit Message Guidelines</h3>
+
+<p>Commit messages are written in a simple format which clearly describes the purpose of a change.</p>
+
+<p>The format in general should look like this:</p>
+
+<pre><code>[[TYPE]] &lt;Short description&gt;
+&lt;Blank line&gt;
+
+&lt;Body / Detailed description&gt;
+
+&lt;Footer&gt;</code></pre>
+
+<p>Line lengths in commit messages are not strict, but good commit messages should have headers of no
+more than 60 characters, and bodies/footers wrapped at 100 columns. This renders nicely on Github&#39;s
+UI.</p>
+
+<h4>Header</h4>
+
+<p>The first line is the commit message header, which will indicate the type of change, and a general
+description of the change. This should fit within 60 characters, ideally. For instance:</p>
+
+<pre><code>[[FIX]] Ignore &quot;nocomma&quot; when parsing object literals</code></pre>
+
+<p>The title <code>[[FIX]]</code> indicates that the change is a bugfix, while the remainder clarifies what the
+change actually contains.</p>
+
+<p>Several commit types are used by jshint:</p>
+
+<ol><li><code>[[FIX]]</code> --- Commit fixes a bug or regression</li><li><code>[[FEAT]]</code> --- Commit introduces new functionality</li><li><code>[[DOCS]]</code> --- Commit modifies documentation. Docs commits should only touch comments in source code, or scripts and assets which are used to generate the documentation.</li><li><code>[[TEST]]</code> --- Commit modifies tests or test infrastructure only</li><li><code>[[CHORE]]</code> --- Commit affects dev-ops, CI, or package dependencies</li></ol>
+
+<h4>Body</h4>
+
+<p><code>&lt;Body&gt;</code> is a detailed commit message explaining exactly what has changed, and a summary of the
+reason why. Lines in the body should be wrapped to 100 characters for best rendering.</p>
+
+<p>For a historical example, see this <a href="https://github.com/jshint/jshint/commit/5751c5ed249b7a035758a3ae876cfa1a360fd144">example</a></p>
+
+<h4>Footer</h4>
+
+<p><code>&lt;Footer&gt;</code> contains a description of any breaking changes, no matter how subtle, as well as a list
+of issues affected or fixed by this commit. Lines in the footer should be wrapped to 100 characters
+for best rendering.</p>
+
+<p>For instance:</p>
+
+<pre><code>[[FEAT]] Enable `norecurs` option by default
+
+Commit 124124a7f introduced an option which forbids recursion. We liked it so much, we&#39;ve enabled
+it by default.
+
+BREAKING CHANGE:
+
+This change will break the CI builds of many applications and frameworks.
+
+In order to work around this issue, you will need to re-engineer your applications and frameworks
+to avoid making recursive calls. Use Arrays as stacks rather than relying on the VM call stack.
+
+Fixes #1000009
+Closes #888888
+Closes #77777</code></pre>
+        </div>
+
+        <div class="col-md-4">
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

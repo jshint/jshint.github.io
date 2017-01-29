@@ -1,0 +1,201 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>Download and install</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      if (window.self !== window.top)
+        window.top.location.href = document.location.href;
+
+      function jumpToOption() {
+        var input = document.getElementById("jump-to-option")
+
+        if (/^\s*$/.test(input.value))
+          return false
+
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
+
+        if (window.location.pathname === "/docs/options/")
+          window.location.hash = "#" + input.value
+        else
+          window.location = "/docs/options/#" + input.value
+
+        return false
+      }
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Download and install</h1>
+
+<p>JSHint runs in a number of different environments; installation is different
+for each.</p>
+
+<h3>Browser-like environments</h3>
+
+<p>A standalone files is built for browser-like environments with every release.
+You&#39;ll find it in the <code>dist</code> directory of the download. <a href="https://github.com/jshint/jshint/releases/latest">Download the latest
+release here</a>.</p>
+
+<h3>Rhino</h3>
+
+<p>A standalone files is built for Mozilla&#39;s <a href="http://www.mozilla.org/rhino">Rhino JavaScript
+engine</a> with every release.  You&#39;ll find it in
+the <code>dist</code> directory of the download. <a href="https://github.com/jshint/jshint/releases/latest">Download the latest release
+here</a>.</p>
+
+<h3>Node.js</h3>
+
+<p><img alt="NPM version" src="https://badge.fury.io/js/jshint.svg"/></p>
+
+<p>Each release of JSHint is published to <a href="https://npmjs.org">npm</a>, the package
+manager for <a href="https://nodejs.org">the Node.js platform</a>.</p>
+
+<p>You may <strong>install it globally</strong> using the following command:</p>
+
+<pre><code>npm install -g jshint</code></pre>
+
+<p>After this, you can use the <code>jshint</code> command-line interface.</p>
+
+<p>It is common to install JSHint as a development dependency within an existing
+Node.js project:</p>
+
+<pre><code>npm install --save-dev jshint</code></pre>
+
+<h3>Plugins for text editors and IDEs</h3>
+
+<h4>VIM</h4>
+
+<ul><li><a href="https://github.com/walm/jshint.vim">jshint.vim</a>, VIM plugin and command line
+tool for running JSHint.</li><li><a href="https://github.com/Shutnik/jshint2.vim">jshint2.vim</a>, modern VIM plugin with
+extra features for running JSHint.</li><li><a href="https://github.com/scrooloose/syntastic">Syntastic</a>,
+supports JSHint both older/newer than 1.1.0.</li></ul>
+
+<h4>Emacs</h4>
+
+<ul><li><a href="https://github.com/daleharvey/jshint-mode">jshint-mode</a>, JSHint mode for GNU
+Emacs.</li><li><a href="https://github.com/lunaryorn/flycheck">Flycheck</a>, on-the-fly syntax checking
+extension for GNU Emacs, built-in JSHint support.</li><li><a href="http://web-mode.org/">web-mode</a>, an autonomous major-mode for editing web templates
+supports JSHint.</li></ul>
+
+<h4>Sublime Text</h4>
+
+<ul><li><a href="https://github.com/victorporof/Sublime-JSHint">Sublime-JSHint Gutter</a>, JSHint
+plugin for graphically displaying lint results in ST2 and ST3.</li><li><a href="https://github.com/uipoet/sublime-jshint">sublime-jshint</a>, JSHint build package
+for ST2.</li><li><a href="https://github.com/Kronuz/SublimeLinter">Sublime Linter</a>, inline lint
+highlighting for ST2.</li></ul>
+
+<h4>Atom</h4>
+
+<ul><li><a href="https://github.com/AtomLinter/linter-jshint">linter-jshint</a>, JSHint plugin for Atom&#39;s Linter.</li><li><a href="https://github.com/sindresorhus/atom-jshint">JSHint for Atom</a>, JSHint package for Atom.</li></ul>
+
+<h4>TextMate</h4>
+
+<ul><li><a href="https://github.com/bodnaristvan/JSHint.tmbundle">JSHint Bundle for TextMate 2</a></li><li><a href="https://github.com/fgnass/jshint.tmbundle">JSHint TextMate Bundle</a>.</li><li><a href="http://rondevera.github.com/jslintmate/">JSLintMate</a> (supports both JSHint and
+JSLint).</li><li><a href="https://github.com/natesilva/jshint-external.tmbundle">JSHint-external TextMate Bundle</a></li></ul>
+
+<h4>Visual Studio</h4>
+
+<ul><li><a href="https://github.com/jamietre/SharpLinter">SharpLinter</a> (supports both JSLint and
+JSHint).</li><li><a href="http://jslint4vs2010.codeplex.com/">JSLint for Visual Studio</a> (supports both
+JSLint and JSHint).</li><li><a href="http://vswebessentials.com">Web Essentials</a> (Runs JSHint automatically).</li></ul>
+
+<h4>Brackets</h4>
+
+<ul><li><a href="https://github.com/cfjedimaster/brackets-jshint/">Brackets JSHint plugin</a></li><li><a href="https://github.com/MiguelCastillo/Brackets-InteractiveLinter">Brackets Interactive Linter</a></li></ul>
+
+<h4>Other</h4>
+
+<ul><li><a href="http://shiftedit.net/">ShiftEdit IDE</a> has built-in support for JSHint.</li><li><a href="http://www.activestate.com/blog/2011/05/komodo-7-alpha-2-improved-syntax-checking">Komodo 7 now ships</a>
+with built-in support for JSHint.</li><li><a href="http://github.eclipsesource.com/jshint-eclipse/">JSHint integration for the Eclipse IDE</a></li><li><a href="https://github.com/panga/netbeans-jshint/">JSHint integration for the NetBeans IDE</a></li><li><a href="http://www.jetbrains.com/products.html">JetBrains IDE family</a> supports realtime
+code inspection with both JSHint and JSLint out of the box.</li><li><a href="http://sourceforge.net/projects/jslintnpp/">JSLint plugin for Notepad++</a> now
+supports JSHint.</li><li><a href="https://github.com/Kilian/gedit-jshint">JSHint plugin for Gedit</a>.</li></ul>
+
+<h3>Other cool stuff</h3>
+
+<ul><li><a href="http://rixth.github.com/jshintr/">JSHintr</a> is a web tool that allows you to
+set your own code standards, easily review a file against these standards, and
+share the output with other developers.</li><li><a href="https://github.com/jshint/fixmyjs">FixMyJS</a> is a tool that automatically fixes
+mistakes—such as missing semicolon, multiple definitions, etc.—reported by
+JSHint.</li><li><a href="https://github.com/rquinlivan/jshint-gem">A ruby gem for JSHint</a>.</li><li><a href="https://github.com/stereobooster/jshintrb">Another ruby gem</a> but without Java
+dependency.</li><li><a href="http://jish.github.com/pre-commit/">pre-commit</a> checks your code for errors
+before you commit it.</li><li><a href="https://github.com/philmander/ant-jshint">Dedicated Ant task</a> to easily
+automate JSHint in Ant Maven.</li><li><a href="https://github.com/gyoshev/qhint">QHint - JSHint in QUnit</a>. Check for errors in
+your code from within your unit tests. Lint errors result in failed tests.</li><li><a href="http://gruntjs.com">Grunt</a>, a task-based command line build tool for JavaScript
+projects, supports JSHint out of the box.</li><li><a href="https://github.com/brigade/overcommit">overcommit</a> is an extensible Git hook
+manager with built-in JSHint linting, distributed as a Ruby gem. <a href="http://causes.github.io/blog/2013/05/30/overcommit-the-opinionated-git-hook-manager/">Read
+more</a>
+about it.</li><li><a href="https://github.com/cjdev/jshint-mojo">jshint-mojo</a>, a plugin for Maven.</li><li><a href="https://github.com/CondeNast/JSXHint">JSXHint</a>, a wrapper around JSHint to allow
+linting of files containing JSX syntax.</li></ul>
+        </div>
+
+        <div class="col-md-4">
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.9.3</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.9.3</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">Aug 18th, 2016</span>
+          </span>
+
+          <h3>Bug Fixes</h3>
+
+<ul><li>Add TypedArray globals for ES2015 (<a href="https://github.com/jshint/jshint/commit/ee0acab">ee0acab</a>)</li><li>Allow Expression within for-in head (<a href="https://github.com/jshint/jshint/commit/56c95d0">56c95d0</a>)</li><li>Avoid crash when peeking past end of prog (#2937) (<a href="https://github.com/jshint/jshint/commit/330d429">330d429</a>)</li><li>Correct behavior of singleGroups (#2951) (<a href="https://github.com/jshint/jshint/commit/97fefb7">97fefb7</a>)</li><li>Correct interpretation of ASI (#2977) (<a href="https://github.com/jshint/jshint/commit/3ef7a03">3ef7a03</a>)</li><li>Correctly recognize asi after directives (<a href="https://github.com/jshint/jshint/commit/039ee2e">039ee2e</a>), closes <a href="https://github.com/jshint/jshint/issues/2714">#2714</a></li><li>Disallow Import declarations below top lvl (<a href="https://github.com/jshint/jshint/commit/d800e44">d800e44</a>)</li><li>Support <code>y</code> RegExp flag in ES2015 code (#2999) (<a href="https://github.com/jshint/jshint/commit/a801433">a801433</a>)</li><li>Support semicolons within arrow fn params (#3003) (<a href="https://github.com/jshint/jshint/commit/179a9d6">179a9d6</a>)</li></ul>
+
+<h3>Features</h3>
+
+<ul><li>Error for literals on rhs of <code>instanceof</code> (<a href="https://github.com/jshint/jshint/commit/e3e745b">e3e745b</a>), closes <a href="https://github.com/jshint/jshint/issues/2777">#2777</a></li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

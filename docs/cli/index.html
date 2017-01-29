@@ -1,0 +1,334 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>JSHint CLI flags</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      if (window.self !== window.top)
+        window.top.location.href = document.location.href;
+
+      function jumpToOption() {
+        var input = document.getElementById("jump-to-option")
+
+        if (/^\s*$/.test(input.value))
+          return false
+
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
+
+        if (window.location.pathname === "/docs/options/")
+          window.location.hash = "#" + input.value
+        else
+          window.location = "/docs/options/#" + input.value
+
+        return false
+      }
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Command-line Interface</h1>
+
+<p>The JSHint CLI can be installed via npm (see <a href="/install">the Installation page</a>
+for instructions).</p>
+
+<p>Contents: <a href="#specifying-input">Specifying Input</a> · <a href="#specifying-linting-options">Specifying Linting
+Options</a> · <a href="#special-options">Special Options</a> ·
+<a href="#ignoring-files">Ignoring Files</a> · <a href="#flags">Flags</a></p>
+
+<a name="specifying-input"></a>
+
+<h3>Specifying Input</h3>
+
+<p>The <code>jshint</code> executable accepts paths to files, which it will read and lint:</p>
+
+<pre><code>$ jshint myfile.js
+myfile.js: line 10, col 39, Octal literals are not allowed in strict mode.
+
+1 error</code></pre>
+
+<p>If a file path is a dash (<code>-</code>) then JSHint will read from standard input.</p>
+
+<a name="specifying-linting-options"></a>
+
+<h3>Specifying Linting Options</h3>
+
+<p>The <code>jshint</code> executable is capable of applying <a href="/docs/options">linting options</a>
+specified in an external <a href="http://json.org/">JSON</a>-formatted file. Such a file
+might look like this:</p>
+
+<pre><code>{
+  &quot;curly&quot;: true,
+  &quot;eqeqeq&quot;: true,
+  &quot;nocomma&quot;: true
+}</code></pre>
+
+<p><code>jshint</code> will look for this configuration in a number of locations, stopping at
+the first positive match:</p>
+
+<ol><li>The location specified with the <code>--config</code> <a href="#flags">flag</a></li><li>A file named <code>package.json</code> located in the current directory or any parent
+of the current directory (the configuration should be declared as the
+<code>jshintConfig</code> attribute of that file&#39;s JSON value)</li><li>A file named <code>.jshintrc</code> located in the current directory or any parent of
+the current directory</li><li>A file named <code>.jshintrc</code> located in the current user&#39;s &quot;home&quot; directory
+(where defined)</li></ol>
+
+<p>If this search yields no results, <code>jshint</code> will lint the input code as if no
+linting rules had been enabled.</p>
+
+<p>The command-line interface offers some <a href="#special-options">special options</a> in
+addition to <a href="/docs/options">the ones available in other contexts</a></p>
+
+<a name="special-options"></a>
+
+<h3>Special Options</h3>
+
+<p>The following options concern the file system and are only available from
+within configuration files (i.e. not from inline directives or the API):</p>
+
+<h4><code>extends</code></h4>
+
+<p>Use another configuration file as a &quot;base&quot;. The value of this option should be
+a file path to another configuration file, and the path should be relative to
+the current file.</p>
+
+<p>For example, you might define a <code>.jshintrc</code> file in the top-level directory of
+your project (say, `./.jshintrc&#39;) to specify the <a href="/docs/options">linting
+options</a> you would like to use in your entire project:</p>
+
+<pre><code>{
+  &quot;undef&quot;: true,
+  &quot;unused&quot;: true
+}</code></pre>
+
+<p>You may want to re-use this configuration for your project&#39;s automated tests,
+but also <a href="http://localhost:4000/docs/options#globals">allow for global
+variables</a> that are specific to the
+test environment.  In this case, you could create a a new file in their test
+directory, (<code>./test/.jshintrc</code> for example), and include the following
+configuration:</p>
+
+<pre><code>{
+  &quot;extends&quot;: &quot;../.jshintrc&quot;,
+  &quot;globals&quot;: {
+    &quot;test&quot;: false,
+    &quot;assert&quot;: false
+  }
+}</code></pre>
+
+<h4><code>overrides</code></h4>
+
+<p>Specify options that should only be applied to files matching a given path
+pattern.</p>
+
+<p>The following configuration file <a href="/docs/options#shadow">disallows variable
+shadowing</a> for <em>all</em> files and <a href="/docs/options#expr">allows expressions as
+statements</a> for only those files ending in <code>-test.js</code>:</p>
+
+<pre><code>{
+  &quot;shadow&quot;: false,
+  &quot;overrides&quot;: {
+    &quot;lib/*-test.js&quot;: {
+      &quot;expr&quot;: true
+    }
+  }
+}</code></pre>
+
+<a name="ignoring-files"></a>
+
+<h3>Ignoring Files</h3>
+
+<p><code>jshint</code> can be configured to ignore files based on their location in the
+filesystem. You may create a dedicated &quot;ignore&quot; file to list any number of file
+names, file paths, or file path patterns that should not be linted. Path
+patterns will be interpreted using <a href="https://www.npmjs.com/package/minimatch">the <code>minimatch</code> npm
+module</a>, which itself is based on <a href="http://linux.die.net/man/3/fnmatch">the
+Unix filename matching syntax, fnmatch</a>.</p>
+
+<pre><code>build/
+src/**/tmp.js</code></pre>
+
+<p><code>jshint</code> will look for this configuration in a number of locations, stopping at
+the first positive match:</p>
+
+<ol><li>The location specified with the <code>--exclude-path</code> <a href="#flags">flag</a></li><li>A file named <code>.jshintignore</code> located in the current directory or any parent
+of the current directory</li></ol>
+
+<p>If this search yields no results, <code>jshint</code> will not ignore any files.</p>
+
+<a name="flags"></a>
+
+<h3>Flags</h3>
+
+<h4><code>--config</code></h4>
+
+<p>Explicitly sets the location on the file system from which <code>jshint</code> should load
+linting options.</p>
+
+<pre><code>$ jshint --config ../path/to/my/config.json</code></pre>
+
+<h4><code>--reporter</code></h4>
+
+<p>Allows you to modify JSHint&#39;s output by replacing its default output function
+with your own implementation.</p>
+
+<pre><code>$ jshint --reporter=myreporter.js myfile.js</code></pre>
+
+<p>This flag also supports two pre-defined reporters: <em>jslint</em>, to make output
+compatible with JSLint, and <em>checkstyle</em>, to make output compatible with
+CheckStyle XML.</p>
+
+<pre><code>$ jshint --reporter=checkstyle myfile.js
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;checkstyle version=&quot;4.3&quot;&gt;
+  &lt;file name=&quot;myfile.js&quot;&gt;
+    &lt;error line=&quot;10&quot; column=&quot;39&quot; severity=&quot;error&quot;
+      message=&quot;Octal literals are not allowed in strict mode.&quot;/&gt;
+  &lt;/file&gt;
+&lt;/checkstyle&gt;</code></pre>
+
+<p>See also: <a href="/docs/reporters/">Writing your own JSHint reporter</a>.</p>
+
+<h4><code>--verbose</code></h4>
+
+<p>Adds message codes to the JSHint output.</p>
+
+<h4><code>--show-non-errors</code></h4>
+
+<p>Shows additional data generated by JSHint.</p>
+
+<pre><code>$ jshint --show-non-errors myfile.js
+myfile.js: line 10, col 39, Octal literals are not allowed in strict mode.
+
+1 error
+
+myfile.js:
+  Unused variables:
+    foo, bar</code></pre>
+
+<h4><code>--extra-ext</code></h4>
+
+<p>Allows you to specify additional file extensions to check (default is .js).</p>
+
+<h4><code>--extract=[auto|always|never]</code></h4>
+
+<p>Tells JSHint to extract JavaScript from HTML files before linting:</p>
+
+<pre><code>tmp ☭ cat test.html
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hello, World!&lt;/title&gt;
+    &lt;script&gt;
+      function hello() {
+        return &quot;Hello, World!&quot;;
+      }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;script&gt;
+      console.log(hello())
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+tmp ☭ jshint --extract=auto test.html
+test.html: line 13, col 27, Missing semicolon.
+
+1 error</code></pre>
+
+<p>If you set it to <em>always</em> JSHint will always attempt to extract JavaScript.
+And if you set it to <em>auto</em> it will make an attempt only if file looks
+like it&#39;s an HTML file.</p>
+
+<h4><code>--exclude</code></h4>
+
+<p>Allows you to specify directories which you DON&#39;T want to be linted.</p>
+
+<h4><code>--exclude-path</code></h4>
+
+<p>Allows you to provide your own .jshintignore file. For example, you can point
+JSHint to your .gitignore file and use it instead of default .jshintignore.</p>
+
+<h4><code>--prereq</code></h4>
+
+<p>Allows you to specify prerequisite files i.e. files which include definitions
+of global variables used throughout your project.</p>
+
+<h4><code>--help</code></h4>
+
+<p>Shows a nice little help message similar to what you&#39;re reading right now.</p>
+
+<h4><code>--version</code></h4>
+
+<p>Shows the installed version of JSHint.</p>
+        </div>
+
+        <div class="col-md-4">
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

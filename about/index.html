@@ -1,0 +1,192 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>About JSHint</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      if (window.self !== window.top)
+        window.top.location.href = document.location.href;
+
+      function jumpToOption() {
+        var input = document.getElementById("jump-to-option")
+
+        if (/^\s*$/.test(input.value))
+          return false
+
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
+
+        if (window.location.pathname === "/docs/options/")
+          window.location.hash = "#" + input.value
+        else
+          window.location = "/docs/options/#" + input.value
+
+        return false
+      }
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <p>This page&#39;s content is sourced from <a href="https://github.com/jshint/jshint">the JSHint project repository</a>. If you spot an error, please <a href="https://github.com/jshint/jshint/issues/new">open an issue</a> or (better yet) <a href="https://github.com/jshint/jshint/compare">make a pull request</a>!</p>
+
+<h1>JSHint, A Static Code Analysis Tool for JavaScript</h1>
+
+<p>[ <a href="http://jshint.com/">Use it online</a> •
+<a href="http://jshint.com/docs/">Docs</a> • <a href="http://jshint.com/docs/faq">FAQ</a> •
+<a href="http://jshint.com/install/">Install</a> •
+<a href="http://jshint.com/contribute/">Contribute</a> •
+<a href="http://jshint.com/blog/">Blog</a> • <a href="https://twitter.com/jshint/">Twitter</a> ]</p>
+
+<p><a href="https://www.npmjs.com/package/jshint"><img alt="NPM version" src="https://img.shields.io/npm/v/jshint.svg?style=flat"/></a>
+<a href="https://travis-ci.org/jshint/jshint"><img alt="Linux Build Status" src="https://img.shields.io/travis/jshint/jshint/master.svg?style=flat&amp;label=Linux%20build"/></a>
+<a href="https://ci.appveyor.com/project/jshint/jshint/branch/master"><img alt="Windows Build status" src="https://img.shields.io/appveyor/ci/jshint/jshint/master.svg?style=flat&amp;label=Windows%20build"/></a>
+<a href="https://david-dm.org/jshint/jshint"><img alt="Dependency Status" src="https://img.shields.io/david/jshint/jshint.svg?style=flat"/></a>
+<a href="https://david-dm.org/jshint/jshint#info=devDependencies"><img alt="devDependency Status" src="https://img.shields.io/david/dev/jshint/jshint.svg?style=flat"/></a>
+<a href="https://coveralls.io/r/jshint/jshint?branch=master"><img alt="Coverage Status" src="https://img.shields.io/coveralls/jshint/jshint.svg?style=flat"/></a></p>
+
+<p>JSHint is a community-driven tool that detects errors and potential problems in
+JavaScript code. Since JSHint is so flexible, you can easily adjust it in 
+the environment you expect your code to execute. JSHint is open source and
+will always stay this way.</p>
+
+<h2>Our goal</h2>
+
+<p>The project aims to help JavaScript developers write complex programs
+without worrying about typos and language gotchas.</p>
+
+<p>Any code base eventually becomes huge at some point, so simple mistakes — that
+would not show themselves when written — can become show stoppers and add 
+extra hours of debugging. So, static code analysis tools come into play
+and help developers spot such problems. JSHint scans a program written in
+JavaScript and reports about commonly made mistakes and potential bugs. The
+potential problem could be a syntax error, a bug due to an implicit type
+conversion, a leaking variable, or something else entirely.</p>
+
+<p>Only 15% of all programs linted on <a href="http://jshint.com">jshint.com</a> pass the
+JSHint checks. In all other cases, JSHint finds some red flags that could&#39;ve
+been bugs or potential problems.</p>
+
+<p>Please note, that while static code analysis tools can spot many different kind
+of mistakes, it can&#39;t detect if your program is correct, fast or has memory
+leaks. You should always combine tools like JSHint with unit and functional
+tests as well as with code reviews.</p>
+
+<h2>Reporting a bug</h2>
+
+<p>To report a bug simply create a
+<a href="https://github.com/jshint/jshint/issues/new">new GitHub Issue</a> and describe
+your problem or suggestion. We welcome all kinds of feedback regarding
+JSHint including but not limited to:</p>
+
+<ul><li>When JSHint doesn&#39;t work as expected</li><li>When JSHint complains about valid JavaScript code that works in all browsers</li><li>When you simply want a new option or feature</li></ul>
+
+<p>Before reporting a bug, please look around to see if there are any open or closed tickets
+that discuss your issue, and remember the wisdom: pull request &gt; bug report &gt; tweet.</p>
+
+<h2>Who uses JSHint?</h2>
+
+<p>Engineers from these companies and projects use JSHint:</p>
+
+<ul><li><a href="https://www.mozilla.org/">Mozilla</a></li><li><a href="https://wikipedia.org/">Wikipedia</a></li><li><a href="https://facebook.com/">Facebook</a></li><li><a href="https://twitter.com/">Twitter</a></li><li><a href="http://getbootstrap.com/">Bootstrap</a></li><li><a href="https://disqus.com/">Disqus</a></li><li><a href="https://medium.com/">Medium</a></li><li><a href="https://yahoo.com/">Yahoo!</a></li><li><a href="http://smugmug.com/">SmugMug</a></li><li><a href="http://jquery.com/">jQuery</a></li><li><a href="http://mozilla.github.io/pdf.js">PDF.js</a></li><li><a href="http://coursera.com/">Coursera</a></li><li><a href="http://brackets.io/">Adobe Brackets</a></li><li><a href="http://cordova.io/">Apache Cordova</a></li><li><a href="http://redhat.com/">RedHat</a></li><li><a href="http://soundcloud.com/">SoundCloud</a></li><li><a href="http://nodejitsu.com/">Nodejitsu</a></li><li><a href="https://yelp.com/">Yelp</a></li><li><a href="http://voxer.com/">Voxer</a></li><li><a href="http://enyojs.com/">EnyoJS</a></li><li><a href="http://quickenloans.com/">QuickenLoans</a></li><li><a href="http://www.odesk.com/">oDesk</a></li><li><a href="http://c9.io/">Cloud9</a></li><li><a href="https://codeclimate.com/">CodeClimate</a></li><li><a href="http://pandootek.com/">Pandoo TEK</a></li><li><a href="http://zendesk.com/">Zendesk</a></li><li><a href="http://couchdb.apache.org/">Apache CouchDB</a></li><li><a href="https://www.google.com/">Google</a></li></ul>
+
+<p>And many more!</p>
+
+<h2>License</h2>
+
+<p>Most files are published using <a href="https://www.gnu.org/licenses/license-list.html#Expat">the standard MIT Expat
+license</a>. One file,
+however, is provided under a slightly modified version of that license. The
+so-called <a href="https://www.gnu.org/licenses/license-list.html#JSON">JSON license</a>
+is a non-free license, and unfortunately, we can&#39;t change it due to historical
+reasons. This license is included as an in-line within the file it concerns.</p>
+
+<h2>The JSHint Team</h2>
+
+<p>JSHint is currently maintained by <a href="https://github.com/rwaldron/">Rick Waldron</a>,
+<a href="https://github.com/caitp/">Caitlin Potter</a>, <a href="https://github.com/jugglinmike/">Mike
+Pennisi</a>, and <a href="https://github.com/lukeapage">Luke
+Page</a>.</p>
+
+<h2>Previous Maintainers</h2>
+
+<p>Originating from the JSLint project in 2010, JSHint has been maintained by a
+number of dedicated individuals. In chronological order, they are: Douglas
+Crockford, Anton Kovalyov, and Mike Sherov. We appreciate their long-term
+commitment!</p>
+
+<h2>Thank you!</h2>
+
+<p>We really appreciate all kinds of feedback and contributions. Thanks for using and supporting JSHint!</p>
+        </div>
+
+        <div class="col-md-4">
+          
+          <img class="sideimage" src="/res/power.jpg">
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>
