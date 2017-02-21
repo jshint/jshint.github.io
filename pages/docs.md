@@ -94,7 +94,7 @@ A directive for setting JSHint-compatible JSLint options.
 
 A directive for telling JSHint about global variables that are defined
 elsewhere. If value is `false` (default), JSHint will consider that variable
-as read-only. Use it together with the `undef` option.
+as read-only. Affects the `undef` option.
 
     /* globals MY_LIB: false */
 
@@ -106,7 +106,7 @@ anywhere in the current file.
 #### exported
 
 A directive for telling JSHint about global variables that are defined in the
-current file but used elsewhere. Use it together with the `unused` option.
+current file but used elsewhere. Affects the `unused` option.
 
     /* exported EXPORTED_LIB */
 
