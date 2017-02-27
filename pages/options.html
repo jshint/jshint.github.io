@@ -24,4 +24,15 @@ a pull request</a>!
 
 <p>These options let JSHint know about some pre-defined global variables.</p>
 
+<p><strong>Note:</strong> the JSHint project is no longer accepting new
+library-specific "environment" options. Please use <a href="/docs">the
+<code>globals</code> configuration option</a> to manage globally-defined
+bindings. (JavaScript libraries come and go, and even the most popular and
+stable are subject to change over time. Supporting multiple versions
+concurrently increases maintenance burden and introduces coordination issues
+that are best avoided by allowing consumers to explicitly manage custom rules
+in their own projects' configurations.  Those libraries that are currently
+supported are maintained only to honor commitments made before this change in
+policy.)</p>
+
 {{>option-table options.environments }}
