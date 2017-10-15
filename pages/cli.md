@@ -13,12 +13,33 @@ Options](#specifying-linting-options) · [Special Options](#special-options) ·
 
 ### Specifying Input
 
-The `jshint` executable accepts paths to files, which it will read and lint:
+The `jshint` executable accepts file system paths as command-line arguments. If
+a provided path describes a file, the executable will read that file and lint
+the JavaScript code it contains:
 
     $ jshint myfile.js
     myfile.js: line 10, col 39, Octal literals are not allowed in strict mode.
 
     1 error
+
+If a provided path describes a file system directory, JSHint will traverse
+the directory and any subdirectories recursively, reading all JavaScript files
+and linting their contents:
+
+    $ tree a-directory/
+    a-directory/
+    ├── file-1.js
+    └── nested
+        └── file-2.js
+
+    1 directory, 2 files
+
+    $ jshint a-directory/
+    a-directory/file-1.js: line 3, col 1, 'with' is not allowed in strict mode.
+
+    a-directory/nested/file-2.js: line 3, col 3, Unreachable 'void' after 'return'.
+
+    2 errors
 
 If a file path is a dash (`-`) then JSHint will read from standard input.
 
