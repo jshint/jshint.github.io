@@ -63,7 +63,13 @@ the first positive match:
 1. The location specified with the `--config` [flag](#flags)
 2. A file named `package.json` located in the current directory or any parent
    of the current directory (the configuration should be declared as the
-   `jshintConfig` attribute of that file's JSON value)
+   `jshintConfig` attribute of that file's JSON value). **Note** only the first
+   file named `package.json` encountered will be considered, *regardless of the
+   presence of a `jshintConfig` attribute*. This behavior is faulty and
+   [scheduled to be fixed in the next major release of
+   JSHint](https://github.com/jshint/jshint/issues/2898). Future releases will
+   continue querying `package.json` files in ancestor directories in these
+   cases.
 3. A file named `.jshintrc` located in the current directory or any parent of
    the current directory
 4. A file named `.jshintrc` located in the current user's "home" directory
