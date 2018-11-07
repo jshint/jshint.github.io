@@ -334,9 +334,9 @@ function showMetrics(functions) {
 
   p("There are <b>" + func + "</b> functions in this file.")
   p("Function with the largest signature take <b>" + args.max +
-    "</b> arguments, while the median is <b>" + args.med + "</b>.")
+    "</b> arguments, while the average is <b>" + args.med + "</b>.")
   p("Largest function has <b>" + stmt.max + "</b> statements in it," +
-    " while the median is <b>" + stmt.med + "</b>.")
+    " while the average is <b>" + stmt.med + "</b>.")
   p("The most complex function has a cyclomatic complexity value of <b>" + comp.max +
-    "</b> while the median is <b>" + comp.med + "</b>.")
+    "</b> while the average is <b>" + comp.med + "</b>.")
 }
