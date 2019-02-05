@@ -16,8 +16,10 @@ function getCategory(annotation, options) {
     name = "relaxers";
   } else if (name in options.parsed.bool.environments) {
     name = "environments";
+  } else if (name === "unstable") {
+    name = "unstable";
   } else {
-    throw new Error("Category not recognized for option ", name);
+    throw new Error("Category not recognized for option '" + name + "'");
   }
 
   return name;
@@ -49,7 +51,8 @@ module.exports = function(path) {
       enforcers: [],
       relaxers: [],
       environments: [],
-      legacy: []
+      legacy: [],
+      unstable: []
     }
   };
 
