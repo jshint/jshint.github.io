@@ -14,7 +14,7 @@
     "marked": "^0.3.2",
     "oddweb": "~0.0.4",
     "sqwish": "0.2.x",
-    "uglify-js": "2.4.x"
+    "uglify-js": "3.6.x"
   },
   "oddwebPlugins": [
     "plugins/changelog.js",
