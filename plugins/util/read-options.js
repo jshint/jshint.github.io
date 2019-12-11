@@ -16,7 +16,7 @@ function getCategory(annotation, options) {
     name = "relaxers";
   } else if (name in options.parsed.bool.environments) {
     name = "environments";
-  } else if (name === "unstable") {
+  } else if (name === "unstable" || name in options.parsed.unstable) {
     name = "unstable";
   } else {
     throw new Error("Category not recognized for option '" + name + "'");
