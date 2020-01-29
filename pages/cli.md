@@ -240,7 +240,9 @@ like it's an HTML file.
 
 #### `--exclude`
 
-Allows you to specify directories which you DON'T want to be linted.
+Allows you to specify a comma separated list of directories which you DON'T want to be linted.
+
+    $ jshint --exclude=node_modules,coverage
 
 #### `--exclude-path`
 
