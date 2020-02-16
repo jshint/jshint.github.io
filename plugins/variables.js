@@ -7,21 +7,12 @@ var path = require("path");
 var fs = require("fs");
 var marked = require("marked");
 var readOptions = require("./util/read-options");
-var translateFencedCode = require("./util/fenced-code");
 var optionsSrc = __dirname + "/../res/jshint/src/options.js";
 
 var pkg = require(path.join(
   __dirname, "..", "res", "jshint", "package.json")
 );
-var readme = fs.readFileSync(
-  "res/jshint/README.md", { encoding: "utf-8" }
-);
-var contributing = fs.readFileSync(
-  "res/jshint/CONTRIBUTING.md", { encoding: "utf-8" }
-);
 var context = {
-  readme: readme,
-  contributionGuidelines: translateFencedCode(contributing),
   version: pkg.version,
   options: readOptions(optionsSrc),
   urls: {
