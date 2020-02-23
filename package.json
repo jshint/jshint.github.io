@@ -4,11 +4,12 @@
   "description": "http://jshint.com/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test.js",
     "start": "oddweb dev .",
     "build": "oddweb build ."
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "dox": "^0.6.1",
     "jshint": "latest",
     "marked": "^0.3.2",
@@ -17,6 +18,7 @@
     "uglify-js": "2.4.x"
   },
   "oddwebPlugins": [
+    "plugins/trim-jshint-repository.js",
     "plugins/from-repository.js",
     "plugins/changelog.js",
     "core/blog",
