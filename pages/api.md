@@ -2,8 +2,12 @@
 
 # Application Programming Interface
 
-JSHint exposes a JavaScript API for programmatic access in environments like
-web browsers and [Node.js](https://nodejs.org).
+JSHint exposes a JavaScript API for programmatic interaction. When the source
+file is included in web browser environments via a `<script>` tag, this API is
+available via a global binding named `JSHINT` (i.e.  `window.JSHINT`). When
+JSHint is loaded in as a CommonJS module (for example, in
+[Node.js](https://nodejs.org)), the API is available via the `JSHINT` property
+of that module (i.e.  `require('jshint').JSHINT`).
 
 ## `JSHINT( source, options, predef )`
 
