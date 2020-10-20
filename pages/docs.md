@@ -137,36 +137,34 @@ is to find an appropriate option. Trying to figure out how JSHint options work
 can be confusing and frustrating (and we're working on fixing that!) so please
 read the following couple of paragraphs carefully.
 
-JSHint has two types of options: enforcing and relaxing. The former are used to
-make JSHint more strict while the latter are used to suppress some warnings.
+JSHint has two types of boolean options: enforcing and relaxing. The former,
+when set to `true`, are used to make JSHint more strict while the latter are 
+used to suppress some warnings when set to `true`.
 Take the following code as an example:
 
-    function main(a, b) {
-      return a == null;
-    }
+    if(typeof foo == "fuction") // no curly brackets; note the typo of "fuction"
+        bar = foo();
 
 This code will produce the following warning when run with default JSHint
 options:
 
-    line 2, col 14, Use '===' to compare with 'null'.
+    line 2: Expected '{' and instead saw 'bar'.
 
-Let's say that you know what you're doing and want to disable the produced
-warning but, in the same time, you're curious whether you have any variables
-that were defined but never used. What you need to do, in this case, is to
-enable two options: one relaxing that will suppress the `=== null` warning and
-one enforcing that will enable checks for unused variables. In your case these
-options are `unused` and `eqnull`.
+Let's say that you know what you're doing and want to disable the produced warning
+but, in the same time, you're curious whether you have any type checks that will
+always fail because they're typos. What you need to do, in this case, is to disable
+two options: one *enforcing*, which will suppress the `Expected '{'` warning and one 
+*relaxing*, which will enable checks for misspelled type checks. In your case, these
+options are `curly` and `notypeof`, which are both set to `true` by default.
 
-    /*jshint unused:true, eqnull:true */
-    function main(a, b) {
-      return a == null;
-    }
+    /*jshint curly: false, notypeof:false */
+    if(typeof foo == "fuction")
+        foo = "bar";
 
-After that, JSHint will produce the following warning while linting this example
-code:
+After that, JSHint will ignore the previous, but now produce the following warning 
+while linting this example code:
 
-    demo.js: line 2, col 14, 'main' is defined but never used.
-    demo.js: line 2, col 19, 'b' is defined but never used.
+    line 2: Invalid typeof value 'fuction'
 
 Sometimes JSHint doesn't have an appropriate option that disables some
 particular warning. In this case you can use `jshint` directive to disable
