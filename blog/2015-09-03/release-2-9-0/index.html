@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.9.0</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.9.0</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">Sep 3rd, 2015</span>
+          </span>
+
+          <p><strong>Note</strong> This release was revoked shortly following its publication. Please
+refer to the release notes for version 2.9.1 for more information (found in the
+project&#39;s <code>CHANGELOG.md</code> file and on the project&#39;s website).</p>
+
+<p>This release was a long time in the making, but it may not be the most exciting
+version we&#39;ve published. Most of the changes are internal refactorings that
+were necessary to properly fix bugs. And fix bugs we did! Special thanks go to
+Luke Page, the newest addition to the JSHint team. Luke is a maintainer of <a href="http://lesscss.org/">the
+Less CSS project</a>, and he introduced himself to use by
+overhauling JSHint&#39;s variable tracking logic.</p>
+
+<p>JSHint 3.0 is closer than ever. We&#39;re excited for the opportunity to break a
+few things in order to make real strides forward. In fact, the hardest part
+will be <em>limiting</em> ourselves (we don&#39;t want to make migrating to the new
+version onerous). If you have any ideas along these lines, please submit them
+on <a href="https://github.com/jshint/jshint/issues">the project&#39;s issue tracker</a>.
+We&#39;ll mark them with <a href="https://github.com/jshint/jshint/labels/Breaking%20Change">the label &quot;Breaking
+Change&quot;</a>, and as we
+decide what&#39;s definitely &quot;in&quot; for 3.0, we&#39;ll add them to <a href="https://github.com/jshint/jshint/milestones/v3.0.0">the &quot;v3.0.0&quot;
+milestone</a>.</p>
+
+<h3>Bug Fixes</h3>
+
+<ul><li>Add <code>HTMLCollection</code> to browser environment. (<a href="https://github.com/jshint/jshint/commit/e92d375">e92d375</a>), closes <a href="https://github.com/jshint/jshint/issues/2443">#2443</a></li><li>Add <code>window.performance</code> to browser vars (<a href="https://github.com/jshint/jshint/commit/3ff1b05">3ff1b05</a>), closes <a href="https://github.com/jshint/jshint/issues/2461">#2461</a></li><li>Allow <code>__proto__</code> when using ES6 (<a href="https://github.com/jshint/jshint/commit/06b5764">06b5764</a>), closes <a href="https://github.com/jshint/jshint/issues/2371">#2371</a></li><li>Allow binary and octal numbers, and templates when using inline <code>esnext</code> (<a href="https://github.com/jshint/jshint/commit/b5ba7d6">b5ba7d6</a>), closes <a href="https://github.com/jshint/jshint/issues/2519">#2519</a></li><li>Allow default values in destructuring. (<a href="https://github.com/jshint/jshint/commit/04ace9a">04ace9a</a>), closes <a href="https://github.com/jshint/jshint/issues/1941">#1941</a></li><li>Allow destructuring in catch blocks parameter (<a href="https://github.com/jshint/jshint/commit/759644c">759644c</a>), closes <a href="https://github.com/jshint/jshint/issues/2526">#2526</a></li><li>Allow latedef in the initialiser of variable (<a href="https://github.com/jshint/jshint/commit/18f8775">18f8775</a>), closes <a href="https://github.com/jshint/jshint/issues/2628">#2628</a></li><li>Allow line breaking after yield if <code>asi: true</code> (<a href="https://github.com/jshint/jshint/commit/728c84b">728c84b</a>), closes <a href="https://github.com/jshint/jshint/issues/2530">#2530</a></li><li>Allow non-identifier PropertyNames in object destructuring. (<a href="https://github.com/jshint/jshint/commit/aa8a023">aa8a023</a>), closes <a href="https://github.com/jshint/jshint/issues/2467">#2467</a></li><li>Allow object destructuring assignment (<a href="https://github.com/jshint/jshint/commit/ae48966">ae48966</a>), closes <a href="https://github.com/jshint/jshint/issues/2269">#2269</a></li><li>Allow semicolon as string value in JSON (<a href="https://github.com/jshint/jshint/commit/ab73e01">ab73e01</a>)</li><li>block scope vars dont redefine in blocks (<a href="https://github.com/jshint/jshint/commit/9e74025">9e74025</a>), closes <a href="https://github.com/jshint/jshint/issues/2438">#2438</a></li><li>Catch blocks are no longer functions (<a href="https://github.com/jshint/jshint/commit/8a864f3">8a864f3</a>), closes <a href="https://github.com/jshint/jshint/issues/2510">#2510</a></li><li>Change imported variables to be constants (<a href="https://github.com/jshint/jshint/commit/94a6779">94a6779</a>), closes <a href="https://github.com/jshint/jshint/issues/2428">#2428</a></li><li>Classes are not hoisted (<a href="https://github.com/jshint/jshint/commit/87378cc">87378cc</a>), closes <a href="https://github.com/jshint/jshint/issues/1934">#1934</a></li><li>Correct exported AssignmentExpressions (<a href="https://github.com/jshint/jshint/commit/282b40e">282b40e</a>)</li><li>Correctly parse empty destructuring (<a href="https://github.com/jshint/jshint/commit/97c188b">97c188b</a>), closes <a href="https://github.com/jshint/jshint/issues/2513">#2513</a></li><li>Correctly parse exported generators (<a href="https://github.com/jshint/jshint/commit/0604816">0604816</a>), closes <a href="https://github.com/jshint/jshint/issues/2472">#2472</a></li><li>Declare <code>func</code> as a property of <code>state</code> (<a href="https://github.com/jshint/jshint/commit/3be8d36">3be8d36</a>)</li><li>default params can&#39;t reference future arg (<a href="https://github.com/jshint/jshint/commit/bc2741c">bc2741c</a>), closes <a href="https://github.com/jshint/jshint/issues/2422">#2422</a></li><li>Define &quot;build&quot; module (<a href="https://github.com/jshint/jshint/commit/2f98f91">2f98f91</a>)</li><li>Define npm scripts for each test suite (<a href="https://github.com/jshint/jshint/commit/5c33ded">5c33ded</a>)</li><li>Do not accept empty values for directives (<a href="https://github.com/jshint/jshint/commit/a5bfefb">a5bfefb</a>)</li><li>Do not crash if the forin check is block (<a href="https://github.com/jshint/jshint/commit/d1cbe84">d1cbe84</a>), closes <a href="https://github.com/jshint/jshint/issues/1920">#1920</a></li><li>Do not mark <code>ignore</code> directives as special (<a href="https://github.com/jshint/jshint/commit/f14c262">f14c262</a>)</li><li>Do not parse arrays which contain <code>for</code> as array comprehensions. (<a href="https://github.com/jshint/jshint/commit/d70876c">d70876c</a>), closes <a href="https://github.com/jshint/jshint/issues/1413">#1413</a></li><li>Don&#39;t crash on uncomplete typeof expression (<a href="https://github.com/jshint/jshint/commit/a32cf50">a32cf50</a>), closes <a href="https://github.com/jshint/jshint/issues/2506">#2506</a></li><li>Don&#39;t warn when Array() is used without &#39;new&#39;. (<a href="https://github.com/jshint/jshint/commit/5f88aa7">5f88aa7</a>), closes <a href="https://github.com/jshint/jshint/issues/1987">#1987</a></li><li>Dont crash when testing x == keyword if eqnull is on (<a href="https://github.com/jshint/jshint/commit/6afd373">6afd373</a>), closes <a href="https://github.com/jshint/jshint/issues/2587">#2587</a></li><li>Dont warn twice in var redeclaration (<a href="https://github.com/jshint/jshint/commit/e32e17b">e32e17b</a>)</li><li>handle no &#39;home&#39; environment variables (<a href="https://github.com/jshint/jshint/commit/946af3e">946af3e</a>)</li><li>Honor <code>ignore</code> directive more consistently (<a href="https://github.com/jshint/jshint/commit/0971608">0971608</a>)</li><li>Ignore directive should ignore max line length for comments (<a href="https://github.com/jshint/jshint/commit/f2f871a">f2f871a</a>), closes <a href="https://github.com/jshint/jshint/issues/1575">#1575</a></li><li>Immediately-invoked arrow funcs&#39; param doesn&#39;t need parentheses (<a href="https://github.com/jshint/jshint/commit/d261071">d261071</a>), closes <a href="https://github.com/jshint/jshint/issues/2351">#2351</a></li><li>Improve support for <code>__proto__</code> identifier (<a href="https://github.com/jshint/jshint/commit/925a983">925a983</a>)</li><li>It is not un-necessary to assign undefined in a loop (<a href="https://github.com/jshint/jshint/commit/e8ce9bf">e8ce9bf</a>), closes <a href="https://github.com/jshint/jshint/issues/1191">#1191</a></li><li>labeled break and continue semantics (<a href="https://github.com/jshint/jshint/commit/da66f70">da66f70</a>)</li><li>Labels shadowing within a function is a syntax error (<a href="https://github.com/jshint/jshint/commit/124e00f">124e00f</a>), closes <a href="https://github.com/jshint/jshint/issues/2419">#2419</a></li><li>Load JSHint from package root (<a href="https://github.com/jshint/jshint/commit/92acdd1">92acdd1</a>)</li><li>Make <code>strict: func</code> have precedence over env options. (<a href="https://github.com/jshint/jshint/commit/d138db8">d138db8</a>)</li><li>Param destructuring should not effect max params (<a href="https://github.com/jshint/jshint/commit/9d021ee">9d021ee</a>), closes <a href="https://github.com/jshint/jshint/issues/2183">#2183</a></li><li>Params cannot always have the same name (<a href="https://github.com/jshint/jshint/commit/9f2b64c">9f2b64c</a>), closes <a href="https://github.com/jshint/jshint/issues/2492">#2492</a></li><li>Prevent regressions in bug fix (<a href="https://github.com/jshint/jshint/commit/477d3ad">477d3ad</a>)</li><li>Regular args can come after args with default (<a href="https://github.com/jshint/jshint/commit/f2a59f1">f2a59f1</a>), closes <a href="https://github.com/jshint/jshint/issues/1779">#1779</a></li><li>Relax restriction on <code>module</code> option (<a href="https://github.com/jshint/jshint/commit/56c19a5">56c19a5</a>)</li><li>Remove bad error E048 in for loop init (<a href="https://github.com/jshint/jshint/commit/a8fc16b">a8fc16b</a>), closes <a href="https://github.com/jshint/jshint/issues/1862">#1862</a></li><li>Remove module import declaration (<a href="https://github.com/jshint/jshint/commit/1749ac0">1749ac0</a>)</li><li>Report an error when a necessary semicolon is missing (<a href="https://github.com/jshint/jshint/commit/45d8e3e">45d8e3e</a>), closes <a href="https://github.com/jshint/jshint/issues/1327">#1327</a></li><li>report line numbers of destructured params (<a href="https://github.com/jshint/jshint/commit/7d25451">7d25451</a>), closes <a href="https://github.com/jshint/jshint/issues/2494">#2494</a></li><li>Report loopfunc for all function types (<a href="https://github.com/jshint/jshint/commit/4d4cfcd">4d4cfcd</a>), closes <a href="https://github.com/jshint/jshint/issues/2153">#2153</a></li><li>singleGroups: Allow grouping for integers (<a href="https://github.com/jshint/jshint/commit/8c265ca">8c265ca</a>)</li><li>Support <code>new.target</code> (<a href="https://github.com/jshint/jshint/commit/2fbf621">2fbf621</a>)</li><li>The <code>__iterator__</code> property is deprecated. (<a href="https://github.com/jshint/jshint/commit/7780613">7780613</a>)</li><li>Unify assign operation checks. (<a href="https://github.com/jshint/jshint/commit/06eb1d2">06eb1d2</a>), closes <a href="https://github.com/jshint/jshint/issues/2589">#2589</a></li><li>use of params is not capturing loopfunc (<a href="https://github.com/jshint/jshint/commit/827e335">827e335</a>)</li><li>Warn about using <code>var</code> inside <code>for (...)</code> when <code>varstmt: true</code> (<a href="https://github.com/jshint/jshint/commit/f1ab638">f1ab638</a>), closes <a href="https://github.com/jshint/jshint/issues/2627">#2627</a></li></ul>
+
+<h3>Features</h3>
+
+<ul><li>Add <code>esversion</code> option (<a href="https://github.com/jshint/jshint/commit/cf5a699">cf5a699</a>), closes <a href="https://github.com/jshint/jshint/issues/2124">#2124</a></li><li>Add pending to Jasmine&#39;s globals (<a href="https://github.com/jshint/jshint/commit/02790b9">02790b9</a>), closes <a href="https://github.com/jshint/jshint/issues/2154">#2154</a></li><li>Add Window constructor to browser vars (<a href="https://github.com/jshint/jshint/commit/7f5806f">7f5806f</a>), closes <a href="https://github.com/jshint/jshint/issues/2132">#2132</a></li><li>Option to assume strict mode (<a href="https://github.com/jshint/jshint/commit/8de8247">8de8247</a>), closes <a href="https://github.com/jshint/jshint/issues/924">#924</a></li><li>Support multiple files in the exclude option (<a href="https://github.com/jshint/jshint/commit/bd4ec25">bd4ec25</a>)</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

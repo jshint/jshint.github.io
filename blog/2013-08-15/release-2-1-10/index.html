@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.1.10</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.1.10</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Aug 15th, 2013</span>
+          </span>
+
+          <p>Thanks to <a href="https://twitter.com/campd">Dave Camp</a> JSHint now supports list
+comprehensions, a declarative way of transforming a list:</p>
+
+<pre><code>[ for (i of [ 1, 2, 3 ]) i + 2 ]; // Returns [ 3, 4, 5 ]</code></pre>
+
+<p>Note: SpiderMonkey currently implements a slightly different syntax for list
+comprehensions which is also supported by JSHint.</p>
+
+<h3>Patch summary</h3>
+
+<ul><li><a href="https://github.com/jshint/jshint/commit/ae96e5c1e0fb6a80921c8e9bd1eba8f3c96eaaee">ae96e5c</a>
+Fixed <a href="https://github.com/jshint/jshint/issues/1220/">#1220</a>: Add typed array
+option, implied by &#39;node&#39; option</li><li><a href="https://github.com/jshint/jshint/commit/27bd241c17e3bedb4e4b66f44e2612e6d4ef0041">27bd241</a>
+Fixed <a href="https://github.com/jshint/jshint/issues/1222/">#1222</a>: Update
+PhantomJS globals to 1.7 API</li><li><a href="https://github.com/jshint/jshint/commit/6c5a08553f1fcb2bbd89220b539aa0568ff99481">6c5a085</a>
+Fixed <a href="https://github.com/jshint/jshint/issues/1216/">#1216</a>: Support for
+array comprehensions using for-of (closed #1095)</li><li><a href="https://github.com/jshint/jshint/commit/83374adb3dad7c5bf708a8f6488d023d65232660">83374ad</a>
+No issue: Remove /stable/ subdirectories</li><li><a href="https://github.com/jshint/jshint/commit/1a3c47fb1278159e9db2a13e41f442f92e08a099">1a3c47f</a>
+Fixed <a href="https://github.com/jshint/jshint/issues/1174/">#1174</a>: Fixed a false
+positive &#39;destructuring assignment&#39; warning (closed #1177)</li><li><a href="https://github.com/jshint/jshint/commit/303c53555d36651285a1decc7faacd94f400b7e8">303c535</a>
+Fixed <a href="https://github.com/jshint/jshint/issues/1183/">#1183</a>: Fix an issue
+with debugger warning pointing to a wrong line in some cases</li><li><a href="https://github.com/jshint/jshint/commit/a0b7181578c2f07058bd1ff4f11fc622056005a3">a0b7181</a>
+No issue: Add helper programs to apply and land patches from GitHub</li><li><a href="https://github.com/jshint/jshint/commit/9c2b8dd55bcc131420b6326cc56cc2863d0b268f">9c2b8dd</a>
+Fixed <a href="https://github.com/jshint/jshint/issues/1194/">#1194</a>: Don&#39;t look for
+a config when input is /dev/stdin</li><li><a href="https://github.com/jshint/jshint/commit/a17ae9ed1e01ba465487b97066fdc2ba65ce109a">a17ae9e</a>
+Fixed <a href="https://github.com/jshint/jshint/issues/1189/">#1189</a>: Support spaces
+in /<em>global ... </em>/</li><li><a href="https://github.com/jshint/jshint/commit/dcc125147455556c8fbc4d51ed59b8afa7174ff3">dcc1251</a>
+Fixed <a href="https://github.com/jshint/jshint/issues/1197/">#1197</a>: Make Rhino
+wrapper to be more consistent with NPM package.</li><li><a href="https://github.com/jshint/jshint/commit/96ea1a88f19681f35ca534045aa6e990a39713ca">96ea1a8</a>
+No issue: Split make.js into bin/build and bin/changelog</li><li><a href="https://github.com/jshint/jshint/commit/4ac19fa53016dfc8686d0ec882da2269aee1e964">4ac19fa</a>
+No issue: Move JSHint config into package.json</li></ul>
+
+<p><strong>Thanks</strong> to Rob Wu, Ryan Cannon, Dave Camp, Amir Livneh, Josh Hoff, Nikolay
+S. Frantsev, Lapo Luchini, Lukas Domnick for sending patches!</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

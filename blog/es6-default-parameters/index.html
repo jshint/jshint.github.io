@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>ES6 default parameters</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">ES6 default parameters</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Jul 31st, 2013</span>
+          </span>
+
+          <p>Yesterday, I decided to post a bounty on <a href="https://github.com/jshint/jshint/issues/1195">a feature request</a> to add support
+for ES6 <a href="http://wiki.ecmascript.org/doku.php?id=harmony:parameter_default_values">parameter default values</a>.
+I put $50 and a few minutes later the bounty was increased to $150. Then I sent out this tweet and
+went to grab some food:</p>
+
+<blockquote class="twitter-tweet" align="center"><p>if you want $150 for a couple of hours of open source hacking, add support for default params to <a href="https://twitter.com/JSHint">@jshint</a>: <a href="https://t.co/ZnJG7G2a1X">https://t.co/ZnJG7G2a1X</a></p>&mdash; Anton (@valueof) <a href="https://twitter.com/valueof/statuses/362361275583442945">July 30, 2013</a></blockquote>
+<script async="true" src="//platform.twitter.com/widgets.js" charset="utf-8">no script</script>
+
+<p><strong>One hour later</strong> an incredible <a href="https://twitter.com/thomasABoyt">Thomas Boyt</a>
+posted his solution which I reviewed, landed and published today as JSHint 2.1.8.
+This means that JSHint now officially supports default parameters!</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.9.1-rc1</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.9.1-rc1</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">Nov 12th, 2015</span>
+          </span>
+
+          <p>Version 2.9.0 was revoked shortly after its release due to a number of
+regressions. Although the underlying issues have been resolved, we are
+sensitive to the possibility that there may be still more; as mentioned in
+2.9.0&#39;s release notes, the variable tracking system saw a significant
+refactoring.</p>
+
+<p>In an effort to minimize friction with a new version, we&#39;re publishing a
+release candidate and requesting feedback from early adopters. Please give it a
+try in your projects and let us know about any surprising behavior!</p>
+
+<h3>Bug Fixes</h3>
+
+<ul><li><code>latedef</code> shouldn&#39;t warn when marking a var as exported (<a href="https://github.com/jshint/jshint/commit/c630994">c630994</a>), closes <a href="https://github.com/jshint/jshint/issues/2662">#2662</a></li><li>Add <code>File</code> and <code>FileList</code> to browser global variables (<a href="https://github.com/jshint/jshint/commit/7f2a729">7f2a729</a>), closes <a href="https://github.com/jshint/jshint/issues/2690">#2690</a></li><li>Allow comments and new lines after /<em> falls through </em>/ (<a href="https://github.com/jshint/jshint/commit/3b1c925">3b1c925</a>), closes <a href="https://github.com/jshint/jshint/issues/2652">#2652</a> <a href="https://github.com/jshint/jshint/issues/1660">#1660</a></li><li>Allow let and const to be in a block outside of a block (<a href="https://github.com/jshint/jshint/commit/84a9145">84a9145</a>), closes <a href="https://github.com/jshint/jshint/issues/2685">#2685</a></li><li>Always warn about missing &quot;use strict&quot; directive (<a href="https://github.com/jshint/jshint/commit/e85c2a1">e85c2a1</a>), closes <a href="https://github.com/jshint/jshint/issues/2668">#2668</a></li><li>Disallow incompatible option values (<a href="https://github.com/jshint/jshint/commit/72ba5ad">72ba5ad</a>)</li><li>Do not enable <code>newcap</code> within strict mode (<a href="https://github.com/jshint/jshint/commit/acaf3f7">acaf3f7</a>)</li><li>Don&#39;t throw W080 when the initializer starts with <code>undefined</code> (<a href="https://github.com/jshint/jshint/commit/0d87919">0d87919</a>), closes <a href="https://github.com/jshint/jshint/issues/2699">#2699</a></li><li>Don&#39;t warn that an exported function is used before it is defined. (<a href="https://github.com/jshint/jshint/commit/d0433d2">d0433d2</a>), closes <a href="https://github.com/jshint/jshint/issues/2658">#2658</a></li><li>Enforce Identifier restrictions lazily (<a href="https://github.com/jshint/jshint/commit/ceca549">ceca549</a>)</li><li>Global &quot;use strict&quot; regressions (<a href="https://github.com/jshint/jshint/commit/04b43d2">04b43d2</a>), closes <a href="https://github.com/jshint/jshint/issues/2657">#2657</a> <a href="https://github.com/jshint/jshint/issues/2661">#2661</a></li><li>Support property assignment when destructure assigning (<a href="https://github.com/jshint/jshint/commit/b6df1f2">b6df1f2</a>), closes <a href="https://github.com/jshint/jshint/issues/2659">#2659</a> <a href="https://github.com/jshint/jshint/issues/2660">#2660</a></li><li>Throw W119 instead of &quot;Unexpected &#39;`&#39;&quot; when using templates in ES5 mode. (<a href="https://github.com/jshint/jshint/commit/87064e8">87064e8</a>)</li></ul>
+
+<h3>Features</h3>
+
+<ul><li>Support QUnit&#39;s global notOk (<a href="https://github.com/jshint/jshint/commit/73ac9b8">73ac9b8</a>)</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

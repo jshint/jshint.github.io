@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.6.1</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.6.1</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">Feb 27th, 2015</span>
+          </span>
+
+          <h3>Bug Fixes</h3>
+
+<ul><li>Allow object-literals within template strings (<a href="https://github.com/jshint/jshint/commit/4f08b74">4f08b74</a>), closes <a href="https://github.com/jshint/jshint/issues/2082">#2082</a></li><li>Correct behavior of <code>singleGroups</code> (<a href="https://github.com/jshint/jshint/commit/6003c83">6003c83</a>)</li><li>Correct token reported by <code>singleGroups</code> (<a href="https://github.com/jshint/jshint/commit/bc857f3">bc857f3</a>)</li><li>Disambiguate argument (<a href="https://github.com/jshint/jshint/commit/d75ef69">d75ef69</a>)</li><li>Do not crash on improper use of <code>delete</code> (<a href="https://github.com/jshint/jshint/commit/35df49f">35df49f</a>)</li><li>ES6 modules respect undef and unused (<a href="https://github.com/jshint/jshint/commit/438d928">438d928</a>)</li><li>Fix false positives in &#39;nocomma&#39; option (<a href="https://github.com/jshint/jshint/commit/33612f8">33612f8</a>)</li><li>Handle multi-line tokens after return or yield (<a href="https://github.com/jshint/jshint/commit/5c9c7fd">5c9c7fd</a>), closes <a href="https://github.com/jshint/jshint/issues/1814">#1814</a> <a href="https://github.com/jshint/jshint/issues/2142">#2142</a></li><li>Miss xdescribe/xit/context/xcontext in mocha (<a href="https://github.com/jshint/jshint/commit/8fe6610">8fe6610</a>)</li><li>Parse nested templates (<a href="https://github.com/jshint/jshint/commit/3da1eaf">3da1eaf</a>), closes <a href="https://github.com/jshint/jshint/issues/2151">#2151</a> <a href="https://github.com/jshint/jshint/issues/2152">#2152</a></li><li>Permit &quot;eval&quot; as object key (<a href="https://github.com/jshint/jshint/commit/b5f5d5d">b5f5d5d</a>)</li><li>Prevent beginning array from being confused for JSON (<a href="https://github.com/jshint/jshint/commit/813d97a">813d97a</a>)</li><li>Refactor <code>doFunction</code> (<a href="https://github.com/jshint/jshint/commit/06b5d40">06b5d40</a>)</li><li>Remove quotmark linting for NoSubstTemplates (<a href="https://github.com/jshint/jshint/commit/7e80490">7e80490</a>)</li><li>Remove tautological condition (<a href="https://github.com/jshint/jshint/commit/f0bff58">f0bff58</a>)</li><li>remove unused var (<a href="https://github.com/jshint/jshint/commit/e69acfe">e69acfe</a>), closes <a href="https://github.com/jshint/jshint/issues/2156">#2156</a></li><li>Simulate class scope for class expr names (<a href="https://github.com/jshint/jshint/commit/ac98a24">ac98a24</a>)</li><li>Support more cases of ES6 module usage (<a href="https://github.com/jshint/jshint/commit/776ed69">776ed69</a>), closes <a href="https://github.com/jshint/jshint/issues/2118">#2118</a> <a href="https://github.com/jshint/jshint/issues/2143">#2143</a></li><li>Templates can not be directives (<a href="https://github.com/jshint/jshint/commit/20ff670">20ff670</a>)</li><li>Unfollowable path in lexer. (<a href="https://github.com/jshint/jshint/commit/065961a">065961a</a>)</li></ul>
+
+<h3>Features</h3>
+
+<ul><li>Implement new option <code>futurehostile</code> (<a href="https://github.com/jshint/jshint/commit/da52aa0">da52aa0</a>)</li><li>parse and lint tagged template literals (<a href="https://github.com/jshint/jshint/commit/4816dbd">4816dbd</a>), closes <a href="https://github.com/jshint/jshint/issues/2000">#2000</a></li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

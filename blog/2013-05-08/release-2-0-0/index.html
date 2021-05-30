@@ -1,0 +1,143 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.0.0</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.0.0</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">May 8th, 2013</span>
+          </span>
+
+          <p><strong>WARNING:</strong> This release introduces backwards incompatible changes.</p>
+
+<p>JSHint 2.0.0 is out! This version hits a pretty big milestone for the project:
+this is the first JSHint release for which I&#39;m not the biggest contributor. I
+personally believe this fact validates JSHint as a successful <em>open source</em>
+project. And I&#39;m extremely thankful to all you who file bug reports and send
+patches—you&#39;re all awesome.</p>
+
+<h4>EcmaScript 5</h4>
+
+<p>The first and foremost: starting with this version JSHint will assume ES5 as
+the default environment. Before, JSHint was checking all the code per ES3
+specification with an option to enable ES5 mode. Now ES5 mode is the default
+mode and if you want to check your code against the ES3 specification (useful
+when developing for super old browsers such as Internet Explorer 6) you will
+have to use <code>es3:true</code>.</p>
+
+<p>Special thanks to Rick Waldron for championing this change.</p>
+
+<h4>Partial support for Mozilla JavaScript extensions and ES6</h4>
+
+<p>Thanks to our newest core contributor, Bernard Pratz, JSHint now has partial
+support for Mozilla JavaScript extensions (<code>moz</code> option) and ES6 (<code>esnext</code>
+option):</p>
+
+<ul><li>Destructuring assignment</li><li><code>const</code></li><li><code>let</code> blocks and expressions</li><li>Generators and iterators</li><li>List comprehension</li><li>Try/catch filters and multiple catch blocks</li><li>Concise method declaration</li><li><code>for ... of</code> loops</li><li>Fat arrows</li></ul>
+
+<p>We have more patches in queue that add support for classes and other nifty ES6
+things. Stay tuned!</p>
+
+<h4>CLI</h4>
+
+<ul><li>JSHint now looks for <code>.jshintrc</code> in the directory being linted.
+(<a href="https://github.com/jshint/jshint/issues/833">#833</a>)</li><li>Various cross-platform fixes for our Node CLI module.</li><li>New public method for the CLI export that allows third-parties to hook into
+the file resolution logic.
+(<a href="https://github.com/jshint/jshint/issues/741">#741</a>)</li></ul>
+
+<h4>General</h4>
+
+<ul><li>For non-Node system we upgraded to the latest version of Browserify.  This
+resolves some performance issues we had with Rhino.</li><li>Added SVG globals to the browser environment.</li><li>Option <code>smarttabs</code> now ignores mixed tabs and spaces within single-
+and multi-line comments.</li><li><p>Added a new pragma to unignore a warning:</p><p>  /<em>jshint -W096 </em>/</p><p>  // All warnings about keys producing unexpected results will
+  // be ignored here.</p><p>  /<em>jshint +W096 </em>/</p><p>  // But not here.</p></li><li><p>JSHint now ignores unrecognized JSLint options.</p></li><li>Fixed a bug where <code>indent:false</code> was triggering indentation warnings.
+(<a href="https://github.com/jshint/jshint/issues/1035">#1035</a>)</li><li>Fixed a regression bug where <code>unused</code> was not behaving correctly.
+(<a href="https://github.com/jshint/jshint/issues/996">#996</a>)</li><li>Plus lots and lots of other, smaller bug fixes.</li></ul>
+
+<h4>New rapid release schedule</h4>
+
+<p>And last but not least: starting with this version, I&#39;m switching JSHint to a
+more rapid release schedule. This simply means that I will be publishing new
+versions of JSHint more often. I will try my best to follow
+<a href="http://semver.org/">semver</a> recommendations and ship working software. But as
+our license says, no guarantees.</p>
+
+<p><strong>Thanks</strong> to Bernarnd Pratz, Michelle Steigerwalt, Yuya Tanaka, Matthew
+Flaschen, Juan Pablo Buritica, Matt Cheely, Steve Mosley, Stephen Sorensen,
+Rick Waldron, Hugues Malphettes, Jeff Thompson, xzyfer, Lee Leathers, croensch,
+Steven Benner, James Allardice, Sindre Sorhus, Jordan Harband, Stuart Knightley
+and Kevin Locke for sending patches!</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

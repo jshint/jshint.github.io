@@ -1,0 +1,341 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>JSHint Documentation</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      if (window.self !== window.top)
+        window.top.location.href = document.location.href;
+
+      function jumpToOption() {
+        var input = document.getElementById("jump-to-option")
+
+        if (/^\s*$/.test(input.value))
+          return false
+
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
+
+        if (window.location.pathname === "/docs/options/")
+          window.location.hash = "#" + input.value
+        else
+          window.location = "/docs/options/#" + input.value
+
+        return false
+      }
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Documentation</h1>
+
+<p>JSHint is a program that flags suspicious usage in programs written in JavaScript.
+The core project consists of a library itself as well as a CLI program distributed
+as a Node module.</p>
+
+<p>More docs: <a href="/docs/options/">List of all JSHint options</a> · <a href="/docs/cli/">Command-line
+Interface</a> · <a href="/docs/api/">API</a> · <a href="/docs/reporters/">Writing your own
+reporter</a> · <a href="/docs/faq/">FAQ</a></p>
+
+<h3>Basic usage</h3>
+
+<p>First, check out <a href="/install/">the installation instructions</a> for details on
+how to install JSHint in your preferred environment. Both the command line
+executable and the JavaScript API offer unique ways to configure JSHint&#39;s
+behaviour. The most common usages are:</p>
+
+<ul><li><a href="/docs/cli/">As a command-line tool</a> (via <a href="https://nodejs.org">Node.js</a>)</li><li><a href="/docs/api/">As a JavaScript module</a></li></ul>
+
+<p>Regardless of your preferred environment, you can control JSHint&#39;s behavior
+through specifying any number of <a href="/docs/options/">linting options</a>. In
+addition, JSHint will honor any directives declared within the input source
+code--see <a href="#inline-configuration">the section on in-line directives</a> for more
+information.</p>
+
+<h3>Configuration</h3>
+
+<p>JSHint comes with a default set of warnings but it was designed to be very
+configurable. There are three main ways to configure your copy of JSHint:
+you can either specify the configuration file manually via the <code>--config</code> flag,
+use a special file <code>.jshintrc</code> or put your config into your projects <code>package.json</code>
+file under the <code>jshintConfig</code> property. In case of <code>.jshintrc</code>, JSHint will start
+looking for this file in the same directory as the file that&#39;s being linted.
+If not found, it will move one level up the directory tree all the way up to
+the filesystem root. (Note that if the input comes from stdin, JSHint doesn&#39;t
+attempt to find a configuration file)</p>
+
+<p>This setup allows you to have different configuration files per project. Place
+your file into the project root directory and, as long as you run JSHint from
+anywhere within your project directory tree, the same configuration file will
+be used.</p>
+
+<p>Configuration file is a simple JSON file that specifies which JSHint options
+to turn on or off. For example, the following file will enable warnings about
+undefined and unused variables and tell JSHint about a global variable named
+<code>MY_GLOBAL</code>.</p>
+
+<pre><code>{
+  &quot;undef&quot;: true,
+  &quot;unused&quot;: true,
+  &quot;globals&quot;: {
+    &quot;MY_GLOBAL&quot;: true
+  }
+}</code></pre>
+
+<a name="inline-configuration"></a>
+
+<h3>Inline configuration</h3>
+
+<p>In addition to using configuration files you can configure JSHint from within your
+files using special comments. These comments start with a label such as
+<code>jshint</code> or <code>globals</code> (complete list below) and are followed by a
+comma-separated list of values. For example, the following snippet will enable
+warnings about undefined and unused variables and tell JSHint about a global
+variable named <code>MY_GLOBAL</code>.</p>
+
+<pre><code>/* jshint undef: true, unused: true */
+/* globals MY_GLOBAL */</code></pre>
+
+<p>You can use both multi- and single-line comments to configure JSHint. These
+comments are function scoped meaning that if you put them inside a function they
+will affect only this function&#39;s code.</p>
+
+<h3>Directives</h3>
+
+<p>Here&#39;s a list of configuration directives supported by JSHint:</p>
+
+<h4>jshint</h4>
+
+<p>A directive for setting JSHint options.</p>
+
+<pre><code>/* jshint strict: true */</code></pre>
+
+<h4>jslint</h4>
+
+<p>A directive for setting JSHint-compatible JSLint options.</p>
+
+<pre><code>/* jslint vars: true */</code></pre>
+
+<h4>globals</h4>
+
+<p>A directive for telling JSHint about global variables that are defined
+elsewhere. If value is <code>false</code> (default), JSHint will consider that variable
+as read-only. Affects the <code>undef</code> option.</p>
+
+<pre><code>/* globals MY_LIB: false */</code></pre>
+
+<p>You can also blacklist certain global variables to make sure they are not used
+anywhere in the current file.</p>
+
+<pre><code>/* globals -BAD_LIB */</code></pre>
+
+<h4>exported</h4>
+
+<p>A directive for telling JSHint about global variables that are defined in the
+current file but used elsewhere. Affects the <code>unused</code> option.</p>
+
+<pre><code>/* exported EXPORTED_LIB */</code></pre>
+
+<h4>members</h4>
+
+<p>A directive for telling JSHint about all properties you intend to use. <strong>This
+directive is deprecated.</strong></p>
+
+<h4>ignore</h4>
+
+<p>A directive for telling JSHint to ignore a block of code.</p>
+
+<pre><code>// Code here will be linted with JSHint.
+/* jshint ignore:start */
+// Code here will be ignored by JSHint.
+/* jshint ignore:end */</code></pre>
+
+<p>All code in between <code>ignore:start</code> and <code>ignore:end</code> won&#39;t be passed to JSHint
+so you can use any language extension such as <a href="http://facebook.github.io/react/">Facebook React</a>.
+Additionally, you can ignore a single line with a trailing comment:</p>
+
+<pre><code>ignoreThis(); // jshint ignore:line</code></pre>
+
+<h3>Options</h3>
+
+<p>Most often, when you need to tune JSHint to your own taste, all you need to do
+is to find an appropriate option. Trying to figure out how JSHint options work
+can be confusing and frustrating (and we&#39;re working on fixing that!) so please
+read the following couple of paragraphs carefully.</p>
+
+<p>JSHint has two types of options: enforcing and relaxing. The former are used to
+make JSHint more strict while the latter are used to suppress some warnings.
+Take the following code as an example:</p>
+
+<pre><code>function main(a, b) {
+  return a == null;
+}</code></pre>
+
+<p>This code will produce the following warning when run with default JSHint
+options:</p>
+
+<pre><code>line 2, col 14, Use &#39;===&#39; to compare with &#39;null&#39;.</code></pre>
+
+<p>Let&#39;s say that you know what you&#39;re doing and want to disable the produced
+warning but, in the same time, you&#39;re curious whether you have any variables
+that were defined but never used. What you need to do, in this case, is to
+enable two options: one relaxing that will suppress the <code>=== null</code> warning and
+one enforcing that will enable checks for unused variables. In your case these
+options are <code>unused</code> and <code>eqnull</code>.</p>
+
+<pre><code>/*jshint unused:true, eqnull:true */
+function main(a, b) {
+  return a == null;
+}</code></pre>
+
+<p>After that, JSHint will produce the following warning while linting this example
+code:</p>
+
+<pre><code>demo.js: line 2, col 14, &#39;main&#39; is defined but never used.
+demo.js: line 2, col 19, &#39;b&#39; is defined but never used.</code></pre>
+
+<p>Sometimes JSHint doesn&#39;t have an appropriate option that disables some
+particular warning. In this case you can use <code>jshint</code> directive to disable
+warnings by their code. Let&#39;s say that you have a file that was created by
+combining multiple different files into one:</p>
+
+<pre><code>&quot;use strict&quot;;
+/* ... */
+
+// From another file
+function b() {
+  &quot;use strict&quot;;
+  /* ... */
+}</code></pre>
+
+<p>This code will trigger a warning about an unnecessary directive in function <code>b</code>.
+JSHint sees that there&#39;s already a global &quot;use strict&quot; directive and informs you
+that all other directives are redundant. But you don&#39;t want to strip out these
+directives since the file was auto-generated. The solution is to run JSHint
+with a flag <code>--verbose</code> and note the warning code (W034 in this case):</p>
+
+<pre><code>$ jshint --verbose myfile.js
+myfile.js: line 6, col 3, Unnecessary directive &quot;use strict&quot;. (W034)</code></pre>
+
+<p>Then, to hide this warning, just add the following snippet to your file:</p>
+
+<pre><code>/* jshint -W034 */</code></pre>
+
+<p>A couple things to note:</p>
+
+<ol><li>This syntax works only with warnings (code starts with <code>W</code>), it doesn&#39;t work
+with errors (code starts with <code>E</code>).</li><li>This syntax will disable all warnings with this code. Some warnings are more
+generic than others so be cautious.</li></ol>
+
+<p>To re-enable a warning that has been disabled with the above snippet you can
+use:</p>
+
+<pre><code>/* jshint +W034 */</code></pre>
+
+<p>This is especially useful when you have code which causes a warning but that
+you know is safe in the context. In these cases you can disable the warning as
+above and then re-enable the warning afterwards:</p>
+
+<pre><code>var y = Object.create(null);
+// ...
+/*jshint -W089 */
+for (var prop in y) {
+    // ...
+}
+/*jshint +W089 */</code></pre>
+
+<p><a href="/docs/options/">This page</a> contains a list of all options supported by JSHint.</p>
+
+<h4>Switch statements</h4>
+
+<p>By default JSHint warns when you omit <code>break</code> or <code>return</code> statements within
+switch statements:</p>
+
+<pre><code>switch (cond) {
+case &quot;one&quot;:
+  doSomething(); // JSHint will warn about missing &#39;break&#39; here.
+case &quot;two&quot;:
+  doSomethingElse();
+}</code></pre>
+
+<p>If you really know what you&#39;re doing you can tell JSHint that you intended the
+case block to fall through by adding a <code>/* falls through */</code> comment:</p>
+
+<pre><code>switch (cond) {
+case &quot;one&quot;:
+  doSomething();
+  /* falls through */
+case &quot;two&quot;:
+  doSomethingElse();
+}</code></pre>
+        </div>
+
+        <div class="col-md-4">
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

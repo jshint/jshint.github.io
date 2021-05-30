@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.6.0</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.6.0</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">Jan 21st, 2015</span>
+          </span>
+
+          <h3>Bug Fixes</h3>
+
+<ul><li>Add missing globals to browser environment (<a href="https://github.com/jshint/jshint/commit/32f02e0">32f02e0</a>)</li><li>Allow array, grouping and string form to follow spread operator in function call args. (<a href="https://github.com/jshint/jshint/commit/437655a">437655a</a>), closes <a href="https://github.com/jshint/jshint/issues/2060">#2060</a> <a href="https://github.com/jshint/jshint/issues/2060">#2060</a></li><li>Correct bug in enforcement of <code>singleGroups</code> (<a href="https://github.com/jshint/jshint/commit/5fedda6">5fedda6</a>), closes <a href="https://github.com/jshint/jshint/issues/2064">#2064</a></li><li>Remove dead code (<a href="https://github.com/jshint/jshint/commit/3b5d94a">3b5d94a</a>), closes <a href="https://github.com/jshint/jshint/issues/883">#883</a></li><li>Remove dead code for parameter parsing (<a href="https://github.com/jshint/jshint/commit/a1d5817">a1d5817</a>)</li><li>Revert unnecessary commit (<a href="https://github.com/jshint/jshint/commit/a70bbda">a70bbda</a>)</li></ul>
+
+<h3>Features</h3>
+
+<ul><li><code>elision</code> option to relax &quot;Extra comma&quot; warnings (<a href="https://github.com/jshint/jshint/commit/cbfc827">cbfc827</a>), closes <a href="https://github.com/jshint/jshint/issues/2062">#2062</a></li><li>Add new Jasmine 2.1 globals to &quot;jasmine&quot; option (<a href="https://github.com/jshint/jshint/commit/343c45e">343c45e</a>), closes <a href="https://github.com/jshint/jshint/issues/2023">#2023</a></li><li>Support generators in class body (<a href="https://github.com/jshint/jshint/commit/ee348c3">ee348c3</a>)</li></ul>
+
+<h3>BREAKING CHANGES</h3>
+
+<ul><li>In projects which do not enable ES3 mode, it is now an error by default to use elision array elements,
+also known as empty array elements (such as <code>[1, , 3, , 5]</code>)</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

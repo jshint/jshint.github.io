@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>JSHint 1.0.0 RC2</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">JSHint 1.0.0 RC2</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Dec 31st, 2012</span>
+          </span>
+
+          <p>JSHint 1.0.0 Release Candidate 2 is now out:</p>
+
+<ul><li>Fixes a bug with JSHint not recognizing regular expressions after commas.
+(<a href="https://github.com/jshint/jshint/pull/792">#792</a>)</li><li>Fixes two failed tests on Windows.
+(<a href="https://github.com/jshint/jshint/pull/790">#790</a>)</li><li>Fixes a bug with JSHint builder failing when there is no dist/ directory.
+(<a href="https://github.com/jshint/jshint/pull/788">#788</a>)</li><li>Adds JSHint binary to <em>package.json</em> so that JSHint could be, once again,
+installed and used globally as a CLI program.
+(<a href="https://github.com/jshint/jshint/pull/787">#787</a>)</li></ul>
+
+<p>Here&#39;s how you can install this release candidate:</p>
+
+<pre><code>$ npm install https://github.com/jshint/jshint/archive/1.0.0-rc2.tar.gz</code></pre>
+
+<p>For full 1.0.0 changelog please see our
+<a href="http://jshint.com/blog/2012-12-29/1-0-0-rc1/">1.0.0 RC1 announcement</a>.</p>
+
+<p>Big thanks to Samuel Cole for submitting patches and finding bugs!</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

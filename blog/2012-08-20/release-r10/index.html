@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New release: r10</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New release: r10</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Aug 20th, 2012</span>
+          </span>
+
+          <p>This release introduces lots of improvements to the <code>unused</code> option from
+<a href="/blog/2012-08-05/release-r09/">r09</a>. For example, JSHint is now smart
+enough to not to warn about unused variable if that variable is followed
+by a used one:</p>
+
+<pre><code>fetch(function (err, msg) {
+      success(msg);
+  });</code></pre>
+
+<p>We also fixed <code>JSHINT.data().unused</code> to be consistent with this option.</p>
+
+<p>Other changes:</p>
+
+<ul><li><p>You can now exclude globals. For example, if you want to assume browser
+environment but disallow the use of <code>event</code> you can do the following:</p><p>  /<em>jshint browser:true </em>/
+        /<em>global -event </em>/</p></li><li><p>JSHint now recognizes <code>(function () {})();</code> as well as
+<code>(function () {}());</code>.</p></li><li>JSHint can now parse labeled and lonely blocks without generating
+false positives.</li><li>+ other bugfixes.</li></ul>
+
+<p>Thanks to Amir E. Aharoni and Carl Ekerot.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

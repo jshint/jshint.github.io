@@ -1,0 +1,250 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>JSHint 1.0.0 RC1</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">JSHint 1.0.0 RC1</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Dec 29th, 2012</span>
+          </span>
+
+          <p><strong>UPDATE:</strong> <a href="http://jshint.com/blog/2013-01-01/1-0-0-rc3/">JSHint 1.0.0 RC3</a>.</p>
+
+<hr/>
+
+<p>After three months and 100+ commits, JSHint 1.0.0 is ready for release.
+This is the biggest release for JSHint so far, and that&#39;s why I&#39;ve decided to run it
+through a release candidate phase first. I tried my best to make it as
+backwards compatible as possible, but there might be a small number of
+incompatibilities depending on how you use JSHint. Please keep that in mind
+and test your integration before updating to 1.0.0.</p>
+
+<p>One of the biggest changes is that node-jshint is now part of the main JSHint
+project, which means that there will no longer be lag time between releasing a
+new version and publishing it on NPM. <strong>Node and NPM is now the main and
+recommended way of using JSHint on all platforms.</strong> This also means that
+starting with &quot;1.0.0&quot;, JSHint will start using the
+<a href="https://github.com/isaacs/node-semver">node-semver</a> versioning system instead
+of the old rN system.</p>
+
+<p>In addition, this version drops support for non-ES5 environments. This means that
+JavaScript engines that don&#39;t support the ES5 syntax will not even parse
+JSHint&#39;s source code. (For example, the online interface for JSHint will not
+work in older versions of IE.)</p>
+
+<p>I&#39;m very excited to finally release this version and I encourage everyone to try
+out the release candidate and report any bugs and issues you encounter. The full
+changelog is provided below, with examples and links to relevant issues.</p>
+
+<h4>Parser</h4>
+
+<p>This version has a completely rewritten lexer. Since it&#39;s no longer a giant
+regexp, the new lexer is more robust and easier to read. I&#39;d like to thank the
+authors of Esprima and Traceur since I borrowed some pieces from them.</p>
+
+<ul><li><p>This version <strong>adds support for Unicode identifiers!</strong>
+(<a href="https://github.com/jshint/jshint/issues/301">#301</a> and
+<a href="https://github.com/jshint/jshint/issues/716/">#716</a>)</p><p>  var π = 3.1415;</p></li><li><p>Adds support for the comma operator. (<a href="https://github.com/jshint/jshint/issues/56/">#56</a>)
+JSHint now parses code like the following (note the comma in the middle
+expression):</p><p>  for (var i = 0, ch; ch = channels[i], i &lt; channels.length; i++) {
+    // ...
+  }</p></li><li><p>Improves support for numbers. JSHint now understands numbers with leading dots
+(e.g. .12) and doesn&#39;t generate false positives on invalid numbers (e.g. 099).
+In case of invalid numbers the parser still parses them but marks as
+malformed and generates a nice little warning.</p></li><li><p>Adds support for more relaxed JSHint directive syntax. JSHint now recognizes
+space between <code>/*</code> and jshint/global/etc. and allows you to use single-line
+comments for directives in addition to multi-line comments:</p><p>  Before:
+  /<em>jshint strict:true </em>/</p><p>  Now:
+  /<em>jshint strict:true </em>/
+  /<em> jshint strict:true </em>/ (note the space)
+  //jshint strict:true
+  // jshint strict:true</p><p>One potentially breaking change is that all lists inside JSHint directives
+must be separated by commas from now on. So <code>/*jshint strict:true undef:true */</code>
+won&#39;t fly anymore but <code>/*jshint strict:true, undef:true */</code> will (note the
+comma).</p></li><li><p>Adds better parser for regular expressions. Previously, JSHint would check
+the  grammar of regular expressions using its own internal logic. Now, JSHint
+compiles the parsed expressions using the native RegExp object to check
+for grammar errors.</p></li><li><p>Adds support for a defensive semicolon before <code>[</code>. (Ticket
+<a href="https://github.com/jshint/jshint/issues/487/">#487</a>)</p></li><li><p>Adds support for unclosed multi-line strings and removes warnings about
+unnecessary escaping for <code>\u</code> and <code>\x</code> in strings.
+(<a href="https://github.com/jshint/jshint/issues/494/">#494</a>)</p></li></ul>
+
+<p>Bug fixes:</p>
+
+<ul><li><p>Fixes a bug with JSHint not warning about reserved words being used as
+variable and function declaration identifiers. (Ticket
+<a href="https://github.com/jshint/jshint/issues/744/">#744</a>)</p></li><li><p>Fixes a bug with JSHint generating a false positive <em>Missing whitespace...</em>
+warning on trailing commas.
+(<a href="https://github.com/jshint/jshint/issues/363/">#363</a>)</p></li><li><p>Fixes a bug with JSHint not being able to parse regular expressions preceded
+by <em>typeof</em> (e.g. <code>typeof /[a-z]/</code>) and, in some cases, *=, /=, etc.
+(e.g. <code>if (x /= 2) { ... }</code>).
+(<a href="https://github.com/jshint/jshint/issues/657/">#657</a>)</p></li></ul>
+
+<h4>General</h4>
+
+<ul><li><p>This version adds a unique numeric code to every warning and error message
+produced by JSHint. That means that you can now <strong>ignore any warning</strong>
+produced by JSHint even when there is no corresponding option for it. You can
+do that using the special minus (-) operator. For example, here&#39;s how you
+ignore all messages about trailing decimal points (W047):</p><p>  /<em>jshint -W047 </em>/</p><p>or</p><p>  JSHINT(src, { &quot;-W047&quot;: true });</p><p>Keep in mind that this syntax can&#39;t be used to ignore errors.</p></li><li><p>Due to popular demand, this version splits <em>indent</em> and <em>white</em> options
+meaning that <em>indent</em> won&#39;t imply <em>white</em> anymore.
+(<a href="https://github.com/jshint/jshint/issues/667/">#667</a>)</p></li><li><p>Changes <em>node</em> option to not assume that all programs must be
+running in strict mode.
+(<a href="https://github.com/jshint/jshint/issues/721/">#721</a>)</p></li><li><p>Adds new globals for the <em>browser</em> option: Element and Uint8ClampedArray.
+(<a href="https://github.com/jshint/jshint/issues/707/">#707</a> and
+<a href="https://github.com/jshint/jshint/issues/766/">#766</a>)</p></li><li><p>Adds new global for the <em>node</em> option: DataView.
+(<a href="https://github.com/jshint/jshint/issues/773/">#773</a> and
+<a href="https://github.com/jshint/jshint/issues/774/">#774</a>)</p></li><li><p>Removes option <em>onecase</em>.</p></li><li><p><strong>Adds new directive: exported</strong>. Use <code>/* exported ... </code> for global variables
+that are defined in the current file but used elsewhere to prevent
+unnecessary <em>X is defined but never used</em> warnings. As before, you need to declare those
+variables as global in the other files.</p><p>(<a href="https://github.com/jshint/jshint/issues/726/">#726</a> and
+<a href="https://github.com/jshint/jshint/issues/659/">#659</a>)</p></li><li><p>Removes a warning about missing <em>break</em> before <em>default</em> when <em>default</em>
+is the first switch statement (<a href="https://github.com/jshint/jshint/issues/490/">#490</a>):</p><p>  switch (name) {
+  default: // No warning here
+    doSomething();
+    break;
+  case &quot;JSHint&quot;:
+    doSomethingElse();
+  }</p></li><li><p>Improves support for <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words#Words_reserved_for_possible_future_use">future reserved keywords</a>.
+JSHint now properly recognizes future reserved keywords both for ES3 and ES5
+environments with their corresponding rules.
+(<a href="https://github.com/jshint/jshint/issues/674/">#674</a>)</p></li><li><p>Changes behavior for <em>hasOwnProperty</em> (<a href="https://github.com/jshint/jshint/issues/770/">#770</a>):</p><p>  var hasOwnProperty = ...; // No warning
+  var obj = { hasOwnProperty: ... }; // Warning
+  obj.hasOwnProperty = ...; // Warning
+  obj[&#39;hasOwnProperty&#39;] = ...; // Warning</p></li><li><p>Adds ability to disable option <em>unused</em> per function!
+(<a href="https://github.com/jshint/jshint/issues/639/">#639</a>)</p><p>  // jshint unused:true
+  var a; // Warning</p><p>  function foo(b) { // No warning
+    // jshint unused:false
+    return 1;
+  }</p><p>  foo();</p></li></ul>
+
+<p>Bug fixes:</p>
+
+<ul><li>Adds <em>scope</em> property to critical errors. (<a href="https://github.com/jshint/jshint/issues/714/">#714</a>)</li><li>Fixes a regression bug with option <em>predef</em> making all global variables
+writeable. (<a href="https://github.com/jshint/jshint/issues/665/">#665</a>)</li><li>Fixes a bug with JSHint not warning about potential typos on <code>return o.a = 1</code>.
+(<a href="https://github.com/jshint/jshint/issues/670/">#670</a>)</li><li>Fixes a bug with <em>implied</em> property containing false positive data when
+option <em>undef</em> is off.
+(<a href="https://github.com/jshint/jshint/issues/668/">#668</a>)</li></ul>
+
+<h4>CLI</h4>
+
+<ul><li><p>This version <strong>removes support for the JavaScriptCore shell</strong> due to its
+limited API. Note that this doesn&#39;t mean that JSHint no longer works in
+Safari, it simply means that we removed the ability to use jshint via the command
+line JSC shell.</p></li><li><p>This version also <strong>removes support for Windows Script Host</strong>. WSH support
+was initially added due to Node not working well on Windows but, thanks to
+Microsoft engineers, this is no longer true. So everyone is encouraged to
+use JSHint with Node.</p></li><li><p>This version relies on ES5 syntax, so if you use JSHint with
+Rhino, please make sure you have the latest version: 1.7R4.</p></li></ul>
+
+<p>This version includes several improvements to the Node version of JSHint:</p>
+
+<ul><li><p>Adds a new flag, <code>--verbose</code>, that changes output to display message codes:</p><p>  $ jshint --verbose my.js
+  my.js: line 7, col 23, Extra comma. (...) (W070)</p></li><li><p>Makes <code>--config</code> raise an error if it can&#39;t find provided file or if the
+file is invalid JSON.
+(<a href="https://github.com/jshint/jshint/issues/691/">#691</a>)</p></li></ul>
+
+<p>Bug fixes:</p>
+
+<ul><li><p>Fixes a bug with <code>.jshintignore</code> globbing not working properly.
+(<a href="https://github.com/jshint/jshint/issues/777/">#777</a> and
+<a href="https://github.com/jshint/jshint/issues/692/">#692</a>)</p></li><li><p>Fixes a bug with JSHint skipping over files with no extensions.
+(<a href="https://github.com/jshint/jshint/issues/690/">#690</a>)</p></li></ul>
+
+<h4>What&#39;s next?</h4>
+
+<p>I plan to test this release candidate for about a week before marking it
+as stable and publishing on NPM. And, at the same time, I will be updating the
+documentation and the <a href="http://jshint.com/">jshint.com</a> website. If you notice any
+bugs or unexpected backwards-incompatible changes, please file a bug.</p>
+
+<p><strong>RC3 is out:</strong> <a href="http://jshint.com/blog/2013-01-01/1-0-0-rc3/">JSHint 1.0.0 RC3</a>.</p>
+
+<p>Here&#39;s how you can install this release candidate:</p>
+
+<pre><code>$ npm install https://github.com/jshint/jshint/archive/1.0.0-rc1.tar.gz</code></pre>
+
+<p>For Rhino wrapper, you will need to clone our repo and build jshint-rhino:</p>
+
+<pre><code>$ node make.js build
+$ rhino dist/jshint-rhino.js ...</code></pre>
+
+<h4>Contributors</h4>
+
+<p>Thanks to Bernhard K. Weisshuhn, James Allardice, Mike MacCana, Stephen Fry,
+Steven Olmsted, Leith Abdulla, Eric Promislow and Vlad Gurdiga for submitting
+patches!</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

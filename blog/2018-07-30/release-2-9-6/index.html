@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.9.6</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.9.6</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">Jul 30th, 2018</span>
+          </span>
+
+          <h3>Bug Fixes</h3>
+
+<ul><li>Add missing global objects for browser env (<a href="https://github.com/jshint/jshint/commit/badc7a4">badc7a4</a>)</li><li>Add other Fetch spec globals (<a href="https://github.com/jshint/jshint/commit/07bb596">07bb596</a>), closes <a href="https://github.com/jshint/jshint/issues/2582">#2582</a></li><li>Allow closing over immutable bindings (<a href="https://github.com/jshint/jshint/commit/7091685">7091685</a>)</li><li>Allow computed method names in obj literal (<a href="https://github.com/jshint/jshint/commit/a5ff715">a5ff715</a>)</li><li>Allow empty export and trailing comma (<a href="https://github.com/jshint/jshint/commit/631327e">631327e</a>), closes <a href="https://github.com/jshint/jshint/issues/2567">#2567</a></li><li>Avoid infinite loop on invalid <code>for</code> stmt (<a href="https://github.com/jshint/jshint/commit/56a4379">56a4379</a>)</li><li>Consistently ignore dot-prefixed dirs (<a href="https://github.com/jshint/jshint/commit/8d4317e">8d4317e</a>)</li><li>Correct impl of built-in bindings (<a href="https://github.com/jshint/jshint/commit/a11d631">a11d631</a>)</li><li>Correct interpretation of whitespace (<a href="https://github.com/jshint/jshint/commit/dd06eea">dd06eea</a>)</li><li>Correct location of reported error (<a href="https://github.com/jshint/jshint/commit/1c434a3">1c434a3</a>)</li><li>Correct location reported for W043 (<a href="https://github.com/jshint/jshint/commit/1d04868">1d04868</a>)</li><li>Correct reporting of var name in list comprehensions (<a href="https://github.com/jshint/jshint/commit/0ff6644">0ff6644</a>)</li><li>Correct restriction on function name (<a href="https://github.com/jshint/jshint/commit/55aa54e">55aa54e</a>)</li><li>Correct spelling of Uint8ClampedArray (<a href="https://github.com/jshint/jshint/commit/8df4a32">8df4a32</a>)</li><li>Create block scope for <code>switch</code> statements (<a href="https://github.com/jshint/jshint/commit/aa2be10">aa2be10</a>)</li><li>Disallow default values in rest parameters (<a href="https://github.com/jshint/jshint/commit/b420aed">b420aed</a>)</li><li>Do not create binding for illegal syntax (<a href="https://github.com/jshint/jshint/commit/9fe8c94">9fe8c94</a>)</li><li>Do not warn about non-ambiguous linebreaks (<a href="https://github.com/jshint/jshint/commit/ab3ab85">ab3ab85</a>)</li><li>Fix &quot;is is&quot; message typos (<a href="https://github.com/jshint/jshint/commit/7993101">7993101</a>)</li><li>Preserve functionality in &quot;legacy&quot; Node.js (<a href="https://github.com/jshint/jshint/commit/2f6ac13">2f6ac13</a>)</li><li>recognize Jasmine global <code>spyOnProperty</code> (<a href="https://github.com/jshint/jshint/commit/827237f">827237f</a>), closes <a href="https://github.com/jshint/jshint/issues/3183">#3183</a></li><li>Relax restriction on asgnmnt to arguments (<a href="https://github.com/jshint/jshint/commit/0a66710">0a66710</a>)</li><li>Remove warning W100 (<a href="https://github.com/jshint/jshint/commit/ff71d3c">ff71d3c</a>)</li><li>Report error for duplicate arrow params (<a href="https://github.com/jshint/jshint/commit/506c7d5">506c7d5</a>)</li><li>Report error for redeclared generator fns (<a href="https://github.com/jshint/jshint/commit/8896fa3">8896fa3</a>)</li><li>Restrict &quot;name&quot; of strict mode functions (<a href="https://github.com/jshint/jshint/commit/a554c89">a554c89</a>)</li><li>Restrict <code>super</code> usage to valid forms (<a href="https://github.com/jshint/jshint/commit/8f3f880">8f3f880</a>)</li><li>Restrict IdentifierNames in ES5 code (<a href="https://github.com/jshint/jshint/commit/5995a9f">5995a9f</a>)</li><li>Tolerate division following closing brace (<a href="https://github.com/jshint/jshint/commit/3aa02db">3aa02db</a>)</li><li>Tolerate RegExp as <code>void</code> operand (<a href="https://github.com/jshint/jshint/commit/3f920b5">3f920b5</a>)</li><li>Tolerate whitespace in inline directives (<a href="https://github.com/jshint/jshint/commit/efeb0f8">efeb0f8</a>)</li></ul>
+
+<h3>Features</h3>
+
+<ul><li>List outer scoped variables of W083 (<a href="https://github.com/jshint/jshint/commit/d03662c">d03662c</a>), closes <a href="https://github.com/jshint/jshint/issues/3211">#3211</a></li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

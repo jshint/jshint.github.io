@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>JSHint 3 plans</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">JSHint 3 plans</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Oct 8th, 2013</span>
+          </span>
+
+          <p>A few weeks ago we shipped the new JSHint website and it seemed like
+people liked it! In this blog post, I&#39;d like to share my plans for the
+next major release of JSHint.</p>
+
+<p>The next release will be a backwards incompatible release in which I plan
+to clean up and simplify our core package. Here are my current goals
+for that release:</p>
+
+<ul><li>Remove all style-related options and warnings. If it makes sense they
+should be moved into optional plugins.</li><li>Simplify options. All options should enable some sort of a warning with
+some of them enabled by default.</li><li>Build a foundation for plugins by exposing AST and adding additional
+hooks.</li><li>Redesign the API. Since it is a backwards incompatible release, I
+think it could be a great opportunity to change our API from <code>JSHINT(...) &amp;&amp;
+JSHINT.data()</code> to something better.</li></ul>
+
+<p>As you can guess from my goals, I don&#39;t consider JSHint to be a style tool.
+I strongly believe that there&#39;s a market for a good JavaScript style and
+formatting tool, but I don&#39;t think it should be JSHint&#39;s job.</p>
+
+<p>JSHint is <em>really good</em> at giving programmers insight into their code
+and I plan to iterate and improve that side of it. For example,
+wouldn&#39;t it be nice if JSHint could not only warn about undefined variables
+but also <a href="http://anton.kovalyov.net/p/js-typos/">detect if that undefined variable is the result of a typo</a>?</p>
+
+<p>Today many editors, IDEs and teaching services use JSHint to do static
+analysis. The next major release will be about making their life easier.
+If you&#39;re using JSHint within your product or organization and have feedback
+on how you&#39;d like JSHint to be improved, now is a perfect time to
+<a href="mailto:anton@kovalyov.net">send me an email</a>.</p>
+
+<h3>Don&#39;t panic</h3>
+
+<p>This doesn&#39;t mean there won&#39;t be any updates to the current stable branch (2.x)
+of JSHint until 3 is ready. There will be changes, bug fixes and new features
+published soon.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

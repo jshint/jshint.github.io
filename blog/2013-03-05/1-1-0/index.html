@@ -1,0 +1,108 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>JSHint 1.1.0 is out</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">JSHint 1.1.0 is out</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Mar 5th, 2013</span>
+          </span>
+
+          <p>JSHint 1.1.0 is out! This release contains important bug fixes for 1.0.0 and a
+couple of new features.</p>
+
+<ul><li>This version adds a new environment option for PhantomJS: <code>phantom</code>.
+(<a href="https://github.com/jshint/jshint/issues/814">#814</a>)</li><li>Fixes a bug where JSHint would skip parent directory when looking for
+<code>.jshintrc</code> file. (<a href="https://github.com/jshint/jshint/issues/850">#850</a>)</li><li>Adds new option <code>gcl</code> to make JSHint style checks compatible with Google
+Closure Linter.
+(<a href="https://github.com/jshint/jshint/issues/812">#812</a> and
+<a href="https://github.com/jshint/jshint/issues/811">#811</a>)</li><li>Adds a new example <code>.jshintrc</code> file that mirrors defaults from the website.</li><li>Removes errors about empty input. JSHint will now treat empty files as valid.
+(<a href="https://github.com/jshint/jshint/issues/767">#767</a>)</li><li>Fixes a bug where code like <code>return &quot;=&quot;;</code> would produce a false positive
+warning. (<a href="https://github.com/jshint/jshint/issues/878">#878</a>)</li><li><p>Expands on the configurability of <code>unused</code>. This option now accepts the
+following values:</p><ul><li><code>false</code>: no checking is done.</li><li><p><code>true</code>: checks all variables and parameters, unless unused parameter is
+followed by a used one:</p><p>function test(err, val) {
+  return val;
+}</p></li><li><code>&quot;vars&quot;</code>: checks only variables but not function parameters.</li><li><code>&quot;strict&quot;</code>: checks all variables and all function parameters.
+(<a href="https://github.com/jshint/jshint/issues/778">#778</a>)</li></ul></li><li>Fixes a bug where <code>\0</code> in strings would produce a false positive warning.</li><li>Fixes a bug where <code>unused</code> would generate false positive warnings on ES3
+future reserved words in the ES5 environment.</li><li>Removes support for all single-line special comments except for <code>// jshint</code>.
+(<a href="https://github.com/jshint/jshint/issues/881">#881</a>)</li></ul>
+
+<p>I would also like to use this moment to say hi to my friends and family, and
+remind everyone that we&#39;re running <a href="https://www.bountysource.com/#fundraisers/91-jshint">a fundraising campaign on BountySource</a>. All money
+donated will be used to pay contributors for fixing bugs and shipping new
+features. So if you like JSHint donate today. And if you hate JSHint donate
+tomorrow.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

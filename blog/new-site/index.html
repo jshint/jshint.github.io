@@ -1,0 +1,105 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New JSHint website</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New JSHint website</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Oct 1st, 2013</span>
+          </span>
+
+          <p>For the last couple of weeks I&#39;ve been working on a new homepage for JSHint
+and today I&#39;m proud to announce the new <a href="http://jshint.com/">jshint.com</a>!</p>
+
+<p><img alt="JSHint Website" src="/res/blog/new-site.png"/></p>
+
+<p>I decided to change the website to show the direction where I&#39;m taking JSHint
+and where I&#39;d like to see other developer tools go in the near future.</p>
+
+<p>If you go to the <a href="http://jshint.com">front-page</a> right now, you&#39;ll notice
+that it doesn&#39;t have a <em>Lint</em> button anymore. Once you start typing your
+code, JSHint will always be working in the background, providing you with
+valuable data about your code. This data consists of not only warnings but
+also of different metrics such as the cyclomatic complexity. These metrics
+help you step back and look at the overall health of your codebase.</p>
+
+<p>I think that such instant feedback from the tools that monitor your code
+can be quite useful and, now that the foundation is here, I plan to experiment
+with these ideas using both <a href="http://github.com/jshint/jshint/">JSHint</a> and
+JSHint.com.</p>
+
+<p>Stay tuned!</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

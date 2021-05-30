@@ -1,0 +1,167 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>What&#x27;s new in JSHint (December, 2013)</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">What&#x27;s new in JSHint (December, 2013)</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Dec 27th, 2013</span>
+          </span>
+
+          <p>Our latest release, <a href="https://github.com/jshint/jshint/releases/tag/2.4.0">2.4.0</a>,
+was mostly a bug fix release. We fixed a lot of parsing bugs. Among them were
+quite a few serious ES6-related bugs which were blocking some people and
+companies from using JSHint on their ES6 codebases. Since ES6 is still in-progress,
+a moving target, there might be some minor inconsistencies but overall,
+if you&#39;re using more-or-less stable parts of ES6, you can use JSHint to lint
+your forward-thinking code.</p>
+
+<p>We also fixed a couple of bugs that were resulting in JSHint crashing
+when trying to parse invalid code. If your code is syntactically
+broken beyond all hope JSHint might generate false-positive warnings
+and then give up but it should never crash.</p>
+
+<h3>Features</h3>
+
+<p>Thanks to <a href="https://github.com/BenoitZugmeyer">@BenoitZugmeyer</a> we added
+a new flag to the JSHint CLI program, <strong>--extract</strong>, that allows JSHint
+to lint JavaScript within HTML files.</p>
+
+<pre><code>tmp ☭ cat test.html
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Hello, World!&lt;/title&gt;
+    &lt;script&gt;
+      function hello() {
+        return &quot;Hello, World!&quot;;
+      }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;script&gt;
+      console.log(hello())
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+tmp ☭ jshint --extract=auto test.html
+test.html: line 13, col 27, Missing semicolon.
+
+1 error</code></pre>
+
+<p>Another new flag is <strong>--exclude-path</strong> which allows you to provide your
+own <em>.jshintignore</em> file. Or you can point it to the <em>.gitignore</em> file and
+kill two birds with one stone: exclude files both from your version control
+system and JSHint.</p>
+
+<p>As always, the detailed list of changes is on GitHub: <a href="https://github.com/jshint/jshint/releases/tag/2.4.0">JSHint 2.4.0 is released</a>.</p>
+
+<h3>JSHint 3</h3>
+
+<p>Our next major release is shaping up nicely. I removed a lot of old code,
+split <em>jshint.js</em> into smaller pieces and changed its API. New API doesn&#39;t
+mutate any global object, it simply takes your arguments and returns the
+resulting object:</p>
+
+<pre><code>var jshint = require(&quot;jshint&quot;);
+var report = jshint.run(source, options, globals);
+
+report.data.errors.forEach(function (err) {
+  console.log(err.line, err.message);
+});</code></pre>
+
+<p>Almost all bug fixes and new features from 2.4.0 were backported into the
+3.x tree so the codebase is pretty well synced at this point.</p>
+
+<h3>Ramblings</h3>
+
+<p>On the development side, I&#39;m spending a lot of time trying to reduce the
+internal state of JSHint. This means a lot of decoupling, rewriting and
+re-architecting but the codebase is already looking much better.</p>
+
+<p>I still haven&#39;t decided if I want to make JSHint&#39;s internal parser
+to generate an AST or if I want to take a shortcut and use Acorn to do
+the work for me. (This doesn&#39;t mean throwing away JSHint&#39;s
+parser. We can&#39;t do that because no other parser can parse incomplete
+files like JSHint and no other parser supports ES6 and Mozilla JavaScript
+extensions.) Given that Acorn doesn&#39;t support ES6 syntax yet and will
+probably never support Mozilla JavaScript extensions, in some cases JSHint
+will not be able to return an AST. But for majority of users it should be
+fine. Or, maybe, I can do Acorn as a stop-gap solution while I&#39;m patching
+JSHint to generate its own tree. Since everyone uses Mozilla Parser API
+it should be easy enought to do a drop-in replacement.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

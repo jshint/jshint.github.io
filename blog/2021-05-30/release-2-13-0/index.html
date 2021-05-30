@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.13.0</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.13.0</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">May 30th, 2021</span>
+          </span>
+
+          <h3>Bug Fixes</h3>
+
+<ul><li>Allow comma expression in MemberExpression (<a href="https://github.com/jshint/jshint/commit/f05c8d1">f05c8d1</a>)</li><li>Consider all exported bindings &quot;used&quot; (<a href="https://github.com/jshint/jshint/commit/90228b7">90228b7</a>)</li><li>Correct interpretation of ImportSpecifier (<a href="https://github.com/jshint/jshint/commit/72a8102">72a8102</a>)</li><li>Correct location for error (<a href="https://github.com/jshint/jshint/commit/e831188">e831188</a>)</li><li>Correct location reported for directive (<a href="https://github.com/jshint/jshint/commit/ee6aa68">ee6aa68</a>)</li><li>Detect duplicate exported bindings (<a href="https://github.com/jshint/jshint/commit/916c230">916c230</a>)</li><li>Don&#39;t warn when Function() is used without &#39;new&#39;. (#3531) (<a href="https://github.com/jshint/jshint/commit/c13c5cc">c13c5cc</a>)</li><li>Don&#39;t warn when RegExp() is used without &#39;new&#39;. (#3529) (<a href="https://github.com/jshint/jshint/commit/c18a6e4">c18a6e4</a>)</li><li>Enforce restrictions on <code>new</code> operand (<a href="https://github.com/jshint/jshint/commit/c2719eb">c2719eb</a>)</li><li>Graduate BigInt support to <code>esversion: 11</code> (<a href="https://github.com/jshint/jshint/commit/553f816">553f816</a>)</li><li>Improve declaration parsing (<a href="https://github.com/jshint/jshint/commit/a9bdc93">a9bdc93</a>)</li><li>Report early reference with warning (<a href="https://github.com/jshint/jshint/commit/2c1a5f8">2c1a5f8</a>)</li><li>Support RegExp Unicode property escapes (<a href="https://github.com/jshint/jshint/commit/e7fa785">e7fa785</a>)</li></ul>
+
+<h3>Features</h3>
+
+<ul><li>Add support for &quot;export * as ns from&quot; (<a href="https://github.com/jshint/jshint/commit/c46f464">c46f464</a>)</li><li>Add support for <code>import.meta</code> (<a href="https://github.com/jshint/jshint/commit/73d7e0d">73d7e0d</a>)</li><li>Add support for dynamic import (<a href="https://github.com/jshint/jshint/commit/6bfcaed">6bfcaed</a>)</li><li>Add support for optional chaining (<a href="https://github.com/jshint/jshint/commit/b125dbe">b125dbe</a>)</li><li>Implement support for nullish coalescing (<a href="https://github.com/jshint/jshint/commit/f50b14d">f50b14d</a>)</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>
