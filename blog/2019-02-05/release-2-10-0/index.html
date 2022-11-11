@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.10.0</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.10.0</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">Feb 5th, 2019</span>
+          </span>
+
+          <p>This release introduces support for the three most recent editions of
+JavaScript: ES7, ES8, and ES9. Users can enable support for any one of these
+via the <code>esversion</code> linting option.</p>
+
+<p>Perhaps most notably, this includes &quot;async functions.&quot; Since their
+standardization in ES2017, no feature has been more requested. We&#39;re happy to
+add support for this powerful new language feature. If the delay is any
+indication, extending JSHint&#39;s parser was no small task, and we were able to
+make many seemingly-unrelated corrections along the way.</p>
+
+<p>That progress is easiest to see in JSHint&#39;s performance on Test262 (the
+official test suite for the JavaScript programming language). Version 2.9.6
+passed 84% of those tests. Version 2.10.0 passes 96%. We&#39;re excited to push
+that number higher, especially considering that new language features and new
+tests are being added every day. If you&#39;re curious about what needs to be done,
+we maintain an &quot;expectations file&quot; describing every test JSHint is known to
+fail today.</p>
+
+<p>This release also includes brand-new parsing logic for classes. We thank Ethan
+Dorta and Alex Kritchevsky, the two first-time contributors who made this
+possible!</p>
+
+<h3>Bug Fixes</h3>
+
+<ul><li>Accept new RegExp flag introduced by ES6 (<a href="https://github.com/jshint/jshint/commit/26b9e53">26b9e53</a>)</li><li>Add global variables introduced in ES2017 (<a href="https://github.com/jshint/jshint/commit/aded551">aded551</a>)</li><li>Add globals for EventTarget interface (<a href="https://github.com/jshint/jshint/commit/b78083a">b78083a</a>)</li><li>Add globals for WindowOrWorkerGlobalScope (<a href="https://github.com/jshint/jshint/commit/e0aac94">e0aac94</a>)</li><li>Allow YieldExpression as computed property (<a href="https://github.com/jshint/jshint/commit/40dca82">40dca82</a>)</li><li>Correct implementation of spread/rest (<a href="https://github.com/jshint/jshint/commit/bd0ae0d">bd0ae0d</a>)</li><li>Correct invalid function invocation (<a href="https://github.com/jshint/jshint/commit/cda02ae">cda02ae</a>)</li><li>Correct parsing of <code>let</code> token (<a href="https://github.com/jshint/jshint/commit/030d6b4">030d6b4</a>)</li><li>Correct parsing of arrow function (<a href="https://github.com/jshint/jshint/commit/8fa6e39">8fa6e39</a>)</li><li>Correct parsing of InExpression (<a href="https://github.com/jshint/jshint/commit/06f54d0">06f54d0</a>)</li><li>Disallow dups in non-simple parameter list (<a href="https://github.com/jshint/jshint/commit/4a5a4a5">4a5a4a5</a>)</li><li>Disallow fn declarations in stmt positions (<a href="https://github.com/jshint/jshint/commit/a0e0305">a0e0305</a>)</li><li>Disallow YieldExpression in gnrtr params (<a href="https://github.com/jshint/jshint/commit/17ca4e4">17ca4e4</a>)</li><li>Enforce UniqueFormalParameters for methods (<a href="https://github.com/jshint/jshint/commit/280d36b">280d36b</a>)</li><li>Honor <code>globals</code> config in JavaScript API (<a href="https://github.com/jshint/jshint/commit/0278731">0278731</a>)</li><li>Report invalid syntax as error (<a href="https://github.com/jshint/jshint/commit/5ca8b1a">5ca8b1a</a>)</li><li>Update parsing of object &quot;rest&quot; property (<a href="https://github.com/jshint/jshint/commit/58967ea">58967ea</a>)</li></ul>
+
+<h3>Features</h3>
+
+<ul><li>Enable object rest/spread via esversion (<a href="https://github.com/jshint/jshint/commit/3fc9c19">3fc9c19</a>)</li><li>Enforce ES2016 restriction on USD (<a href="https://github.com/jshint/jshint/commit/2c2025b">2c2025b</a>)</li><li>Implement <code>noreturnawait</code> (<a href="https://github.com/jshint/jshint/commit/70ab03d">70ab03d</a>)</li><li>Implement <code>regexpu</code> option (<a href="https://github.com/jshint/jshint/commit/962dced">962dced</a>)</li><li>Implement ES2019 RegExp &quot;dotall&quot; (<a href="https://github.com/jshint/jshint/commit/457d732">457d732</a>)</li><li>Implement support for async iteration (<a href="https://github.com/jshint/jshint/commit/1af5930">1af5930</a>)</li><li>Implement support for ES8 trailing commas (<a href="https://github.com/jshint/jshint/commit/29cab1f">29cab1f</a>)</li><li>Implement support for object spread/rest (<a href="https://github.com/jshint/jshint/commit/35e1b17">35e1b17</a>)</li><li>Introduce exponentiation operator (<a href="https://github.com/jshint/jshint/commit/21b8731">21b8731</a>)</li><li>Introduce linting option <code>leanswitch</code> (<a href="https://github.com/jshint/jshint/commit/1f008f2">1f008f2</a>)</li><li>Introduce support for async functions (<a href="https://github.com/jshint/jshint/commit/bc4ae9f">bc4ae9f</a>)</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

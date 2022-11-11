@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New release: r11</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New release: r11</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Sep 3rd, 2012</span>
+          </span>
+
+          <p>This release adds <strong>new checks for excessive code</strong>! You can now use JSHint
+to check number of parameters per function, nested block depth per function,
+number of statements per function and function&#39;s cyclomatic complexity.
+More information in our <a href="/docs/">docs</a> or in this brilliant
+<a href="https://github.com/jshint/jshint/pull/593/">patch</a>.</p>
+
+<p>Other changes:</p>
+
+<ul><li>Fixed bugs where JSHint couldn&#39;t parse Number.NaN and ES5 sparse arrays.</li><li>Fixed bugs where JSHint couldn&#39;t parse some confusing regular expressions.</li><li><p><code>catch</code> blocks now has their own scope so if you define a function within
+a catch block and try to use it outside of said block—JSHint will warn you
+about undefined variable. JSHint also warns about cases when the catch
+scope leaks values into the outer scope in IE:</p><p>  var e = 2;</p><p>  try {
+    throw &#39;boom&#39;;
+  } catch (e) {
+    // JSHint: &#39;e&#39; may get overwritten in IE.
+  }</p><p>  console.log(e + 2); // &#39;boom2&#39; instead of 4</p></li><li><p>We no longer warn when Object is used as a function. Like Boolean, Number
+and String, Object can be called as a function which provides scripts with
+access to ECMAScript&#39;s internal ToObject logic.</p></li><li>We no longer warn when uncapitalized global functions are used as constructors.</li><li>JSHint now recognizes some ES6 globals (Map, Set and WeakMap) and one
+additional browser global Blob.</li><li>Updated our list of globals for MooTools.</li><li><p>JSHint can now check code within simple eval strings. For example, JSHint can
+now spot typos like this one (this practice is still discouraged, though):</p><p>  eval(&quot;oops(&quot;); // Expected &#39;)&#39; and instead saw &#39;&#39;.</p></li><li><p>+ other minor bugfixes.</p></li></ul>
+
+<p>Thanks to Josh Heidenreich, Rick Waldron, Nikolay Frantsev, shybyte.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

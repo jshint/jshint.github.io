@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>Bugfix release: r04</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">Bugfix release: r04</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">Anton Kovalyov</span>
+            <span class="blog-date">Jan 8th, 2012</span>
+          </span>
+
+          <p>This is a bugfix release that also contains some improvements to our
+test coverage.</p>
+
+<p>Fixes:</p>
+
+<ul><li><p>JSHint now makes sure that <code>null</code> references are not subscripted
+within <code>typeof</code> and <code>delete</code> operators.</p></li><li><p>JSHint now recognizes defensive semicolon technique:</p><p>  ; (function () { /<em> ... </em>/ }());</p><p>But still warns in cases like this:</p><pre><code>; function () {}</code></pre></li><li><p>Fixed an issue with <code>latedef</code> not working for a specific use
+of variable hoisting.</p></li><li><p>Fixed an intermittent bug with JSHint failing with an exception
+instead of returning a Too Many errors message.</p></li><li><p>Fixed incorrect comments in JSC wrapper.</p></li><li><p>Fixed a bug with JSC wrapper not parsing options with spaces correctly.</p></li></ul>
+
+<p>Thanks to Mike Pennisi and Dan Vanderkam.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

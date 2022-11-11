@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>New Release: 2.9.4</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="The JSHint team">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="blog-title">New Release: 2.9.4</h1>
+
+          <span class="blog-byline">
+            <span class="blog-author">The JSHint team</span>
+            <span class="blog-date">Oct 20th, 2016</span>
+          </span>
+
+          <h3>Bug Fixes</h3>
+
+<ul><li>Allow RegExp literal as <code>yield</code> operand (#3011) (<a href="https://github.com/jshint/jshint/commit/b646aea">b646aea</a>)</li><li>Allow W100 to be ignored during lookahead (<a href="https://github.com/jshint/jshint/commit/a2b3881">a2b3881</a>), closes <a href="https://github.com/jshint/jshint/issues/3013">#3013</a></li><li>Avoid crashing on invalid input (#3046) (<a href="https://github.com/jshint/jshint/commit/bec152c">bec152c</a>)</li><li>Correct interpretation of ASI (#3045) (<a href="https://github.com/jshint/jshint/commit/9803e11">9803e11</a>)</li><li>Do not duplicate reported warnings/errors (<a href="https://github.com/jshint/jshint/commit/dc4a4fe">dc4a4fe</a>)</li><li>Enforce TDZ within initializer of lexical declaration <a href="https://github.com/jshint/jshint/commit/8e9d406">8e9d406</a>), closes <a href="https://github.com/jshint/jshint/issues/2637">#2637</a></li><li>Enforce TDZ within class heritage definition <a href="https://github.com/jshint/jshint/commit/8e9d406">8e9d406</a>)</li><li>Enforce TDZ within for in/of head <a href="https://github.com/jshint/jshint/commit/8e9d406">8e9d406</a>), closes <a href="https://github.com/jshint/jshint/issues/2693">#2693</a></li><li>Offset line no.s of errors from eval code (<a href="https://github.com/jshint/jshint/commit/2a31c94">2a31c94</a>)</li><li>Remove <code>null</code> value from <code>errors</code> array (#3049) (<a href="https://github.com/jshint/jshint/commit/f7eb3d7">f7eb3d7</a>)</li><li>Report error for offending token value (<a href="https://github.com/jshint/jshint/commit/3b06d01">3b06d01</a>)</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>

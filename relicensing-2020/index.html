@@ -1,0 +1,211 @@
+<!doctype html>
+
+<html lang=en>
+  <head>
+    <title>2020 Relicensing</title>
+
+    <meta charset=utf8>
+    <meta name=description content="JSHint, a JavaScript Code Quality Tool">
+    <meta name=author      content="Anton Kovalyov">
+
+    
+
+    
+    <link rel=stylesheet href="/res/docs.min.css">
+    
+
+    <script>
+      if (window.self !== window.top)
+        window.top.location.href = document.location.href;
+
+      function jumpToOption() {
+        var input = document.getElementById("jump-to-option")
+
+        if (/^\s*$/.test(input.value))
+          return false
+
+        _gaq.push(["_trackEvent", "Docs", "jumpToOption", input.value]);
+
+        if (window.location.pathname === "/docs/options/")
+          window.location.hash = "#" + input.value
+        else
+          window.location = "/docs/options/#" + input.value
+
+        return false
+      }
+
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-126146-15"]);
+      _gaq.push(["_setDomainName", "jshint.com"]);
+      _gaq.push(["_trackPageview"]);
+    </script>
+  </head>
+
+  <body>
+    <nav class="header navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">JSHint</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/docs/">Docs</a></li>
+          <li><a href="/install/">Install</a></li>
+          <li><a href="/contribute/">Contribute</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <form class="navbar-form navbar-left" role="search" onsubmit="return jumpToOption()">
+          <div class="form-group">
+            <input id="jump-to-option" type="text" class="form-control" placeholder="Option name">
+          </div>
+          <button type="submit" class="btn btn-default">Jump to docs</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-8">
+          <p>This page&#39;s content is sourced from <a href="https://github.com/jshint/jshint">the JSHint project repository</a>. If you spot an error, please <a href="https://github.com/jshint/jshint/issues/new">open an issue</a> or (better yet) <a href="https://github.com/jshint/jshint/compare">make a pull request</a>!</p>
+
+<h1>2020 Relicensing</h1>
+
+<p>In August of 2020, the JSHint project maintainers relicensed the project. This
+was the culmination of a years-long effort where great care was taken to
+respect the practice of software licensing and the intent of all contributors.
+By summarizing the process followed by the maintainers, this document
+demonstrates the legitimacy of the change.</p>
+
+<h2>Origin: JSLint</h2>
+
+<p>The JSLint project was first made publicly available in 2002. It was
+distributed free-of-charge, but it was licensed with the so-called &quot;JSON
+License&quot; [1]. Code published under this license is not recognized as &quot;free
+software&quot; by the Free Software Foundation [2], nor is it recognized as &quot;open
+source&quot; by the Open Source Initiative [3] due to the following clause:</p>
+
+<blockquote><p>The Software shall be used for Good, not Evil.</p></blockquote>
+
+<p>After the initial release, JSLint&#39;s creator iteratively improved it through a
+series of patches to its one-and-only source code file. Throughout this time,
+the owner was the sole contributor to the project.</p>
+
+<h2>The fork</h2>
+
+<p>In 2011, another developer made improvements of their own and published the
+result as a new project named &quot;JSHint&quot; [4]. This was permissible under the
+terms of JSLint&#39;s license provided that the new project used the same license
+for the code it inherited.</p>
+
+<p>The second developer continued to modify JSHint and also accepted contributions
+from others. To promote the maintainability of the source code, new features
+were occasionally introduced in distinct files that were designed to be
+included at runtime. Referred to as &quot;modules,&quot; these files were made available
+under the terms of the MIT &quot;Expat&quot; license [5]. As automated tests were written
+and included in the project, they too were licensed under MIT &quot;Expat.&quot;</p>
+
+<p>In the years that followed, the JSHint project accepted direct code
+contributions from hundreds of developers. Many of these patches modified the
+original JSON-licensed file. Meanwhile, the author of JSLint permitted the
+Eclipse Foundation to relicense a version of JSLint using the MIT Expat license
+so that it could be included in their project named Orion [6].</p>
+
+<h2>Injecting a FOSS starting point</h2>
+
+<p>In 2013, a user of JSHint requested that the project be relicensed [7]. The
+JSHint maintainers obliged via the following procedure:</p>
+
+<ol><li>Using the git version control software, they reverted all of the changes
+that were submitted to JSHint. (The resulting code was identical to JSLint
+at the moment JSHint was created.)</li><li>They replaced the JSON-licensed version of the code with the MIT-licensed
+version published by the Eclipse Foundation. (The resulting code differed
+from JSLint only in the license header.)</li><li>They re-applied all of the changes that were submitted to JSHint.</li></ol>
+
+<p>While this operation created an &quot;alternate history&quot; which demonstrated how
+JSHint could have been created as a free software project, it did not
+necessarily reflect the intentions of the contributors. JSHint did not at that
+time maintain a Contributors Licensing Agreement, so the maintainers did not
+have the authority to modify the terms under which the JSHint-specific patches
+were submitted.</p>
+
+<p>To address this, the maintainers first introduced a Contributors Licensing
+Agreement (&quot;CLA&quot;). They ensured all subsequent contributors agreed to the terms
+of the agreement prior to accepting their patches. They contacted every
+contributor who had modified the JSON-licensed <code>jshint.js</code> file and requested
+they they sign the agreement. Although most responded by signing the agreement,
+a few refused and still others did not respond.</p>
+
+<h2>Rewriting</h2>
+
+<p>A full listing of the patches whose authors have not signed the CLA is
+available alongside this document in the JSHint project source code repository.</p>
+
+<p>The maintainers reviewed each patch which could not be relicensed. Many
+involved non-substantive changes such as code comment amendments, spelling
+corrections, or the introduction of references to standardized APIs. Because
+these contributions did not meaningfully alter the behavior of the software,
+there could be no claim to ownership, so explicit permission to relicense was
+not necessary.</p>
+
+<p>However, a total of six patches included non-trivial changes to <code>jshint.js</code>.
+The maintainers arranged for each of these to be re-written.</p>
+
+<p>Three contributions were rewritten by four volunteers who never reviewed the
+implementation they were rewriting. The project maintainers prepared an
+alternate version of the project for each volunteer--one that omitted each
+patch that needed to be reimplemented.</p>
+
+<p>Three additional contributions were rewritten by a JSHint project maintainer.
+The uniqueness of his work was verified by the other maintainers.</p>
+
+<p>In all cases, correctness of the new implementation was verified by the
+project&#39;s existing automated tests (because as described above, their licensing
+was not subject to change).</p>
+
+<h2>Finalization</h2>
+
+<p>With this work complete, every line of code in the JSHint project has been
+permitted by its contributor to be licensed using the MIT &quot;Expat&quot; license. The
+&quot;alternate history&quot; is available in a Git tag named <code>relicensing-2020</code>.</p>
+
+<p>As of version 2.12.0, JSHint is a free software project.</p>
+
+<p>[1] https://www.gnu.org/licenses/license-list.en.html#JSON
+[2] <em>Ibid.</em>
+[3] https://opensource.org/licenses/alphabetical
+[4] https://web.archive.org/web/20110224022052/http://anton.kovalyov.net/2011/02/20/why-i-forked-jslint-to-jshint/
+[5] https://www.gnu.org/licenses/license-list.en.html#Expat
+[6] http://git.eclipse.org/c/orion/org.eclipse.orion.client.git/tree/lib/jslint/jslint-2011-01-09.js
+[7] https://github.com/jshint/jshint/issues/1234</p>
+        </div>
+
+        <div class="col-md-4">
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = "//www.google-analytics.com/ga.js";
+
+        var st = document.getElementsByTagName("script")[0];
+        st.parentNode.insertBefore(ga, st);
+      })();
+    </script>
+  </body>
+</html>
